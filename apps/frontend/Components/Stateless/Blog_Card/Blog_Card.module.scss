@@ -1,0 +1,23 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: calc(140rem / 3);
+
+  &__image {
+    width: 100%;
+    height: 20rem;
+    position: relative;
+  }
+
+  &:not(:last-of-type) {
+    margin-right: 2rem;
+  }
+}
+.text--heading {
+  margin-top: 2rem;
+}
+
+.text--paragraph {
+  margin: 2rem 0;
+}

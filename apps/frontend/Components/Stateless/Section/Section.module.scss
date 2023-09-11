@@ -1,0 +1,29 @@
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: var(--margin-section-auto);
+  margin-bottom: 4rem;
+  max-width: var(--max-width);
+  &__details {
+    max-width: 50rem;
+  }
+}
+
+.container {
+  &--fullScreen {
+    width: 100%;
+    margin: var(--margin-section-auto);
+  }
+
+  &--default {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: var(--margin-section-auto);
+  }
+}
+.section {
+  width: 100%;
+  // max-width: var(--max-width);
+  margin: var(--margin-section-auto);
+}

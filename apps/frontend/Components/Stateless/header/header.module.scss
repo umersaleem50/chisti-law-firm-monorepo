@@ -1,0 +1,31 @@
+/*
+ * Replace this with your own classes
+ *
+ * e.g.
+ * .container {
+ * }
+*/
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  
+}
+.left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 90%;
+
+  &__buttons {
+    margin: 8rem 0;
+  }
+
+  &__tags {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+  }
+}

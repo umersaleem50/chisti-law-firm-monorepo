@@ -1,0 +1,26 @@
+.hero {
+  font-size: var(--font-hero);
+  color: var(--font-color, #011f26);
+  font-family: Poppins;
+
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.p {
+  color: var(--color-accent, #0f4c59);
+  font-family: Poppins;
+  font-size: var(--font-paragraph);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 3rem;
+}
+.secondary,
+.h6 {
+  color: var(--accent, #0f4c59);
+  font-family: Poppins;
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}

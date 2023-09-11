@@ -1,0 +1,33 @@
+.finder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-accent);
+  padding: 4rem 8rem;
+  margin: 8rem 0;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: var(--max-width);
+  &__details {
+    width: 50%;
+  }
+
+  &__finder {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+}
+
+.button {
+  width: 100%;
+  margin-top: 1rem;
+}

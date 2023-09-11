@@ -1,0 +1,16 @@
+{
+  "name": "generate-ui",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/generate-ui/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/generate-ui/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  }
+}

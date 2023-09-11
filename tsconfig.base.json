@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@law-firm/generate-ui": ["libs/generate-ui/src/index.ts"],
+      "@law-firm/generate-ui/server": ["libs/generate-ui/src/server.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

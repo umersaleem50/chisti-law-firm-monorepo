@@ -1,0 +1,29 @@
+.element {
+  display: flex;
+  width: 100%;
+
+  &__image,
+  &__details {
+    flex: 0 1 50%;
+    position: relative;
+
+    width: 100%;
+  }
+
+  &__details {
+    padding: 5rem;
+  }
+
+  &__text {
+    margin-bottom: 2rem;
+
+    &--small {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  //element--modifiers
+  &--reverse {
+    flex-direction: row-reverse !important;
+  }
+}
