@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Team_Card_Component } from './Team_Card';
+import Team_Card_Component from './Team_Card';
 const meta: Meta<typeof Team_Card_Component> = {
   title: 'Stateless/Team Card',
   component: Team_Card_Component,

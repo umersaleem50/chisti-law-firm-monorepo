@@ -10,7 +10,7 @@ export type IButton = {
   onClick?: any;
   customClasses?: string[];
   iconStart?: React.ElementType<IconBaseProps>;
-  iconEnd?: React.ElementType<IconBaseProps>;
+  iconEnd?: any;
   modifier?: 'secondary';
   isActive?: boolean;
 };

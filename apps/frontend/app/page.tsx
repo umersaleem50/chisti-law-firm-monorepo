@@ -1,5 +1,6 @@
 // 'use client';
 import Blogs from '../Components/Layouts/Blogs/Blogs';
+import Footer from '../Components/Layouts/Footer/Footer';
 import Make_Appointment from '../Components/Layouts/Make_Appointment/Make_Appointment';
 import Mission from '../Components/Layouts/Mission/Mission';
 import Services from '../Components/Layouts/Services/Services';
@@ -27,6 +28,7 @@ export default async function Index() {
       <Blogs />
       <Make_Appointment />
       <Testimonials />
+      <Footer />
     </div>
   );
 }

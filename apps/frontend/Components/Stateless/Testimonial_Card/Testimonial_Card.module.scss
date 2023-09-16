@@ -5,12 +5,14 @@
   flex-direction: column;
   background-color: var(--color-white);
   min-width: 50rem;
+  max-width: 50rem;
   padding: 4rem;
-  max-height: 20rem;
+
+  height: auto;
   transition: background-color 0.2s ease-in;
   box-shadow: var(--form-shadow);
   cursor: pointer;
-
+  overflow: hidden;
   &:hover,
   &--active {
     background-color: var(--color-accent) !important;
@@ -24,13 +26,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: -8rem;
+    // margin-top: -8rem;
+    margin-top: 4rem;
+
+    max-height: 10rem;
   }
 
   &__qoute {
     font-family: 'PT Serif', serif !important;
     font-size: 20rem !important;
-    line-height: 1rem;
+    line-height: 0rem;
     transform: translate(0, 6rem);
     user-select: none;
     z-index: 1;

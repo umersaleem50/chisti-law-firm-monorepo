@@ -38,17 +38,17 @@ const Testimonials = () => {
         paragraph={testmonials_text.paragraph}
       >
         <div className={classes['container']}>
-          <Slider_Dots
-            count={count}
-            dotsLength={temp_comment_data.length}
-            setCount={setCount}
-          />
           <div className={classes['slider']}>
             {GenerateUi({
               RenderElement: Testimonial_Card,
               dataArr: temp_comment_data,
             })}
           </div>
+          <Slider_Dots
+            count={count}
+            dotsLength={temp_comment_data.length}
+            setCount={setCount}
+          />
         </div>
       </Section>
     </div>
