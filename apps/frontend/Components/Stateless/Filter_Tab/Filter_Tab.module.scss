@@ -1,0 +1,11 @@
+.container {
+  padding: 3rem 0;
+  border-top: var(--border-line);
+
+  &__text {
+    padding: 1rem 2rem;
+  }
+}
+.heading {
+  margin: 1rem 0;
+}

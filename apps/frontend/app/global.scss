@@ -11,9 +11,11 @@
   --color-white: #f2f2f2;
   --color-black: #000000;
   --color-grey-light: #e7e7e7;
+  --color-grey-3: #828282;
 
   // fonts
   --font-paragraph: 1.4rem;
+  --font-medium: 1.8rem;
   --font-secondary: 2rem;
   --font-hero: 7.5rem;
 
@@ -21,6 +23,7 @@
   --margin-section-auto: 8rem auto;
   --border-stroke: 2px;
   --grid-gap: 4rem;
+  --border-line: 2px solid var(--color-grey-light);
 
   //shadows
   --form-shadow: 0px 17px 34px 0px rgba(0, 0, 0, 0.1);

@@ -2,8 +2,10 @@
 import classes from './Button.module.scss';
 import { CSSProperties } from 'react';
 import { IconBaseProps } from 'react-icons/lib';
+import { HiOutlineArrowNarrowLeft as IconBackToHomepage } from 'react-icons/hi';
+import Router from 'next/router';
 export type IButton = {
-  varient: 'primary' | 'outline' | 'text';
+  varient: 'primary' | 'outline' | 'text' | 'fullwidth';
   children?: any;
   style?: CSSProperties;
   text?: string;
@@ -13,6 +15,7 @@ export type IButton = {
   iconEnd?: any;
   modifier?: 'secondary';
   isActive?: boolean;
+  id?: string;
 };
 
 const Button = ({
@@ -26,9 +29,11 @@ const Button = ({
   iconStart,
   modifier,
   isActive,
+  id,
 }: IButton) => {
   return (
     <button
+      id={id}
       className={[
         classes['button'],
         classes[varient],
@@ -44,6 +49,21 @@ const Button = ({
       {iconStart && iconStart}
       {children || text}
       {iconEnd && iconEnd}
+    </button>
+  );
+};
+
+export const Back_to_Home_Button = ({
+  text = 'back to homepage',
+  url = '/',
+}: {
+  text?: string;
+  url?: string;
+}) => {
+  return (
+    <button className={classes['homepage']} onClick={() => Router.push(url)}>
+      <IconBackToHomepage style={{ marginRight: '1rem' }} />
+      {text}
     </button>
   );
 };

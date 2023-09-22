@@ -21,3 +21,9 @@ export const Secondary = () => (
     Secondary Heading
   </Typography>
 );
+
+export const Medium = () => (
+  <Typography vairent="h5" component="h5">
+    Medium Heading
+  </Typography>
+);

@@ -10,7 +10,7 @@ export interface ITextbox {
       | React.ChangeEvent<HTMLTextAreaElement>
   ) => void;
   value: string | number;
-  type?: 'text' | 'password' | 'email' | 'field';
+  type?: 'text' | 'password' | 'email' | 'field' | 'search';
   inputStyle?: CSSProperties;
   labelStyle?: CSSProperties;
   textboxStyle?: CSSProperties;

@@ -1,7 +1,9 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "emitDecoratorMetadata": true
+    "emitDecoratorMetadata": true,
+    // "composite": true,
+    "noEmit": false
   },
   "exclude": ["components/**/*.spec.ts", "components/**/*.test.ts"],
   "include": [
@@ -10,8 +12,9 @@
     "components/**/*.stories.jsx",
     "components/**/*.stories.tsx",
     "components/**/*.stories.mdx",
+    "Components/**/*.stories.mdx",
     ".storybook/*.js",
-    ".storybook/*.ts"
-, "Components/Layouts/Services/Service.stories1.tsx"  ],
-  "composite": true
+    ".storybook/*.ts",
+    "Components/Layouts/Services/Service.stories1.tsx"
+  ]
 }

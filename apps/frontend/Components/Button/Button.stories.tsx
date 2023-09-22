@@ -1,4 +1,4 @@
-import Button from './Button';
+import Button, { Back_to_Home_Button } from './Button';
 
 export default {
   title: 'Inputs/Button',
@@ -17,3 +17,11 @@ export const Outline = () => (
     Button
   </Button>
 );
+
+export const FullWidth = () => (
+  <Button varient="fullwidth" onClick={() => {}}>
+    Full Width
+  </Button>
+);
+
+export const BtnHomepage = () => <Back_to_Home_Button />;

@@ -57,3 +57,39 @@
     color: var(--color-primary) !important;
   }
 }
+
+.homepage {
+  display: flex;
+  outline: none;
+  border: none;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: var(--font-paragraph);
+  color: var(--color-font);
+  transition: color 0.2s ease-in;
+  &:hover {
+    color: var(--color-primary);
+  }
+}
+
+.fullwidth {
+  width: 100%;
+  max-width: 32rem;
+  background-color: transparent;
+  font-size: var(--font-paragraph);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  outline: none;
+  border: none;
+  transition: 0.2s ease-in-out;
+  &:hover,
+  &--active {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+  }
+}
