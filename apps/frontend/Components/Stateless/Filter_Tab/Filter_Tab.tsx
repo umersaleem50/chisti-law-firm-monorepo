@@ -1,3 +1,4 @@
+'use client';
 import { useState } from 'react';
 import Button, { Back_to_Home_Button } from '../../Button/Button';
 import Textbox from '../../Inputs/Textbox/Textbox';

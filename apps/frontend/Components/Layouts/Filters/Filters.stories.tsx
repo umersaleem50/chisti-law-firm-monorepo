@@ -11,7 +11,7 @@ type Story = StoryObj<typeof Filters>;
 
 const testDataArr = [{}];
 
-export const Primary: Story = {
+export const Services: Story = {
   args: {
     data: [
       {
@@ -39,6 +39,27 @@ export const Primary: Story = {
           { text: 'Marriage Cases', type: 'button', id: 'marriage' },
           { text: 'Dowry Cases', type: 'button', id: 'dowry' },
           { text: 'Other Family Cases', type: 'button', id: 'other-family' },
+        ],
+      },
+    ],
+    activeId: 'civil',
+  },
+};
+export const Team: Story = {
+  args: {
+    data: [
+      {
+        heading: 'Filters:',
+        options: [
+          { text: 'By Profession:', type: 'text', id: 'text-profession' },
+          { text: 'Civil Lawyers', type: 'checkbox', id: 'civil' },
+          { text: 'Criminal Lawyers', type: 'checkbox', id: 'criminal' },
+          { text: 'Cyber Lawyers', type: 'checkbox', id: 'cyber' },
+          { text: 'Taxation Lawyers', type: 'checkbox', id: 'tax' },
+          { text: 'By Expirence:', type: 'text', id: 'text-expirence' },
+          { text: '+3 Years', type: 'checkbox', id: '3+' },
+          { text: '+5 Years', type: 'checkbox', id: '5+' },
+          { text: '+10 Years', type: 'checkbox', id: '10+' },
         ],
       },
     ],
