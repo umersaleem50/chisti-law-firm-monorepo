@@ -7,19 +7,30 @@ export interface ISliderDots {
   count: number;
   setCount: any;
   dotsLength: number;
+  onClickLeftDot?: () => void;
+  onClickRightDot?: () => void;
 }
 
-const Slider_Dots = ({ count, setCount, dotsLength }: ISliderDots) => {
+const Slider_Dots = ({
+  count,
+  setCount,
+  dotsLength,
+  onClickLeftDot = () => {},
+  onClickRightDot = () => {},
+}: ISliderDots) => {
   const increaseCount = () => {
     //check if the count on last index
-    if (count < dotsLength) return setCount((prev: number) => prev + 1);
-    return setCount(1);
+    onClickRightDot();
+    // if (count <= dotsLength) {
+    //   return setCount(0);
+    // }
+    // return setCount((prev: number) => prev + 1);
   };
   const decreaseCount = () => {
     //check if the count on first index
-
-    if (count > 1) return setCount((prev: number) => prev - 1);
-    return setCount(dotsLength);
+    onClickLeftDot();
+    // if (count === 0) return setCount(dotsLength);
+    // return setCount((prev: number) => prev - 1);
   };
 
   const generateDots = (numOfDots: number) => {
@@ -28,9 +39,9 @@ const Slider_Dots = ({ count, setCount, dotsLength }: ISliderDots) => {
         <div
           className={[
             classes['dot'],
-            count === i + 1 ? classes['dot--active'] : '',
+            count === i ? classes['dot--active'] : '',
           ].join(' ')}
-          onClick={() => setCount(i + 1)}
+          onClick={() => setCount(i)}
           key={i}
         ></div>
       );

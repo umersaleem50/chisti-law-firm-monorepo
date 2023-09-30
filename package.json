@@ -5,6 +5,7 @@
   "scripts": {},
   "private": true,
   "dependencies": {
+    "@nx/express": "^16.9.1",
     "@nx/next": "16.7.4",
     "mapbox-gl": "^2.15.0",
     "next": "13.4.1",
