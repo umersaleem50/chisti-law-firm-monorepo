@@ -1,3 +1,4 @@
+import { forwardRef } from 'react';
 import Typography from '../../Typography/Typography';
 import classes from './Testimonial_Card.module.scss';
 
@@ -7,17 +8,17 @@ export interface ITestimonialCard {
   isActive?: boolean;
 }
 
-const Testimonial_Card = ({
-  text,
-  personName,
-  isActive = false,
-}: ITestimonialCard) => {
+const Testimonial_Card = (
+  { text, personName, isActive = false }: ITestimonialCard,
+  childRef: any
+) => {
   return (
     <figure
       className={[
         classes['card'],
         isActive ? classes['card--active'] : '',
       ].join('  ')}
+      ref={childRef}
     >
       <figcaption>
         <Typography vairent="p" component="p">
@@ -43,4 +44,4 @@ const Testimonial_Card = ({
   );
 };
 
-export default Testimonial_Card;
+export default forwardRef(Testimonial_Card);

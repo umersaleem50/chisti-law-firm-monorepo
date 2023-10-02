@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { GenerateUi } from '@law-firm/generate-ui';
 import { testmonials_text } from '../../../text/testimonial_section_text';
 import Section from '../../Stateless/Section/Section';
@@ -30,29 +30,94 @@ const temp_comment_data: ITestimonialCard[] = [
 ];
 
 const Testimonials = () => {
-  const [count, setCount] = useState<number>(1);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const sliderRef = useRef<HTMLDivElement>(null);
+  const commentRef = useRef<HTMLDivElement>(null);
+  const [count, setCount] = useState(0);
+  const [numberOfDots, setNumberOfDots] = useState(1);
+  let numberOfCards: number;
+
+  useEffect(() => {
+    numberOfCards = getNumberOfitemToDisplay(containerRef, commentRef);
+    setNumberOfDots(calculateNumberOfDots());
+    console.log(calculateNumberOfDots());
+  }, []);
+
+  useEffect(() => {
+    slideSlider(count);
+    console.log(count);
+  }, [count]);
+
+  function calculateNumberOfDots() {
+    return Math.ceil(temp_comment_data.length / numberOfCards);
+  }
+
+  function slideSlider(slideNumber: number) {
+    if (temp_comment_data.length === 0) return;
+    const containerWidth = containerRef.current?.offsetWidth || 0;
+    const sliderWidth = sliderRef.current?.offsetWidth || 0;
+    const cardWidth = commentRef.current?.offsetWidth || 0;
+    const cardMargin = commentRef.current?.style.marginRight || 0;
+    const numberOfCardToMove = getNumberOfitemToDisplay(
+      containerRef,
+      commentRef
+    );
+
+    const valueOfTranslateX =
+      cardWidth * (slideNumber * numberOfCardToMove) + (30 * slideNumber - 1);
+
+    // if (containerWidth < sliderWidth) return;
+
+    sliderRef.current?.style.setProperty(
+      'transform',
+      `translateX(-${Math.abs(valueOfTranslateX)}px)`
+    );
+  }
+
+  function move_slider_right() {
+    // slideSlider(count + 1);
+    if (count >= numberOfDots - 1) return setCount(0);
+    return setCount((prev) => prev + 1);
+  }
+
+  function move_slider_left() {
+    if (count <= 0) return setCount(numberOfDots - 1);
+    return setCount((prev) => prev - 1);
+  }
+
   return (
     <div className={classes['testmonials']}>
       <Section
         heading={testmonials_text.heading}
         paragraph={testmonials_text.paragraph}
       >
-        <div className={classes['container']}>
-          <div className={classes['slider']}>
+        <div className={classes['container']} ref={containerRef}>
+          <div className={classes['slider']} ref={sliderRef}>
             {GenerateUi({
               RenderElement: Testimonial_Card,
               dataArr: temp_comment_data,
+              childRef: commentRef,
             })}
           </div>
           <Slider_Dots
             count={count}
-            dotsLength={temp_comment_data.length}
+            dotsLength={numberOfDots}
             setCount={setCount}
+            onClickLeftDot={move_slider_left}
+            onClickRightDot={move_slider_right}
           />
         </div>
       </Section>
     </div>
   );
 };
+
+function getNumberOfitemToDisplay(sliderEl: any, productEl: any) {
+  const numOfProductToDisplay = Math.floor(
+    sliderEl.current.offsetWidth / productEl.current.offsetWidth
+  );
+  if (numOfProductToDisplay > 0) return numOfProductToDisplay;
+  return 1;
+}
 
 export default Testimonials;

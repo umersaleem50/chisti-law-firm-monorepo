@@ -39,6 +39,13 @@
 html {
   font-size: 62.5%;
   font-family: 'Poppins', sans-serif;
+
+  @media only screen and (max-width: 900px) {
+    font-size: 56.25%;
+  }
+  @media only screen and (max-width: 600px) {
+    font-size: 50%;
+  }
   // max-width: var(--max-width);
   // margin: 0 auto;
 }

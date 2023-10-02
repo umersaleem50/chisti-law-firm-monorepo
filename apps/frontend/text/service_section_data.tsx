@@ -1,11 +1,24 @@
+'use client';
+import Router from 'next/router';
+
 import { IFilter } from '../Components/Stateless/Filter_Tab/Filter_Tab';
 
 export const filterData: IFilter[] = [
   {
     heading: 'Civil Cases',
     options: [
-      { text: 'Civil Cases', type: 'button', id: 'civil' },
-      { text: 'Criminal Cases', type: 'button', id: 'criminal' },
+      {
+        text: 'Civil Cases',
+        type: 'button',
+        id: 'civil',
+        onClick: (e) => Router.push('/services/civil'),
+      },
+      {
+        text: 'Criminal Cases',
+        type: 'button',
+        id: 'criminal',
+        onClick: (e) => Router.push('/services/criminal'),
+      },
       { text: 'Family Cases', type: 'button', id: 'family' },
       { text: 'Other Cases', type: 'button', id: 'other-civil' },
     ],

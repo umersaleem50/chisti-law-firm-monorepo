@@ -19,18 +19,10 @@ const Slider_Dots = ({
   onClickRightDot = () => {},
 }: ISliderDots) => {
   const increaseCount = () => {
-    //check if the count on last index
     onClickRightDot();
-    // if (count <= dotsLength) {
-    //   return setCount(0);
-    // }
-    // return setCount((prev: number) => prev + 1);
   };
   const decreaseCount = () => {
-    //check if the count on first index
     onClickLeftDot();
-    // if (count === 0) return setCount(dotsLength);
-    // return setCount((prev: number) => prev - 1);
   };
 
   const generateDots = (numOfDots: number) => {

@@ -5,6 +5,7 @@ import Textbox from '../../Inputs/Textbox/Textbox';
 import classes from './Filter_Tab.module.scss';
 import Typography from '../../Typography/Typography';
 import Checkbox from '../../Inputs/Checkbox/Checkbox';
+import Router from 'next/navigation';
 
 export type IFilterOptions = {
   type: 'text' | 'button' | 'checkbox';
@@ -12,6 +13,7 @@ export type IFilterOptions = {
   text: string;
   isActive?: boolean;
   id: string;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 };
 export interface IFilter {
   heading: string;
@@ -29,37 +31,51 @@ const Filter_Tab = ({
   const [activeValue, setActiveValue] = useState(activeId);
 
   const generate_options = (optionsArr: IFilterOptions[]) => {
-    return optionsArr.map((el, i) => {
-      if (el.type === 'text') {
-        return (
-          <Typography
-            vairent="p"
-            component="p"
-            key={i}
-            customClasses={[classes['container__text']]}
-            color={'var(--color-secondary)'}
-          >
-            {el.text}
-          </Typography>
-        );
-      } else if (el.type === 'button') {
-        return (
-          <Button
-            varient="fullwidth"
-            onClick={() => setActiveValue(el.id)}
-            key={i}
-            id={el.id}
-            isActive={el.id === activeValue}
-          >
-            {el.text}
-          </Button>
-        );
-      } else {
-        return (
-          <Checkbox text={el.text} isChecked={el.isActive} key={i} id={el.id} />
-        );
+    return optionsArr.map(
+      (
+        {
+          type,
+          id,
+          text,
+          isActive,
+          onClick = (e) => {
+            return;
+          },
+        },
+        i
+      ) => {
+        if (type === 'text') {
+          return (
+            <Typography
+              vairent="p"
+              component="p"
+              key={i}
+              customClasses={[classes['container__text']]}
+              color={'var(--color-secondary)'}
+            >
+              {text}
+            </Typography>
+          );
+        } else if (type === 'button') {
+          return (
+            <Button
+              varient="fullwidth"
+              onClick={(e) => {
+                setActiveValue(id);
+                onClick(e);
+              }}
+              key={i}
+              id={id}
+              isActive={isActive || id === activeValue}
+            >
+              {text}
+            </Button>
+          );
+        } else {
+          return <Checkbox text={text} isChecked={isActive} key={i} id={id} />;
+        }
       }
-    });
+    );
   };
 
   const generate_filters = (dataArr: IFilter[]) => {

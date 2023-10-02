@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  max-width: calc(140rem / 3);
+  max-width: calc(120rem / 3);
 
   &__image {
     width: 100%;
@@ -10,9 +10,9 @@
     position: relative;
   }
 
-  &:not(:last-of-type) {
-    margin-right: 2rem;
-  }
+  // &:not(:last-of-type) {
+  //   margin-right: 2rem;
+  // }
 }
 .text--heading {
   margin-top: 2rem;
