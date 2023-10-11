@@ -1,3 +1,6 @@
+// @import '../../../utils/mixins/responsive.scss';
+@import '~apps/frontend/utils/mixins/responsive.scss';
+
 .container {
   padding: 3rem 0;
   border-top: var(--border-line);
@@ -8,4 +11,54 @@
 }
 .heading {
   margin: 1rem 0;
+}
+
+.tab {
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    grid-column: 1 / -1;
+    margin-bottom: 1rem;
+    height: 5rem;
+  }
+
+  @include respond(phone) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: var(--grid-gap);
+    margin: 3rem 0 1rem;
+    height: 5rem;
+    overflow: hidden;
+    transition: all 1s ease-in-out;
+  }
+
+  // @media only screen and (max-width: 600px) {
+  // }
+
+  &--toggle {
+    @include respond(phone) {
+      height: auto;
+    }
+    // @media only screen and (max-width: 600px) {
+    //   height: auto;
+    // }
+  }
+}
+
+.search {
+  @include respond(phone) {
+    grid-column: 1 / -1;
+    margin-bottom: 1rem;
+
+    input {
+      max-width: 100%;
+    }
+  }
+}
+
+.button--filter {
+  display: none;
+  @include respond(phone) {
+    display: inline;
+  }
 }

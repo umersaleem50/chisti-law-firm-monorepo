@@ -1,3 +1,4 @@
+@import '~apps/frontend/utils/mixins/responsive.scss';
 .form {
   max-width: 60rem;
   width: 100%;
@@ -6,6 +7,7 @@
   box-shadow: var(--form-shadow);
   background-color: var(--color-white);
   padding: 4rem;
+  border-radius: 1rem;
   &__top {
     width: 100%;
     display: flex;
@@ -13,7 +15,11 @@
     justify-content: space-between;
     margin-bottom: 3rem;
   }
-  border-radius: 1rem;
+
+  @include respond(phone) {
+    width: 90%;
+    padding: 3rem;
+  }
 }
 .container {
   width: 100%;
@@ -22,6 +28,10 @@
   //   grid-auto-rows: minmax(5rem, 10rem);
   grid-row-gap: 3rem;
   grid-column-gap: var(--grid-gap);
+
+  @include respond(phone) {
+    grid-gap: 2rem;
+  }
 }
 
 .icon {

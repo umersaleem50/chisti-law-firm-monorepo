@@ -62,7 +62,7 @@ const Navbar = () => {
             onClick={(e) => {
               e.preventDefault();
             }}
-            style={{ marginRight: '3rem' }}
+            customClasses={[classes['btn--cta']]}
           >
             Book Appointment
           </Button>
@@ -71,6 +71,7 @@ const Navbar = () => {
             onClick={(e) => {
               e.preventDefault();
             }}
+            customClasses={[classes['btn--login']]}
           >
             login
           </Button>

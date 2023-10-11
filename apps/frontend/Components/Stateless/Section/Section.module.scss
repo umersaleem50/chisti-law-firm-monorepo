@@ -1,3 +1,4 @@
+@import '~apps/frontend/utils/mixins/responsive.scss';
 .top {
   display: flex;
   justify-content: space-between;
@@ -5,8 +6,13 @@
   margin: var(--margin-section-auto);
   margin-bottom: 4rem;
   max-width: var(--max-width);
+
   &__details {
     max-width: 50rem;
+
+    @include respond(phone) {
+      max-width: 40rem;
+    }
   }
 }
 
@@ -26,4 +32,7 @@
   width: 100%;
   // max-width: var(--max-width);
   margin: var(--margin-section-auto);
+  @include respond(phone) {
+    padding: 0 2rem;
+  }
 }

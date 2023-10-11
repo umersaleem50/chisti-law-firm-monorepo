@@ -1,16 +1,14 @@
-/*
- * Replace this with your own classes
- *
- * e.g.
- * .container {
- * }
-*/
+@import '~apps/frontend/utils/mixins/responsive.scss';
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  
+
+  @include respond(phone) {
+    grid-template-columns: 1fr;
+    margin: 4rem 2rem;
+  }
 }
 .left {
   display: flex;
@@ -18,6 +16,11 @@
   justify-content: space-between;
   height: 100%;
   width: 90%;
+
+  @include respond(phone) {
+    width: 100%;
+    align-items: center;
+  }
 
   &__buttons {
     margin: 8rem 0;
@@ -27,5 +30,11 @@
     display: flex;
     width: 80%;
     justify-content: space-between;
+  }
+
+  &__headings {
+    @include respond(phone) {
+      text-align: center;
+    }
   }
 }

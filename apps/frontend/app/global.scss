@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400&display=swap');
-
+@import '~apps/frontend/utils/mixins/responsive.scss';
 :root {
   --max-width: 130rem;
   --max-input-width: 32rem;
@@ -21,12 +21,17 @@
 
   //other
   --margin-section-auto: 8rem auto;
+
   --border-stroke: 2px;
   --grid-gap: 4rem;
   --border-line: 2px solid var(--color-grey-light);
 
   //shadows
   --form-shadow: 0px 17px 34px 0px rgba(0, 0, 0, 0.1);
+
+  @include respond(phone) {
+    --margin-section-auto: 4rem auto;
+  }
 }
 *,
 *::before,
@@ -40,10 +45,10 @@ html {
   font-size: 62.5%;
   font-family: 'Poppins', sans-serif;
 
-  @media only screen and (max-width: 900px) {
+  @include respond(tab-land) {
     font-size: 56.25%;
   }
-  @media only screen and (max-width: 600px) {
+  @include respond(phone) {
     font-size: 50%;
   }
   // max-width: var(--max-width);

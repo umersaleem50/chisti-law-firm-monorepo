@@ -5,7 +5,6 @@ import Textbox from '../../Inputs/Textbox/Textbox';
 import classes from './Filter_Tab.module.scss';
 import Typography from '../../Typography/Typography';
 import Checkbox from '../../Inputs/Checkbox/Checkbox';
-import Router from 'next/navigation';
 
 export type IFilterOptions = {
   type: 'text' | 'button' | 'checkbox';
@@ -29,6 +28,7 @@ const Filter_Tab = ({
 }) => {
   const [searchValue, setSearchValue] = useState<string>('');
   const [activeValue, setActiveValue] = useState(activeId);
+  const [isFilterToggle, setIsFilterToggle] = useState(false);
 
   const generate_options = (optionsArr: IFilterOptions[]) => {
     return optionsArr.map(
@@ -96,9 +96,24 @@ const Filter_Tab = ({
   };
 
   return (
-    <div className={classes['tab']}>
-      <Back_to_Home_Button />
+    <div
+      className={[
+        classes['tab'],
+        isFilterToggle ? classes['tab--toggle'] : '',
+      ].join(' ')}
+    >
+      <div className={classes['tab__top']}>
+        <Back_to_Home_Button />
+        <Button
+          varient="outline"
+          onClick={() => setIsFilterToggle((prev) => !prev)}
+          customClasses={[classes['button--filter']]}
+        >
+          Filters
+        </Button>
+      </div>
       <Textbox
+        customClasses={[classes['search']]}
         type="search"
         placeholder="Search for service"
         value={searchValue}

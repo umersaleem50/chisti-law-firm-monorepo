@@ -3,7 +3,7 @@ import Blogs from '../../../Components/Layouts/Blogs/Blogs';
 import Team from '../../../Components/Layouts/Team/Team';
 import Navbar from '../../../Components/Stateful/Navbar/navbar';
 
-const Lawyer_With_ID = ({ params }) => {
+const Lawyer_With_ID = ({ params }: { params: { id?: string } }) => {
   return (
     <>
       <Navbar />

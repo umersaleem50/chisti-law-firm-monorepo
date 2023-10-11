@@ -1,6 +1,11 @@
+@import '~apps/frontend/utils/mixins/responsive.scss';
 .select {
   padding: 1rem 2rem;
   width: 100%;
   max-width: 32rem;
   font-family: inherit;
+
+  @include respond(phone) {
+    max-width: 100%;
+  }
 }

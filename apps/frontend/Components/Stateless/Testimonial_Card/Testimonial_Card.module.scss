@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
-
+@import '~apps/frontend/utils/mixins/responsive.scss';
 .card {
   display: flex;
   flex-direction: column;
@@ -43,5 +43,12 @@
 
   &:not(:last-of-type) {
     margin-right: var(--grid-gap);
+  }
+
+  @include respond(phone) {
+    background-color: var(--color-accent);
+    p {
+      color: var(--color-white);
+    }
   }
 }

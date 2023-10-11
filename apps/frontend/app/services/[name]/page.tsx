@@ -4,12 +4,22 @@ import Finder from '../../../Components/Stateless/Finder/Finder';
 import Footer from '../../../Components/Layouts/Footer/Footer';
 import Navbar from '../../../Components/Stateful/Navbar/navbar';
 import Service_Filters from '../../../Components/Layouts/Filters/Service_Filters/Service_Filters';
+import Service_Results from '../../../Components/Layouts/services_results/Services_Results';
 
-const Services = () => {
+const Services = ({ params }: { params: { name?: string } }) => {
+  console.log(params.name);
+
   return (
     <>
       <Navbar />
-      <Service_Filters />
+      <Service_Filters>
+        <Service_Results
+          src="/assets/homepage/person.jpg"
+          heading={`${params.name} heading`}
+          description="jkfjkdjfkdjfk"
+          dataArr={[]}
+        />
+      </Service_Filters>
       <Finder />
       <Make_Appointment />
       <Testimonials />

@@ -1,3 +1,5 @@
+@import '~apps/frontend/utils/mixins/responsive.scss';
+
 .finder {
   display: flex;
   justify-content: center;
@@ -6,6 +8,10 @@
   padding: 4rem 8rem;
   margin: 8rem 0;
   width: 100%;
+
+  @include respond(phone) {
+    padding: 3rem 6rem;
+  }
 }
 
 .container {
@@ -14,6 +20,7 @@
   justify-content: space-between;
   width: 100%;
   max-width: var(--max-width);
+
   &__details {
     width: 50%;
   }
@@ -24,6 +31,19 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-end;
+  }
+
+  @include respond(phone) {
+    flex-direction: column;
+
+    &__details {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+
+    &__finder {
+      width: 100%;
+    }
   }
 }
 

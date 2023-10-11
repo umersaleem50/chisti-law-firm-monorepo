@@ -1,3 +1,4 @@
+@import '~apps/frontend/utils/mixins/responsive.scss';
 .navbar {
   height: 10rem;
   background-color: var(--color-white);
@@ -29,5 +30,22 @@
     &:hover {
       color: var(--color-primary);
     }
+  }
+
+  @include respond(phone) {
+    display: none;
+  }
+}
+
+.btn--login {
+  @include respond(phone) {
+    display: none;
+  }
+}
+
+.btn--cta {
+  margin-right: 3rem;
+  @include respond(phone) {
+    margin-right: 0;
   }
 }

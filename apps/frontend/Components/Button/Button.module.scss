@@ -1,3 +1,4 @@
+@import '~apps/frontend/utils/mixins/responsive.scss';
 .button {
   display: inline-block;
   color: var(--color-font);
@@ -5,6 +6,10 @@
   cursor: pointer;
   font-family: inherit;
   max-width: 32rem;
+
+  @include respond(phone) {
+    max-width: 100%;
+  }
 }
 
 .primary {

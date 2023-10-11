@@ -1,8 +1,13 @@
+@import '~apps/frontend/utils/mixins/responsive.scss';
 .card {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   max-width: calc(120rem / 3);
+
+  @include respond(phone) {
+    max-width: 100% !important;
+  }
 
   &__image {
     width: 100%;
