@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
 import { GenerateUi } from '@law-firm/generate-ui';
-import { testmonials_text } from '../../../text/testimonial_section_text';
+import { text } from './text';
 import Section from '../../Stateless/Section/Section';
 import classes from './Testimonial.module.scss';
 import Testimonial_Card, {
@@ -87,10 +87,7 @@ const Testimonials = () => {
 
   return (
     <div className={classes['testmonials']}>
-      <Section
-        heading={testmonials_text.heading}
-        paragraph={testmonials_text.paragraph}
-      >
+      <Section heading={text['heading']} paragraph={text['paragraph']}>
         <div className={classes['container']} ref={containerRef}>
           <div className={classes['slider']} ref={sliderRef}>
             {GenerateUi({

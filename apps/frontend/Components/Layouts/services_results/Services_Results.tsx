@@ -7,11 +7,11 @@ export interface IServiceResult {
   src: string;
   heading: string;
   description: string;
-  dataArr: Array<{ heading: string; paragraph: string }>;
+  dataArr: Array<{ heading: string; paragraph?: string }>;
 }
 
 const generateContent = (
-  dataArr: Array<{ heading: string; paragraph: string }>
+  dataArr: Array<{ heading: string; paragraph?: string }>
 ) => {
   return dataArr.map((el, i) => {
     return (

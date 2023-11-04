@@ -4,6 +4,7 @@ import Typography from '../../Typography/Typography';
 import Button from '../../Button/Button';
 
 import classes from './Service_Casd.module.scss';
+import { useRouter } from 'next/navigation';
 
 export interface IServiceCard {
   Icon: any;
@@ -12,8 +13,9 @@ export interface IServiceCard {
 }
 
 const Service_Card = ({ Icon, title, url }: IServiceCard) => {
+  const router = useRouter();
   return (
-    <div className={classes['service']}>
+    <div className={classes['service']} onClick={() => router.push(url)}>
       <Icon color={'var(--color-accent)'} fontSize={'3.5rem'} />
       <div className={classes['service__details']}>
         <Typography vairent="p" component="p" color="var(--font-color)">

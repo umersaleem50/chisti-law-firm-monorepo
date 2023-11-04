@@ -1,7 +1,7 @@
 // eslint-disable-next-line @nx/enforce-module-boundaries
-import { blog_section_text } from 'apps/frontend/text/blog_section_texts';
 import Section from '../../Stateless/Section/Section';
 import classes from './Blogs.module.scss';
+import { text } from './text';
 import Blog_Card, { IBlogCard } from '../../Stateless/Blog_Card/Blog_Card';
 import { GenerateUi } from '@law-firm/generate-ui';
 
@@ -34,8 +34,8 @@ const Blogs = () => {
   return (
     <div className={classes['blogs']}>
       <Section
-        heading={blog_section_text.heading}
-        paragraph={blog_section_text.paragraph}
+        heading={text['heading']}
+        paragraph={text['paragarph']}
         buttonOptions={{
           text: 'Show All',
           url: '/team',

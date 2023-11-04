@@ -1,5 +1,4 @@
 import Filter_Tab from '../../Stateless/Filter_Tab/Filter_Tab';
-import Section from '../../Stateless/Section/Section';
 import classes from './Filters.module.scss';
 import { IFilter } from '../../Stateless/Filter_Tab/Filter_Tab';
 export interface IFilters {

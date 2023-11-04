@@ -8,7 +8,7 @@
   max-width: var(--max-width);
 
   &__details {
-    max-width: 50rem;
+    max-width: 70rem;
 
     @include respond(phone) {
       max-width: 40rem;

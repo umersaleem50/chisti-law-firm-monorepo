@@ -5,7 +5,13 @@ import classes from './form_appointment.module.scss';
 import Textbox from '../../Inputs/Textbox/Textbox';
 import Button from '../../Button/Button';
 const Form_Appointment = ({ customClasses }: { customClasses?: string[] }) => {
+  const [firstName, setFirstName] = useState<string>('');
+  const [lastName, setLastName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
+  const [country, setCountry] = useState<string>('');
+  const [city, setCity] = useState<string>('');
+  const [address, setAddress] = useState<string>('');
+  const [description, setDescription] = useState<string>('');
   return (
     <form className={[classes['form'], customClasses].flat().join(' ')}>
       <div className={classes['form__top']}>
@@ -21,15 +27,15 @@ const Form_Appointment = ({ customClasses }: { customClasses?: string[] }) => {
       <div className={classes['container']}>
         <Textbox
           type="text"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          value={firstName}
+          onChange={(e) => setFirstName(e.target.value)}
           label="Your Firstname"
           placeholder="Enter your firstname"
         />
         <Textbox
           type="text"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          value={lastName}
+          onChange={(e) => setLastName(e.target.value)}
           label="Your Lastname"
           placeholder="Enter your lastname"
         />
@@ -42,31 +48,31 @@ const Form_Appointment = ({ customClasses }: { customClasses?: string[] }) => {
         />
         <Textbox
           type="text"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          value={country}
+          onChange={(e) => setCountry(e.target.value)}
           label="Your Country"
           placeholder="Enter your country name"
         />
         <Textbox
           type="text"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          value={city}
+          onChange={(e) => setCity(e.target.value)}
           label="Your City"
           placeholder="Enter your city name"
         />
         <Textbox
           type="text"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          value={address}
+          onChange={(e) => setAddress(e.target.value)}
           label="Your Address"
           placeholder="Enter your address"
         />
         <Textbox
           isField={true}
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          label="Your Address"
-          placeholder="Enter your address"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+          label="Subject Matter"
+          placeholder="Explain Subject Matter"
           customClasses={[classes['textarea']]}
         />
         <Button customClasses={[classes['button']]} varient="primary">

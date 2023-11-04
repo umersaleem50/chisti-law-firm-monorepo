@@ -1,6 +1,11 @@
 import { IOptions } from '../Components/Inputs/Select/Select_Input';
 import { IServiceCard } from '../Components/Stateless/Service_Card/Service_Card';
-import { LiaHandshake as IconHand } from 'react-icons/lia';
+import { GiPistolGun as IconGun } from 'react-icons/gi';
+import { TfiTarget as IconTarget } from 'react-icons/tfi';
+import { IoNewspaperOutline as IconPaper } from 'react-icons/io5';
+import { AiOutlineTrademark as IconTradmark } from 'react-icons/ai';
+import { IoMdPaperPlane as IconImigration } from 'react-icons/io';
+import { GiDominoMask as IconMask } from 'react-icons/gi';
 export const finder_text = {
   secondary: `Search For a Lawyer in your area.`,
   paragraph: `Our Search tool will help you to find a good lawyer in your area.
@@ -21,43 +26,33 @@ export const header_text = {
 
 export const services_data: IServiceCard[] = [
   {
-    Icon: IconHand,
-    title: 'Civil Cases',
-    url: '/civil',
-  },
-  {
-    Icon: IconHand,
+    Icon: IconGun,
     title: 'Criminal Cases',
-    url: '/civil',
+    url: '/services/criminal-cases',
   },
   {
-    Icon: IconHand,
+    Icon: IconPaper,
+    title: 'Family Cases',
+    url: '/services/family-cases',
+  },
+  {
+    Icon: IconMask,
     title: 'FIA Cases',
-    url: '/civil',
+    url: '/services/fia-cases',
   },
   {
-    Icon: IconHand,
+    Icon: IconImigration,
     title: 'Imigration Cases',
-    url: '/civil',
+    url: '/services/imigration-cases',
   },
   {
-    Icon: IconHand,
-    title: 'Trademarks Cases',
-    url: '/civil',
+    Icon: IconTradmark,
+    title: 'Trademarks & Copyright',
+    url: '/services/trademark-and-copyright',
   },
   {
-    Icon: IconHand,
-    title: 'Taxiation Cases',
-    url: '/civil',
-  },
-  {
-    Icon: IconHand,
-    title: 'Corporate Cases',
-    url: '/civil',
-  },
-  {
-    Icon: IconHand,
-    title: 'Cyber Cases',
-    url: '/civil',
+    Icon: IconTarget,
+    title: 'Murder Cases',
+    url: '/services/302-criminal',
   },
 ];

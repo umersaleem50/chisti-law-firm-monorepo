@@ -1,6 +1,7 @@
 'use client';
 // eslint-disable-next-line @nx/enforce-module-boundaries
 import { services_data } from 'apps/frontend/text/homepage_texts';
+import { text } from './text';
 import Section from '../../Stateless/Section/Section';
 import Service_Card, {
   IServiceCard,
@@ -9,8 +10,8 @@ import classes from './Service.module.scss';
 const Services = () => {
   return (
     <Section
-      heading="Services"
-      paragraph="We’re offering a ton of services for you. Our lawyers are professionals and have ton of experience in their respected field."
+      heading={text['heading']}
+      paragraph={text['paragraph']}
       buttonOptions={{ text: 'show all', url: '/services' }}
     >
       <div className={classes['services']}>

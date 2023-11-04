@@ -4,7 +4,7 @@ import Select_Input from '../../Inputs/Select/Select_Input';
 import Typography from '../../Typography/Typography';
 import classes from './Finder.module.scss';
 // eslint-disable-next-line @nx/enforce-module-boundaries
-import { finder_options, finder_text } from 'apps/frontend/text/homepage_texts';
+import { finder_options, finder_text } from './text';
 const Finder = () => {
   return (
     <div className={classes['finder']}>

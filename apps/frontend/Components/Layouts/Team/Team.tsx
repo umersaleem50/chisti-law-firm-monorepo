@@ -1,18 +1,18 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
 // eslint-disable-next-line @nx/enforce-module-boundaries
-import { team_raw_data } from 'apps/frontend/text/sections_raw_data';
 import Section from '../../Stateless/Section/Section';
 import classes from './Team.module.scss';
 import Team_Card, { ITeamCard } from '../../Stateless/Team_Card/Team_Card';
 import { GenerateUi } from '@law-firm/generate-ui';
 import Slider_Dots from '../../Stateless/Slider_Dots/Slider_Dots';
+import { text } from './text';
 
 const temp_data_arr: ITeamCard[] = [
   {
-    personName: 'Adv. Bilal Zahid 1',
+    personName: 'Adv. Mian Shafeeq Chishti',
     professions: ['Criminal Lawyer', 'Civil Lawyer'],
-    src: 'bilalzahid.jpg',
+    src: 'mian_shafeeq_profile.jpeg',
   },
   {
     personName: 'Adv. Aqib Shahid 2',
@@ -91,8 +91,8 @@ const Team = () => {
   return (
     <div className={classes['team']}>
       <Section
-        heading={team_raw_data.heading}
-        paragraph={team_raw_data.paragarph}
+        heading={text['heading']}
+        paragraph={text['paragarph']}
         buttonOptions={{
           text: 'Show All',
           url: '/team',
@@ -126,8 +126,6 @@ const Team = () => {
 };
 
 function getNumberOfitemToDisplay(sliderEl: any, productEl: any) {
-  console.log(sliderEl.current);
-
   const numOfProductToDisplay = Math.floor(
     sliderEl.current.offsetWidth / productEl.current.offsetWidth
   );

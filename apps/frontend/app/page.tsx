@@ -1,4 +1,5 @@
 // 'use client';
+import { useRef } from 'react';
 import Blogs from '../Components/Layouts/Blogs/Blogs';
 import Footer from '../Components/Layouts/Footer/Footer';
 import Make_Appointment from '../Components/Layouts/Make_Appointment/Make_Appointment';

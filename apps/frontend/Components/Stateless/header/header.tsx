@@ -1,10 +1,12 @@
 'use client';
 // eslint-disable-next-line @nx/enforce-module-boundaries
-import { header_text } from 'apps/frontend/text/homepage_texts';
+import { header_text } from './text';
 import Button from '../../Button/Button';
 import Typography from '../../Typography/Typography';
 import Tags, { ITag } from '../Tags/Tags';
 import classes from './header.module.scss';
+import { handle_appointment_event } from '@handler/book-appointment-handler';
+import { useEffect, useState } from 'react';
 
 /* eslint-disable-next-line */
 export interface HeaderProps {}
@@ -16,6 +18,11 @@ const tagsArr: ITag[] = [
 ];
 
 export function Header(props: HeaderProps) {
+  const [element, setElement] = useState<HTMLElement>();
+  useEffect(() => {
+    const appointmentElement = document.getElementById('appointment-id');
+    if (appointmentElement) setElement(appointmentElement);
+  }, [element]);
   return (
     <div className={classes['container']}>
       <div className={classes['left']}>
@@ -27,13 +34,14 @@ export function Header(props: HeaderProps) {
             {header_text['paragraph']}
           </Typography>
         </div>
+        <Typography vairent="p" component="p" style={{ fontWeight: 'bold' }}>
+          {header_text['bookappoint']}
+        </Typography>
 
         <div className={classes['left__buttons']}>
           <Button
             varient="primary"
-            onClick={() => {
-              alert('header:34');
-            }}
+            onClick={() => handle_appointment_event(element)}
             style={{ marginRight: '2rem' }}
           >
             Book appointment

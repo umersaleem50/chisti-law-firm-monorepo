@@ -23,7 +23,8 @@
   }
 
   &__buttons {
-    margin: 8rem 0;
+    margin-bottom: 8rem;
+    margin-top: 2rem;
   }
 
   &__tags {
@@ -33,6 +34,7 @@
   }
 
   &__headings {
+    margin-bottom: 4rem;
     @include respond(phone) {
       text-align: center;
     }

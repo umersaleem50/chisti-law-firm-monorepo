@@ -1,0 +1,8 @@
+{
+  "name": "book-appointment-handler",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/handlers/book-appointment-handler/src",
+  "projectType": "library",
+  "targets": {},
+  "tags": []
+}

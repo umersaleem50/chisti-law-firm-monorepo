@@ -7,7 +7,7 @@ import Section from '../../Stateless/Section/Section';
 import classes from './Mission.module.scss';
 import Typography from '../../Typography/Typography';
 import Button from '../../Button/Button';
-import { mission_raw_data } from '../../../text/mission_raw_data';
+import { text } from './text';
 
 export interface IMissonElement {
   src: string;
@@ -86,7 +86,9 @@ export const UIElement = ({
           <>
             <Button
               varient="outline"
-              onClick={() => {}}
+              onClick={() => {
+                return;
+              }}
               modifier="secondary"
               iconEnd={
                 <IconArrow
@@ -111,7 +113,7 @@ const Container = () => {
   return (
     <div className={classes['container']}>
       <div className={classes['item']}>
-        {GenerateUi({ RenderElement: UIElement, dataArr: mission_raw_data })}
+        {GenerateUi({ RenderElement: UIElement, dataArr: text['subsection'] })}
       </div>
     </div>
   );
@@ -120,8 +122,8 @@ const Container = () => {
 const Mission = () => {
   return (
     <Section
-      heading="Our Mission"
-      paragraph="We’re offering a ton of services for you. Our lawyers are professionals and have ton of experience in their respected field."
+      heading={text['heading']}
+      paragraph={text['paragraph']}
       buttonOptions={{ text: 'show all', url: '/' }}
     >
       <Container />

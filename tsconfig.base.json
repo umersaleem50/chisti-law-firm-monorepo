@@ -15,6 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@handler/book-appointment-handler": [
+        "libs/handlers/book-appointment-handler/src/index.ts"
+      ],
       "@law-firm/generate-ui": ["libs/generate-ui/src/index.ts"],
       "@law-firm/generate-ui/server": ["libs/generate-ui/src/server.ts"]
     }
