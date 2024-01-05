@@ -60,7 +60,7 @@ const Filter_Tab = ({
           return (
             <Button
               varient="fullwidth"
-              onClick={(e) => {
+              onClick={(e: any) => {
                 setActiveValue(id);
                 onClick(e);
               }}

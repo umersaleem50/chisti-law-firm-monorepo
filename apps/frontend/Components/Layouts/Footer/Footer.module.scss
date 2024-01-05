@@ -1,7 +1,15 @@
+@import '~apps/frontend/utils/mixins/responsive.scss';
+
 .footer {
   height: 40rem;
   background-color: var(--color-accent);
   width: 100%;
+
+  @include respond(phone) {
+    height: 100%;
+  }
+
+  padding: 8rem 0;
 
   &__copyright {
     width: 100%;
@@ -10,4 +18,50 @@
     align-items: center;
     justify-content: center;
   }
+}
+
+.container {
+  width: var(--max-width);
+  display: flex;
+  height: 100%;
+  margin: 0 auto;
+  justify-content: space-between;
+  @include respond(phone) {
+    flex-direction: column;
+
+    width: 100%;
+    padding: 2rem;
+  }
+  .left {
+    flex: 0 1 40%;
+    // background-color: orange;
+    height: 100%;
+    margin-right: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include respond(phone) {
+      flex: 1;
+      justify-content: flex-start;
+      margin-bottom: 3rem;
+    }
+  }
+
+  .right {
+    // background-color: rebeccapurple;
+    flex: 0 1 40%;
+    display: flex;
+    justify-content: space-around;
+    @include respond(phone) {
+      flex: 1;
+      justify-content: flex-start;
+    }
+
+    div {
+      margin-right: 4rem;
+    }
+  }
+}
+
+.link {
 }

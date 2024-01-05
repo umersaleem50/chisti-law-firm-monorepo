@@ -12,7 +12,7 @@ type Story = StoryObj<typeof Slider_Dots>;
 export const Primary: Story = {
   args: {
     count: 1,
-    setCount(x) {
+    setCount(x: any) {
       return 2;
     },
     dotsLength: 4,

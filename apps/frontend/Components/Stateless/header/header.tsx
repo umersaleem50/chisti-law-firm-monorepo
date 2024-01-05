@@ -7,6 +7,12 @@ import Tags, { ITag } from '../Tags/Tags';
 import classes from './header.module.scss';
 import { handle_appointment_event } from '@handler/book-appointment-handler';
 import { useEffect, useState } from 'react';
+import {
+  MouseParallaxContainer,
+  MouseParallaxChild,
+} from 'react-parallax-mouse';
+import Image from 'next/image';
+import Header_Slider from '../header_slider/header_slider';
 
 /* eslint-disable-next-line */
 export interface HeaderProps {}
@@ -25,6 +31,7 @@ export function Header(props: HeaderProps) {
   }, [element]);
   return (
     <div className={classes['container']}>
+      {/* <Header_Slider /> */}
       <div className={classes['left']}>
         <div className={classes['left__headings']}>
           <Typography vairent="hero" component="h1">
@@ -57,7 +64,7 @@ export function Header(props: HeaderProps) {
         </div>
         <div className={classes['left__tags']}>{generateTags(tagsArr)}</div>
       </div>
-      <div className={classes['right']}>right</div>
+      <div className={classes['right']}></div>
     </div>
   );
 }

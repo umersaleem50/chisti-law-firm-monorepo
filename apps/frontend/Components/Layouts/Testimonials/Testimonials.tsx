@@ -12,20 +12,24 @@ import Slider_Dots from '../../Stateless/Slider_Dots/Slider_Dots';
 const temp_comment_data: ITestimonialCard[] = [
   {
     isActive: true,
-    personName: 'Bilal Zahid',
-    text: '“Working with Mian, Shafeeq Sb. was very great. He’s very corporative & gives very good advice”',
+    personName: 'Aisha Malik',
+    text: ' ""I owe my legal triumph to Mian Shafeeq! His brilliance in civil cases is unmatched. Sincere gratitude for his dedication."',
   },
   {
-    personName: 'Bilal Zahid',
-    text: '“Working with Mian, Shafeeq Sb. was very great. He’s very corporative & gives very good advice”',
+    personName: 'Asif Malik',
+    text: '"Mian Shafeeq legal prowes saved me from a criminal nightmare. A true ally in the courtroom. Highly recommend his services."',
   },
   {
-    personName: 'Bilal Zahid',
-    text: '“Working with Mian, Shafeeq Sb. was very great. He’s very corporative & gives very good advice”',
+    personName: 'Farida Khan',
+    text: '“Mian Shafeeq, a legal genius! His strategic mind won my civil case. Forever thankful. Best regards,”',
   },
   {
-    personName: 'Bilal Zahid',
-    text: '“Working with Mian, Shafeeq Sb. was very great. He’s very corporative & gives very good advice”',
+    personName: 'Hassan Ali',
+    text: '“In my darkest legal hour, Mian Shafeeq emerged as my guiding light. His expertise in criminal law is unmatched”',
+  },
+  {
+    personName: 'Saima Raza',
+    text: '“Mian Shafeeq, a legal virtuoso! His meticulous handling of my civil case secured a victory. Truly grateful.”',
   },
 ];
 

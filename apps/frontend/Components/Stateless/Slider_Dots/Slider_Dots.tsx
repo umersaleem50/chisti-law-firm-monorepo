@@ -15,8 +15,8 @@ const Slider_Dots = ({
   count,
   setCount,
   dotsLength,
-  onClickLeftDot = () => {},
-  onClickRightDot = () => {},
+  onClickLeftDot = () => {return},
+  onClickRightDot = () => {return},
 }: ISliderDots) => {
   const increaseCount = () => {
     onClickRightDot();

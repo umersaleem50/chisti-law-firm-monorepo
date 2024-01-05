@@ -12,8 +12,15 @@ const Form_Appointment = ({ customClasses }: { customClasses?: string[] }) => {
   const [city, setCity] = useState<string>('');
   const [address, setAddress] = useState<string>('');
   const [description, setDescription] = useState<string>('');
+  const submitForm = (e: any) => {
+    e.preventDefault();
+    alert('Thanks for submitting your request.');
+  };
   return (
-    <form className={[classes['form'], customClasses].flat().join(' ')}>
+    <form
+      className={[classes['form'], customClasses].flat().join(' ')}
+      onSubmit={submitForm}
+    >
       <div className={classes['form__top']}>
         <Typography
           vairent="secondary"

@@ -6,7 +6,7 @@ import { IFilter } from '../../../../Components/Stateless/Filter_Tab/Filter_Tab'
 
 import { useRouter, usePathname } from 'next/navigation';
 
-const Service_Filters = ({ children }: { children: any }) => {
+const Service_Filters = ({ children }: { children?: any }) => {
   const router = useRouter();
 
   const filterData: IFilter[] = [

@@ -1,0 +1,38 @@
+.card {
+  display: flex;
+  padding: 2rem 4rem;
+  align-items: center;
+  background-color: var(--color-white);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    background-color: var(--color-secondary);
+    .heading--work {
+      color: var(--color-white) !important;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    padding: 0.5rem 1rem;
+  }
+
+  &__image {
+    height: 15rem;
+    width: 15rem;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    margin-right: 4rem;
+
+    @media only screen and (max-width: 600px) {
+      margin-right: 2rem;
+      height: 12rem;
+      width: 12rem;
+    }
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+}
