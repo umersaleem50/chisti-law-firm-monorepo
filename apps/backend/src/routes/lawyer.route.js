@@ -1,19 +1,18 @@
 import { Router } from 'express';
 import {
-  createService,
-  getAllServices,
-  getOneService,
-  updateOneService,
-  deleteService,
-} from '../controllers/service.controller';
+  createLawyer,
+  deleteLawyer,
+  getAllLawyers,
+  getOneLawyer,
+  updateOneLawyer,
+} from '../controllers/lawyer.controller';
 
-const serviceRouter = Router();
+const lawyerRoute = Router();
+lawyerRoute
+  .get('/', getAllLawyers)
+  .get('/:id', getOneLawyer)
+  .patch('/:id', updateOneLawyer)
+  .post('/', createLawyer)
+  .delete('/:id', deleteLawyer);
 
-serviceRouter
-  .get('/', getAllServices)
-  .get('/:id', getOneService)
-  .patch('/:id', updateOneService)
-  .post('/', createService)
-  .delete('/:id', deleteService);
-
-export default serviceRouter;
+export default lawyerRoute;
