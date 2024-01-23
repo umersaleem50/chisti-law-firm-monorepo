@@ -1,16 +1,20 @@
-import { model, Schema } from 'mongoose';
+import { model, models, Schema } from 'mongoose';
 
 const LawyerSchema = new Schema({
-  name: {
+  firstName: {
     type: String,
-    required: [true, 'Please enter your name.'],
+    required: [true, 'Please enter your firstName.'],
+  },
+  lastName: {
+    type: String,
+    required: [true, 'Please enter your lastName'],
   },
   email: {
     type: String,
-    email: [true, 'Please enter email accociated with lawyer.'],
+    email: [true, 'Please enter email associated with lawyer.'],
     unique: true,
   },
-  workingAt: {
+  workplace: {
     type: String,
     required: [true, 'Please enter workplace location.'],
   },
@@ -18,7 +22,7 @@ const LawyerSchema = new Schema({
     type: [String],
     required: [true, 'Please enter the professions'],
   },
-  phoneNo: {
+  contact: {
     type: String,
     required: [true, 'Please enter your business phone no.'],
   },
@@ -30,30 +34,35 @@ const LawyerSchema = new Schema({
     type: String,
     min: [30, 'Please keep the bio between 30 - 400 words max.'],
     max: [400, 'Please keep the bio between 30 - 400 words max.'],
+    required: [true, 'Please enter your bio.'],
   },
   gallery: [String],
-  expirence: [
-    {
-      course: {
-        type: String,
-        required: [true, 'Please enter your course title.'],
+  expirenceYears: Number,
+  expirence: {
+    type: [
+      {
+        course: {
+          type: String,
+          required: [true, 'Please enter your course title.'],
+        },
+        start_date: {
+          type: Date,
+          require: [
+            true,
+            'Please enter the starting date of your expirence or education.',
+          ],
+        },
+        end_date: {
+          type: Date,
+        },
+        description: String,
+        institue: String,
       },
-      start_date: {
-        type: Date,
-        require: [
-          true,
-          'Please enter the starting date of your expirence or education.',
-        ],
-      },
-      end_date: {
-        type: Date,
-      },
-      description: String,
-      institue: String,
-    },
-  ],
+    ],
+    required: [true, 'Please enter your expirences.'],
+  },
 });
 
-const Lawyer = model('service', LawyerSchema);
+const Lawyer = model('lawyers', LawyerSchema);
 
 export default Lawyer;

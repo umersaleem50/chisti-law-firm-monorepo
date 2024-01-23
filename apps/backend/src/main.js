@@ -8,10 +8,12 @@ import * as path from 'path';
 import mainRouter from './mainRouter';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import cors from 'cors';
 import { errorHandlerController } from './controllers/errorHandler';
 dotenv.config('./env');
 const app = express();
 
+app.use(cors({ origin: process.env.ORIGIN_ROUTE || 'http://localhost:3000' }));
 app.use(express.json());
 
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
