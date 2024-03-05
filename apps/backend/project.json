@@ -17,7 +17,7 @@
         "assets": [
           "apps/backend/src/assets",
           {
-            "input": "apps/backend/src",
+            "input": "apps/backend",
             "glob": ".env",
             "output": "./"
           }

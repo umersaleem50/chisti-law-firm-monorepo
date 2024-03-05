@@ -1,13 +1,14 @@
-'use client';
-import { useState } from 'react';
-import Button, { Back_to_Home_Button } from '../../Button/Button';
-import Textbox from '../../Inputs/Textbox/Textbox';
-import classes from './Filter_Tab.module.scss';
-import Typography from '../../Typography/Typography';
-import Checkbox from '../../Inputs/Checkbox/Checkbox';
+"use client";
+import { useState } from "react";
+import Button, { Back_to_Home_Button } from "../../Button/Button";
+import Textbox from "../../Inputs/Textbox/Textbox";
+import classes from "./Filter_Tab.module.scss";
+import Typography from "../../Typography/Typography";
+import Checkbox from "../../Inputs/Checkbox/Checkbox";
+import { useRouter } from "next/navigation";
 
 export type IFilterOptions = {
-  type: 'text' | 'button' | 'checkbox';
+  type: "text" | "button" | "checkbox";
   // optionType: 'button' | 'checkbox';
   text: string;
   isActive?: boolean;
@@ -22,17 +23,24 @@ export interface IFilter {
 const Filter_Tab = ({
   data,
   activeId,
+  handleCheckbox,
+  isSearchBar = true,
+  filter_title = "Filters",
 }: {
   data: IFilter[];
   activeId?: string;
+  handleCheckbox?: any;
+  isSearchBar?: boolean;
+  filter_title?: string;
 }) => {
-  const [searchValue, setSearchValue] = useState<string>('');
+  const [searchValue, setSearchValue] = useState<string>("");
   const [activeValue, setActiveValue] = useState(activeId);
   const [isFilterToggle, setIsFilterToggle] = useState(false);
 
   const generate_options = (optionsArr: IFilterOptions[]) => {
     return optionsArr.map(
       (
+        //properties of each Option Obj.
         {
           type,
           id,
@@ -44,19 +52,19 @@ const Filter_Tab = ({
         },
         i
       ) => {
-        if (type === 'text') {
+        if (type === "text") {
           return (
             <Typography
               vairent="p"
               component="p"
               key={i}
-              customClasses={[classes['container__text']]}
-              color={'var(--color-secondary)'}
+              customClasses={[classes["container__text"]]}
+              color={"var(--color-secondary)"}
             >
               {text}
             </Typography>
           );
-        } else if (type === 'button') {
+        } else if (type === "button") {
           return (
             <Button
               varient="fullwidth"
@@ -72,7 +80,15 @@ const Filter_Tab = ({
             </Button>
           );
         } else {
-          return <Checkbox text={text} isChecked={isActive} key={i} id={id} />;
+          return (
+            <Checkbox
+              text={text}
+              isChecked={isActive}
+              key={i}
+              id={id}
+              handleCheckbox={handleCheckbox}
+            />
+          );
         }
       }
     );
@@ -81,11 +97,11 @@ const Filter_Tab = ({
   const generate_filters = (dataArr: IFilter[]) => {
     return dataArr.map((el, i) => {
       return (
-        <div className={classes['container']} key={i}>
+        <div className={classes["container"]} key={i}>
           <Typography
             vairent="h5"
             component="h5"
-            customClasses={[classes['heading']]}
+            customClasses={[classes["heading"]]}
           >
             {el.heading}
           </Typography>
@@ -96,31 +112,33 @@ const Filter_Tab = ({
   };
 
   return (
-    <div
+    <form
       className={[
-        classes['tab'],
-        isFilterToggle ? classes['tab--toggle'] : '',
-      ].join(' ')}
+        classes["tab"],
+        isFilterToggle ? classes["tab--toggle"] : "",
+      ].join(" ")}
     >
-      <div className={classes['tab__top']}>
+      <div className={classes["tab__top"]}>
         <Back_to_Home_Button />
         <Button
           varient="outline"
           onClick={() => setIsFilterToggle((prev) => !prev)}
-          customClasses={[classes['button--filter']]}
+          customClasses={[classes["button--filter"]]}
         >
-          Filters
+          {filter_title}
         </Button>
       </div>
-      <Textbox
-        customClasses={[classes['search']]}
-        type="search"
-        placeholder="Search for service"
-        value={searchValue}
-        onChange={(e) => setSearchValue(e.target.value)}
-      />
+      {isSearchBar && (
+        <Textbox
+          customClasses={[classes["search"]]}
+          type="search"
+          placeholder="Search for service"
+          value={searchValue}
+          onChange={(e) => setSearchValue(e.target.value)}
+        />
+      )}
       {generate_filters(data)}
-    </div>
+    </form>
   );
 };
 export default Filter_Tab;

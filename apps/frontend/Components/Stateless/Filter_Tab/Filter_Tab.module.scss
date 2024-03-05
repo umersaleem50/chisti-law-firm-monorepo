@@ -1,10 +1,13 @@
 // @import '../../../utils/mixins/responsive.scss';
-@import '~apps/frontend/utils/mixins/responsive.scss';
+@import "~/utils/mixins/responsive.scss";
 
 .container {
   padding: 3rem 0;
   border-top: var(--border-line);
 
+  // position: sticky;
+  display: block;
+  top: 0;
   &__text {
     padding: 1rem 2rem;
   }
@@ -14,6 +17,10 @@
 }
 
 .tab {
+  display: inline-block;
+  position: sticky;
+  top:2rem;
+  height: fit-content;
   &__top {
     display: flex;
     justify-content: space-between;
@@ -30,6 +37,9 @@
     height: 5rem;
     overflow: hidden;
     transition: all 1s ease-in-out;
+    position: relative;
+    margin-bottom: 4rem;
+    
   }
 
   // @media only screen and (max-width: 600px) {

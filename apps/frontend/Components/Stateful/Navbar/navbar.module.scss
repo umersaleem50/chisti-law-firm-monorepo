@@ -1,4 +1,4 @@
-@import '~apps/frontend/utils/mixins/responsive.scss';
+@import "~/utils/mixins/responsive.scss";
 .navbar {
   height: 10rem;
   background-color: var(--color-white);
@@ -50,4 +50,9 @@
   @include respond(phone) {
     margin-right: 0;
   }
+}
+
+.btn--logout {
+  background-color: red !important;
+  color: white !important;
 }

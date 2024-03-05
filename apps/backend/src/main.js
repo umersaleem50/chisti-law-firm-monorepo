@@ -10,19 +10,32 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import { errorHandlerController } from './controllers/errorHandler';
-dotenv.config('./env');
+import cookieParser from 'cookie-parser';
+// dotenv.config('.env');
+// dotenv.config({ path: './config.env' });
+dotenv.config();
 const app = express();
+app.use(cookieParser());
 
-app.use(cors({ origin: process.env.ORIGIN_ROUTE || 'http://localhost:3000' }));
+app.use(
+  cors({
+    origin: process.env.ORIGIN_ROUTE || 'http://localhost:3000',
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 app.use('/api/v1', mainRouter);
 
+app.use('/test', (req, res, next) => {
+  res.status(200).json({ message: 'working api' });
+});
+
 app.use(errorHandlerController);
 
 mongoose
-  .connect('mongodb://127.0.0.1:27017/lawfirm')
+  .connect(process.env.DATABASE_URL)
   .then(() => {
     console.log('Successfully connected to Database!');
   })
@@ -36,5 +49,3 @@ const server = app.listen(port, () => {
   console.log(`Listening at http://localhost:${port}/api`);
 });
 server.on('error', console.error);
-
-console.warn('Please fix the env. not loading....');

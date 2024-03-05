@@ -1,11 +1,11 @@
-@import '~apps/frontend/utils/mixins/responsive.scss';
+@import "~/utils/mixins/responsive.scss";
 .button {
   display: inline-block;
   color: var(--color-font);
   font-size: var(--font-paragraph);
   cursor: pointer;
   font-family: inherit;
-  max-width: 32rem;
+  max-width: var(--max-input-width);
 
   @include respond(phone) {
     max-width: 100%;
@@ -82,7 +82,7 @@
 
 .fullwidth {
   width: 100%;
-  max-width: 32rem;
+  max-width: var(--max-input-width);
   background-color: transparent;
   font-size: var(--font-paragraph);
   padding: 1rem 2rem;

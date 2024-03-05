@@ -1,0 +1,21 @@
+import React from "react";
+import { Meta, StoryObj } from "@storybook/react";
+import Lawyer_Details from "./Lawyer_Details";
+
+const meta: Meta<typeof Lawyer_Details> = {
+  title: "Lawyer Details",
+  component: Lawyer_Details,
+};
+
+export default meta;
+
+type Story = StoryObj<typeof Lawyer_Details>;
+
+export const Primary: Story = {
+  args: {
+    bio: "this is test bio",
+    contact: "+33223333",
+    email: "test@test.com",
+    expirence: [{ _id: "jfdkjfkd", course: "test", description: "test" }],
+  },
+};

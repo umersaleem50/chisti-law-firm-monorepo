@@ -1,12 +1,11 @@
-import Button, { Back_to_Home_Button } from './Button';
+import Button, { Back_to_Home_Button } from "./Button";
 
 export default {
-  title: 'Inputs/Button',
+  title: "Inputs/Button",
   component: Button,
 };
 
 export const Primary = () => (
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
   <Button varient="primary" onClick={() => {}}>
     Book appointment
   </Button>

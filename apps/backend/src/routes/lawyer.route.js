@@ -20,7 +20,7 @@ lawyerRoute
   .get('/:id', getOneLawyer)
   .patch(
     '/:id',
-    uploadSingleImage('profilePicture'),
+    uploadLawyersImages,
     resizeSingleImage('profilePicture', 'profile', {
       width: 1000,
       height: 1000,

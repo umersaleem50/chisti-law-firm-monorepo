@@ -1,0 +1,38 @@
+@import "~/utils/mixins/responsive.scss";
+
+.container {
+  display: flex;
+  margin-top: var(--grid-gap);
+  @include respond(phone) {
+    flex-direction: column;
+  }
+  &__picture {
+    width: 20rem;
+    height: 20rem;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    // border: 1rem solid var(--color-secondary);
+    outline: 1rem solid var(--color-secondary);
+    @include respond(phone) {
+      align-self: center;
+    }
+  }
+
+  &__details {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex: 1;
+    margin-left: var(--grid-gap);
+
+    @include respond(phone) {
+      margin-top: 4rem;
+      margin-left: auto;
+    }
+  }
+}
+
+.mg-top {
+  margin-top: var(--grid-gap);
+}

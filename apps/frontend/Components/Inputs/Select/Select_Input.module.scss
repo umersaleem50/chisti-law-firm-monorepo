@@ -1,8 +1,8 @@
-@import '~apps/frontend/utils/mixins/responsive.scss';
+@import "~/utils/mixins/responsive.scss";
 .select {
   padding: 1rem 2rem;
   width: 100%;
-  max-width: 32rem;
+  max-width: var(--max-input-width);
   font-family: inherit;
 
   @include respond(phone) {

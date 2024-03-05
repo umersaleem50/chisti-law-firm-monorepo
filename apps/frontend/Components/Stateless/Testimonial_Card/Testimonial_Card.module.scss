@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
-@import '~apps/frontend/utils/mixins/responsive.scss';
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif&display=swap");
+@import "~/utils/mixins/responsive.scss";
 .card {
   display: flex;
   flex-direction: column;
@@ -7,7 +7,7 @@
   min-width: 50rem;
   max-width: 50rem;
   padding: 4rem;
-
+  // border: 3px solid var(--color-accent);
   height: auto;
   transition: background-color 0.2s ease-in;
   box-shadow: var(--form-shadow);
@@ -33,7 +33,7 @@
   }
 
   &__qoute {
-    font-family: 'PT Serif', serif !important;
+    font-family: "PT Serif", serif !important;
     font-size: 20rem !important;
     line-height: 0rem;
     transform: translate(0, 6rem);

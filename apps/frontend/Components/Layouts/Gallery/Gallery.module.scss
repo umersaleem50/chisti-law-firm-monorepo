@@ -1,0 +1,57 @@
+@import "~/utils/mixins/responsive.scss";
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 25rem;
+  gap: 2rem;
+  height: 70rem;
+
+  @include respond(phone) {
+    grid-template-columns: 1fr;
+  }
+
+  &__main {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: flex;
+
+    flex: 1;
+
+    @include respond(phone) {
+      height: 50rem;
+    }
+  }
+
+  &__other {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    overflow-y: scroll;
+    height: 100%;
+
+    @include respond(phone) {
+      flex-direction: row;
+      overflow-y: hidden;
+      overflow-x: scroll;
+    }
+  }
+}
+
+.item {
+  width: 100%;
+  min-height: 20rem;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  @include respond(phone) {
+    height: 20rem;
+    min-width: 20rem;
+  }
+  img {
+    transition: all 0.5s ease;
+  }
+  &:hover img {
+    transform: scale(1.2);
+  }
+}

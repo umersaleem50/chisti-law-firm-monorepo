@@ -1,0 +1,30 @@
+@import "~/utils/mixins/responsive.scss";
+
+.main {
+  display: flex;
+  height: 100vh;
+
+  &__left {
+    flex: 0 1 65%;
+    position: relative;
+  }
+
+  &__right {
+    flex: 0 1 35%;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @include respond(phone) {
+    &__left {
+      display: none;
+      flex: 0 1 0%;
+    }
+
+    &__right {
+      flex: 0 1 100%;
+    }
+  }
+}

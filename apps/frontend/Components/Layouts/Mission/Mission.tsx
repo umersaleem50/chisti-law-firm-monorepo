@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import { GenerateUi } from '@law-firm/generate-ui';
+import GenerateUi from '@/utils/generate-ui/generate-ui';
 
 import { FiArrowUpRight as IconArrow } from 'react-icons/fi';
 import Section from '../../Stateless/Section/Section';

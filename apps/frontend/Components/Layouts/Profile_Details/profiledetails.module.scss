@@ -1,0 +1,11 @@
+@import "~/utils/mixins/responsive.scss";
+
+.container {
+  max-width: 60rem;
+  margin-top: 4rem;
+  margin-left: 24rem;
+
+  @include respond(phone) {
+    margin-left: auto;
+  }
+}

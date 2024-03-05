@@ -1,0 +1,26 @@
+.button {
+  height: 10rem;
+  width: 10rem;
+  //   background-color: var(--color-grey-light);
+  background-color: transparent;
+  position: relative;
+  border: none;
+  cursor: pointer;
+
+  &--dragging {
+    border: 2px solid var(--color-primary);
+    padding: 1rem;
+    border-style: dashed;
+    stroke-dashoffset: 40;
+    animation: moveDashes 2s linear infinite;
+  }
+}
+
+@keyframes moveDashes {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 10px 10px; /* Change the values as per your preference */
+  }
+}

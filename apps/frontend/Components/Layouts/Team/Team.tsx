@@ -1,69 +1,72 @@
-'use client';
-import { useEffect, useRef, useState } from 'react';
-// eslint-disable-next-line @nx/enforce-module-boundaries
-import Section from '../../Stateless/Section/Section';
-import classes from './Team.module.scss';
-import Team_Card, { ITeamCard } from '../../Stateless/Team_Card/Team_Card';
-import { GenerateUi } from '@law-firm/generate-ui';
-import Slider_Dots from '../../Stateless/Slider_Dots/Slider_Dots';
-import { text } from './text';
-
-const temp_data_arr: ITeamCard[] = [
-  {
-    personName: 'Adv. Mian Shafeeq Chishti',
-    professions: ['Criminal Lawyer', 'Civil Lawyer'],
-    src: 'mian_shafeeq_profile.jpeg',
-  },
-  {
-    personName: 'Adv. Aqib Shahid 2',
-    professions: ['Criminal Lawyer', 'Civil Lawyer'],
-    src: 'bilalzahid.jpg',
-  },
-  {
-    personName: 'Adv. Amir iqbal 3',
-    professions: ['Criminal Lawyer', 'Civil Lawyer'],
-    src: 'bilalzahid.jpg',
-  },
-  {
-    personName: 'Adv. Danish Sohail 4',
-    professions: ['Criminal Lawyer', 'Civil Lawyer 4'],
-    src: 'bilalzahid.jpg',
-  },
-  {
-    personName: 'Adv. Danish Sohail 5',
-    professions: ['Criminal Lawyer', 'Civil Lawyer 5'],
-    src: 'bilalzahid.jpg',
-  },
-];
+"use client";
+import { useEffect, useRef, useState } from "react";
+import Section from "../../Stateless/Section/Section";
+import classes from "./Team.module.scss";
+import Team_Card, { ITeamCard } from "../../Stateless/Team_Card/Team_Card";
+import { GenerateUi } from "@/utils/generate-ui/generate-ui";
+import Slider_Dots from "../../Stateless/Slider_Dots/Slider_Dots";
+import { text } from "./text";
+import axios from "axios";
+import { NEXT_PUBLIC_API_URL } from "@/config";
 
 const Team = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const sliderRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
+  const [lawyer, setLaywer] = useState<ITeamCard[]>([
+    {
+      firstName: "Mian Shafeeq Chishti",
+      lastName: "Chishti",
+      professions: ["Criminal Lawyer", "Civil Lawyer"],
+      profilePicture: "mian_shafeeq_profile.jpeg",
+      _id: "",
+    },
+  ]);
+  const [error, setError] = useState(false);
   const [count, setCount] = useState(0);
   const [numberOfDots, setNumberOfDots] = useState(1);
   let numberOfCards: number;
 
+  const fetchData = async () => {
+    try {
+      const response = await axios({
+        url: NEXT_PUBLIC_API_URL + "/lawyers",
+        method: "GET",
+      });
+      if (response.status === 200) {
+        setLaywer(response.data.data);
+      }
+    } catch (error) {
+      alert(error);
+
+      setError(true);
+    }
+  };
+
   useEffect(() => {
     numberOfCards = getNumberOfitemToDisplay(containerRef, cardRef);
     setNumberOfDots(calculateNumberOfDots());
+    fetchData();
   }, []);
 
   useEffect(() => {
     slideSlider(count);
-    console.log(count);
   }, [count]);
 
   function calculateNumberOfDots() {
-    return Math.ceil(temp_data_arr.length / numberOfCards);
+    if (!lawyer.length) return 0;
+    if (lawyer.length === 1) return 1;
+    const numberOfDots = Math.ceil(lawyer.length + 1 / numberOfCards);
+
+    return numberOfDots;
   }
 
   function slideSlider(slideNumber: number) {
-    if (temp_data_arr.length === 0) return;
-    const containerWidth = containerRef.current?.offsetWidth || 0;
-    const sliderWidth = sliderRef.current?.offsetWidth || 0;
+    if (lawyer.length === 0) return;
+    // const containerWidth = containerRef.current?.offsetWidth || 0;
+    // const sliderWidth = sliderRef.current?.offsetWidth || 0;
     const cardWidth = cardRef.current?.offsetWidth || 0;
-    const cardMargin = cardRef.current?.style.marginRight || 0;
+    // const cardMargin = cardRef.current?.style.marginRight || 0;
     const numberOfCardToMove = getNumberOfitemToDisplay(containerRef, cardRef);
 
     const valueOfTranslateX =
@@ -72,7 +75,7 @@ const Team = () => {
     // if (containerWidth < sliderWidth) return;
 
     sliderRef.current?.style.setProperty(
-      'transform',
+      "transform",
       `translateX(-${Math.abs(valueOfTranslateX)}px)`
     );
   }
@@ -89,26 +92,26 @@ const Team = () => {
   }
 
   return (
-    <div className={classes['team']}>
+    <div className={classes["team"]}>
       <Section
-        heading={text['heading']}
-        paragraph={text['paragarph']}
+        heading={text["heading"]}
+        paragraph={text["paragarph"]}
         buttonOptions={{
-          text: 'Show All',
-          url: '/team',
-          varient: 'outline',
+          text: "Show All",
+          url: "/lawyers",
+          varient: "outline",
           style: {
-            border: '3px solid var(--color-white)',
-            color: 'var(--color-white)',
+            border: "3px solid var(--color-white)",
+            color: "var(--color-white)",
           },
         }}
         textColor="var(--color-white)"
       >
-        <div className={classes['team__container']} ref={containerRef}>
-          <div className={classes['team__slider']} ref={sliderRef}>
+        <div className={classes["team__container"]} ref={containerRef}>
+          <div className={classes["team__slider"]} ref={sliderRef}>
             {GenerateUi({
               RenderElement: Team_Card,
-              dataArr: temp_data_arr,
+              dataArr: lawyer,
               childRef: cardRef,
             })}
           </div>
@@ -127,7 +130,7 @@ const Team = () => {
 
 function getNumberOfitemToDisplay(sliderEl: any, productEl: any) {
   const numOfProductToDisplay = Math.floor(
-    sliderEl.current.offsetWidth / productEl.current.offsetWidth
+    sliderEl.current.offsetWidth / productEl?.current?.offsetWidth
   );
   return numOfProductToDisplay;
 }

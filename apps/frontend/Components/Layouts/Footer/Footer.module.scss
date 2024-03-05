@@ -1,4 +1,4 @@
-@import '~apps/frontend/utils/mixins/responsive.scss';
+@import "~/utils/mixins/responsive.scss";
 
 .footer {
   height: 40rem;
@@ -17,6 +17,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: var(--color-secondary);
   }
 }
 
@@ -53,8 +54,8 @@
     display: flex;
     justify-content: space-around;
     @include respond(phone) {
-      flex: 1;
-      justify-content: flex-start;
+      flex: 0 1 100%;
+      justify-content: space-between;
     }
 
     div {
@@ -64,4 +65,15 @@
 }
 
 .link {
+  text-decoration: none;
+
+  &:hover {
+    background-color: var(--color-font);
+  }
+}
+
+.logo {
+  @include respond(phone) {
+    margin-bottom: 2rem;
+  }
 }

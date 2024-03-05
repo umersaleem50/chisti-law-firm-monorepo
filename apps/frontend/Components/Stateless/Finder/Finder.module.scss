@@ -1,4 +1,4 @@
-@import '~apps/frontend/utils/mixins/responsive.scss';
+@import "~/utils/mixins/responsive.scss";
 
 .finder {
   display: flex;
@@ -6,7 +6,7 @@
   align-items: center;
   background-color: var(--color-accent);
   padding: 4rem 8rem;
-  margin: 8rem 0;
+  // margin: 8rem 0;
   width: 100%;
 
   @include respond(phone) {

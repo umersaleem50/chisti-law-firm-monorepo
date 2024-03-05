@@ -1,16 +1,33 @@
-@import '~apps/frontend/utils/mixins/responsive.scss';
+@import "~/utils/mixins/responsive.scss";
+.main {
+  width: 100%;
+  height: 100%;
+  background-image: url("/assets/paper.jpg");
+  background-repeat: no-repeat;
+  object-fit: cover;
+  background-size: cover;
+
+  @include respond(phone) {
+    grid-template-columns: 1fr;
+    // margin: 4rem 2rem;
+    padding: 0 2rem;
+  }
+}
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
+
+  grid-gap: 2rem;
   width: 100%;
   height: 100%;
   // position: relative;
 
   @include respond(phone) {
     grid-template-columns: 1fr;
-    margin: 4rem 2rem;
+    grid-template-rows: 1fr 1fr;
+    // margin: 4rem 2rem;
     padding: 0 2rem;
   }
 }
@@ -19,7 +36,7 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  width: 90%;
+  width: 100%;
   z-index: 10;
 
   @include respond(phone) {
@@ -35,6 +52,7 @@
   &__tags {
     display: flex;
     width: 80%;
+    margin-bottom: 4rem;
     justify-content: space-between;
   }
 

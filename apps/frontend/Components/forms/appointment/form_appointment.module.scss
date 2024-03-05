@@ -1,4 +1,4 @@
-@import '~apps/frontend/utils/mixins/responsive.scss';
+@import "~/utils/mixins/responsive.scss";
 .form {
   max-width: 60rem;
   width: 100%;
@@ -18,7 +18,7 @@
 
   @include respond(phone) {
     width: 90%;
-    padding: 3rem;
+    padding: 1rem;
   }
 }
 .container {
@@ -31,6 +31,7 @@
 
   @include respond(phone) {
     grid-gap: 2rem;
+    grid-template-columns: 1fr;
   }
 }
 

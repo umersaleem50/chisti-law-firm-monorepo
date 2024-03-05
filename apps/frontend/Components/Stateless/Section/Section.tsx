@@ -1,12 +1,13 @@
 'use client';
 import Button from '../../Button/Button';
-import Typography, { ITypography } from '../../Typography/Typography';
+import Typography from '../../Typography/Typography';
 import classes from './Section.module.scss';
 // import { useRouter } from 'next/router';
 import { MouseEvent } from 'react';
 import { FiArrowUpRight as IconArrow } from 'react-icons/fi';
 type ButtonEvent = MouseEvent<HTMLButtonElement>;
 import { IButton } from '../../Button/Button';
+import { useRouter } from 'next/navigation';
 
 interface ISectionButton extends IButton {
   url: string;
@@ -29,12 +30,12 @@ const Section = ({
   textColor,
   varient = 'default',
 }: ISection) => {
-  // const router = useRouter();
+  const router = useRouter();
 
   const handleNaviation = (e: ButtonEvent, url: string | undefined) => {
     if (!url) return;
-    alert(url + ' working....');
-    // router.push(url);
+    // alert(url + ' working....');
+    router.push(url);
     return;
   };
 

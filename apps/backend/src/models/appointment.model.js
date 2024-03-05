@@ -1,6 +1,6 @@
 import { model, Schema } from 'mongoose';
 
-const LawyerSchema = new Schema({
+const appointmentSchema = new Schema({
   firstName: {
     type: String,
     required: [true, 'Please enter your firstname.'],
@@ -13,40 +13,28 @@ const LawyerSchema = new Schema({
     type: String,
     required: [true, 'Please enter your email.'],
   },
-  workplace: {
+  country: {
     type: String,
-    required: [true, 'Please enter your workplace.'],
+    required: [true, 'Please enter your country.'],
   },
-  contact: {
+  phone: {
     type: String,
-    required: [true, 'Please enter your contact no.'],
+    required: [true, 'Please enter your phone no.'],
   },
-  profilePicture: {
+  address: {
     type: String,
+    required: [true, 'Please enter your address.'],
   },
-  expirence: {
-    type: {
-      years: { type: Number },
-      totalCases: { type: Number },
-    },
-  },
-  description: {
+  subject: {
     type: String,
+    required: [true, 'Please enter the subject matter.'],
   },
-
-  gallery: [String],
-
-  education: [
-    {
-      type: {
-        title: String,
-        institue: String,
-        description: String,
-      },
-    },
-  ],
+  createdOn: {
+    type: Date,
+    default: Date.now(),
+  },
 });
 
-const Lawyer = model('lawyer', LawyerSchema);
+const Appointment = model('appointments', appointmentSchema);
 
-export default Lawyer;
+export default Appointment;
