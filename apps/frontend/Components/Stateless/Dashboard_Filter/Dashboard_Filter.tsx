@@ -1,9 +1,9 @@
-"use client";
-import { useRouter } from "next/navigation";
+'use client';
+import { useRouter } from 'next/navigation';
 import Filter_Tab, {
   IFilter,
-} from "../../../Components/Stateless/Filter_Tab/Filter_Tab";
-import classes from "./Dashboard_Filter.module.scss";
+} from '../../../Components/Stateless/Filter_Tab/Filter_Tab';
+import classes from './Dashboard_Filter.module.scss';
 const Dashboard_Filter = ({
   handleCheckbox,
   children,
@@ -14,14 +14,14 @@ const Dashboard_Filter = ({
   const router = useRouter();
   const filterData: IFilter[] = [
     {
-      heading: "Pages: ",
+      heading: 'Pages: ',
       options: [
         {
-          text: "Appointments",
-          type: "button",
-          id: "appointments",
+          text: 'Appointments',
+          type: 'button',
+          id: 'appointments',
           onClick: () => {
-            router.push("/admin/appointments");
+            router.push('/admin/appointments');
           },
         },
         // {
@@ -34,12 +34,12 @@ const Dashboard_Filter = ({
         //   },
         // },
         {
-          text: "Cases",
-          type: "button",
+          text: 'Cases',
+          type: 'button',
           // id: "criminal-lawyers",
-          id: "cases",
+          id: 'cases',
           onClick: () => {
-            router.push("/admin/cases");
+            router.push('/admin/cases');
           },
         },
         // {
@@ -52,25 +52,25 @@ const Dashboard_Filter = ({
         //   },
         // },
         {
-          text: "Settings",
-          type: "button",
+          text: 'Settings',
+          type: 'button',
           onClick: () => {
-            router.push("/admin/settings");
+            router.push('/admin/settings');
           },
           // id: "tax-lawyers",
-          id: "settings",
+          id: 'settings',
         },
       ],
     },
   ];
 
   return (
-    <div className={classes["filters"]}>
+    <div className={classes['filters']}>
       <Filter_Tab
         isSearchBar={false}
         data={filterData}
         handleCheckbox={handleCheckbox}
-        filter_title={"Pages"}
+        filter_title={'Pages'}
       />
       {children}
     </div>

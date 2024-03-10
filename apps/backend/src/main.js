@@ -19,7 +19,7 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: process.env.ORIGIN_ROUTE || 'http://localhost:3000',
+    origin: process.env.ORIGIN_ROUTE || 'http://localhost:3333',
     credentials: true,
   })
 );

@@ -1,7 +1,7 @@
-"use client";
-import { ReactHTMLElement, useState } from "react";
-import classes from "./Checkbox.module.scss";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+'use client';
+import { ReactHTMLElement, useState } from 'react';
+import classes from './Checkbox.module.scss';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 export interface ICheckbox {
   text: string;
@@ -15,7 +15,9 @@ const Checkbox = ({
   text,
   id,
   isChecked = false,
-  onClick = () => {},
+  onClick = () => {
+    return;
+  },
   handleCheckbox,
 }: ICheckbox) => {
   const [isActive, setIsActive] = useState(isChecked);
@@ -48,7 +50,7 @@ const Checkbox = ({
 
   return (
     <div
-      className={classes["checkbox"]}
+      className={classes['checkbox']}
       onClick={() => {
         setIsActive((prev) => !prev);
         onClick();
@@ -57,16 +59,16 @@ const Checkbox = ({
       <input
         type="checkbox"
         className={[
-          classes["checkbox__input"],
-          isActive ? classes["checkbox__input--active"] : "",
-        ].join(" ")}
+          classes['checkbox__input'],
+          isActive ? classes['checkbox__input--active'] : '',
+        ].join(' ')}
         id={id}
         value={text}
         onChange={handleCheckbox}
         max={1}
       />
 
-      <label className={classes["checkbox__label"]} htmlFor={id}>
+      <label className={classes['checkbox__label']} htmlFor={id}>
         {text}
       </label>
     </div>

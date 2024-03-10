@@ -1,11 +1,11 @@
-@import "~/utils/mixins/responsive.scss";
+@import '~/utils/mixins/responsive.scss';
 .navbar {
   height: 10rem;
   background-color: var(--color-white);
   display: flex;
   align-items: center;
   padding: 0 2rem;
-  z-index: 100;
+  // z-index: 100;
   position: relative;
 }
 .container {

@@ -19,7 +19,8 @@
         "libs/handlers/book-appointment-handler/src/index.ts"
       ],
       "@law-firm/generate-ui": ["libs/generate-ui/src/index.ts"],
-      "@law-firm/generate-ui/server": ["libs/generate-ui/src/server.ts"]
+      "@law-firm/generate-ui/server": ["libs/generate-ui/src/server.ts"],
+      "@shared/caseType": ["libs/shared/case-type/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

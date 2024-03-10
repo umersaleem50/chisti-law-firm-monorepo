@@ -1,0 +1,16 @@
+.main {
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.icon {
+  font-size: 1.8rem;
+}
+
+.button {
+  display: flex !important;
+  align-items: center !important;
+}

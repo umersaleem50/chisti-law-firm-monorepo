@@ -24,7 +24,8 @@ function ExpandableCase({ data }: { data: any }) {
       });
       if (response.status === 204) {
         alert('Deleted cases successfully!');
-        router.refresh();
+        // router.refresh();
+        window.location.reload();
       }
     } catch (error: any) {
       if (error.message) alert(error.message);
@@ -41,7 +42,7 @@ function ExpandableCase({ data }: { data: any }) {
         }
         return (
           <Typography vairent="p" component="p" key={i}>
-            {el + ': ' + objectValues[i]}
+            <b>{el}</b>: {objectValues[i]}
           </Typography>
         );
       })}

@@ -1,0 +1,8 @@
+{
+  "name": "case-type",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/case-type/src",
+  "projectType": "library",
+  "targets": {},
+  "tags": []
+}

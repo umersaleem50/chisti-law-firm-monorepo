@@ -2,7 +2,7 @@ import { CSSProperties } from 'react';
 import classes from './Textbox.module.scss';
 export interface ITextbox {
   label?: string;
-  placeholder: string;
+  placeholder?: string;
   required?: boolean;
   onChange?: (
     e:
@@ -10,7 +10,7 @@ export interface ITextbox {
       | React.ChangeEvent<HTMLTextAreaElement>
   ) => void;
   value: string | number;
-  type?: 'text' | 'password' | 'email' | 'field' | 'search';
+  type?: 'text' | 'password' | 'email' | 'field' | 'search' | 'date';
   inputStyle?: CSSProperties;
   labelStyle?: CSSProperties;
   textboxStyle?: CSSProperties;

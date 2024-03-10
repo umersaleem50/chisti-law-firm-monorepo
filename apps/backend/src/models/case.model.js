@@ -1,5 +1,5 @@
 import { Schema, model } from 'mongoose';
-import { caseTypesPakistan } from '../utils/caseTypes';
+import { caseTypesPakistan } from '@shared/caseType';
 
 const CaseSchema = new Schema({
   prevDate: {
