@@ -1,6 +1,7 @@
 import Footer from '../../../Components/Layouts/Footer/Footer';
 import Blogs from '../../../Components/Layouts/Blogs/Blogs';
 import Navbar from '../../../Components/Stateful/Navbar/navbar';
+import BlogLayout from '@/Components/Layouts/Blog_Layout/Blog_Layout';
 
 const fetchBlogs = async (slug: string) => {
   try {
@@ -11,7 +12,10 @@ const fetchBlogs = async (slug: string) => {
       { method: 'get', cache: 'force-cache' }
     );
 
-    return response.json();
+    const dataObj: any = await response.json();
+
+    if (dataObj.data) return dataObj.data;
+    return dataObj;
   } catch (error: any) {
     if (error.message) throw new Error(error.message);
     throw new Error('Failed to fetch data');
@@ -22,13 +26,17 @@ const Blog_With_ID = async ({ params }: { params: any }) => {
   const { slug } = params;
   const data = await fetchBlogs(slug);
 
-  console.log(data);
-
   return (
     <>
       <Navbar />
-      <div>Blog with id : {slug}</div>
-      <div>Blog with id : {data.readtime}</div>
+      <BlogLayout
+        description={data.description}
+        coverPicture={data.coverPicture}
+        heading={data.heading}
+        readtime={data.readtime}
+        createdOn={data.createdOn}
+        content={data.content}
+      />
       <Blogs />
       <Footer />
     </>

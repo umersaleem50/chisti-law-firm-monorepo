@@ -17,7 +17,7 @@ export const getAllDocuments = (Model) => {
   });
 };
 
-export const getDocument = (Model, options) => {
+export const getDocument = (Model, options = {}) => {
   return catchAsync(async (req, res, next) => {
     const { findBy } = options;
     const findObject = {};
@@ -41,8 +41,7 @@ export const createDocument = (Model, options) => {
     if (slugId) {
       req.body.slug = slugify(req.body[slugId], { lower: true });
     }
-    if (process.env.NODE_ENV === 'development')
-      console.log('handlerfactory.js', req.body);
+
     const document = await Model.create(req.body);
 
     if (!document)

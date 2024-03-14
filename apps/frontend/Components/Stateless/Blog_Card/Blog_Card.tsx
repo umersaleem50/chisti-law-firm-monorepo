@@ -5,27 +5,34 @@ import classes from './Blog_Card.module.scss';
 import Typography from '../../Typography/Typography';
 import Button from '../../Button/Button';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 export interface IBlogCard {
-  src: string;
+  coverPicture: string;
   alt: string;
+  slug: string;
   objectFit?: 'cover' | 'contain';
   heading: string;
-  paragraph: string;
+  description: string;
   isButtonActive?: boolean;
 }
 const Blog_Card = ({
-  src,
+  coverPicture,
+  slug,
   alt,
   objectFit = 'cover',
   heading,
-  paragraph,
+  description,
   isButtonActive = false,
 }: IBlogCard) => {
   return (
     <figure className={classes['card']}>
       <div className={classes['card__image']}>
         <Image
-          src={process.env.NEXT_PUBLIC_STORAGE_BUCKET_URL + '/' + src}
+          src={
+            process.env.NEXT_PUBLIC_STORAGE_BUCKET_URL +
+            '/assets/blogs/small/' +
+            coverPicture
+          }
           alt={alt}
           fill
           style={{ objectFit: objectFit }}
@@ -42,22 +49,23 @@ const Blog_Card = ({
         vairent="p"
         component="p"
         color="var(--color-font)"
-        text={paragraph}
+        text={description}
         customClasses={[classes['text--paragraph']]}
       />
-      <Button
-        varient="outline"
-        onClick={() => {}}
-        text="Read More"
-        isActive={isButtonActive}
-        modifier="secondary"
-        iconEnd={
-          <IconArrow
-            color="currentColor"
-            style={{ marginLeft: '.4rem', transform: 'translateY(.3rem)' }}
-          />
-        }
-      />
+      <Link href={'/blogs/' + slug}>
+        <Button
+          varient="outline"
+          text="Read More"
+          isActive={isButtonActive}
+          modifier="secondary"
+          iconEnd={
+            <IconArrow
+              color="currentColor"
+              style={{ marginLeft: '.4rem', transform: 'translateY(.3rem)' }}
+            />
+          }
+        />
+      </Link>
     </figure>
   );
 };

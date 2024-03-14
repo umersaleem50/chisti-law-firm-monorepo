@@ -1,13 +1,13 @@
-"use client";
-import { useEffect, useRef, useState } from "react";
-import Section from "../../Stateless/Section/Section";
-import classes from "./Team.module.scss";
-import Team_Card, { ITeamCard } from "../../Stateless/Team_Card/Team_Card";
-import { GenerateUi } from "@/utils/generate-ui/generate-ui";
-import Slider_Dots from "../../Stateless/Slider_Dots/Slider_Dots";
-import { text } from "./text";
-import axios from "axios";
-import { NEXT_PUBLIC_API_URL } from "@/config";
+'use client';
+import { useEffect, useRef, useState } from 'react';
+import Section from '../../Stateless/Section/Section';
+import classes from './Team.module.scss';
+import Team_Card, { ITeamCard } from '../../Stateless/Team_Card/Team_Card';
+import { GenerateUi } from '@/utils/generate-ui/generate-ui';
+import Slider_Dots from '../../Stateless/Slider_Dots/Slider_Dots';
+import { text } from './text';
+import axios from 'axios';
+import { NEXT_PUBLIC_API_URL } from '@/config';
 
 const Team = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -15,11 +15,11 @@ const Team = () => {
   const cardRef = useRef<HTMLDivElement>(null);
   const [lawyer, setLaywer] = useState<ITeamCard[]>([
     {
-      firstName: "Mian Shafeeq Chishti",
-      lastName: "Chishti",
-      professions: ["Criminal Lawyer", "Civil Lawyer"],
-      profilePicture: "mian_shafeeq_profile.jpeg",
-      _id: "",
+      firstName: 'Mian Shafeeq Chishti',
+      lastName: 'Chishti',
+      professions: ['Criminal Lawyer', 'Civil Lawyer'],
+      profilePicture: 'mian_shafeeq_profile.jpeg',
+      _id: '',
     },
   ]);
   const [error, setError] = useState(false);
@@ -30,8 +30,8 @@ const Team = () => {
   const fetchData = async () => {
     try {
       const response = await axios({
-        url: NEXT_PUBLIC_API_URL + "/lawyers",
-        method: "GET",
+        url: NEXT_PUBLIC_API_URL + '/lawyers',
+        method: 'GET',
       });
       if (response.status === 200) {
         setLaywer(response.data.data);
@@ -75,7 +75,7 @@ const Team = () => {
     // if (containerWidth < sliderWidth) return;
 
     sliderRef.current?.style.setProperty(
-      "transform",
+      'transform',
       `translateX(-${Math.abs(valueOfTranslateX)}px)`
     );
   }
@@ -92,29 +92,29 @@ const Team = () => {
   }
 
   return (
-    <div className={classes["team"]}>
+    <div className={classes['team']}>
       <Section
-        heading={text["heading"]}
-        paragraph={text["paragarph"]}
+        heading={text['heading']}
+        paragraph={text['paragarph']}
         buttonOptions={{
-          text: "Show All",
-          url: "/lawyers",
-          varient: "outline",
+          text: 'Show All',
+          url: '/lawyers',
+          varient: 'outline',
           style: {
-            border: "3px solid var(--color-white)",
-            color: "var(--color-white)",
+            border: '3px solid var(--color-white)',
+            color: 'var(--color-white)',
           },
         }}
         textColor="var(--color-white)"
       >
-        <div className={classes["team__container"]} ref={containerRef}>
-          <div className={classes["team__slider"]} ref={sliderRef}>
+        <div className={classes['team__container']} ref={containerRef}>
+          <aside className={classes['team__slider']} ref={sliderRef}>
             {GenerateUi({
               RenderElement: Team_Card,
               dataArr: lawyer,
               childRef: cardRef,
             })}
-          </div>
+          </aside>
         </div>
         <Slider_Dots
           count={count}

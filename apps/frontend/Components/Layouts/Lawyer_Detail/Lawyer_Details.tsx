@@ -1,13 +1,13 @@
 // "use client";
-import Section from "@/Components/Stateless/Section/Section";
-import classes from "./Lawyer_Details.module.scss";
-import ProfileLayout from "../ProfileLayout/ProfileLayout";
-import { BtnHomepage } from "@/Components/Button/Button.stories";
-import ProfileDetails from "../Profile_Details/Profile_Details";
-import Profile_Education from "../Profile_Education/Profile_Education";
-import Gallery, { IGalleryItem } from "../Gallery/Gallery";
+import Section from '@/Components/Stateless/Section/Section';
+import classes from './Lawyer_Details.module.scss';
+import ProfileLayout from '../ProfileLayout/ProfileLayout';
+import { BtnHomepage } from '@/Components/Button/Button.stories';
+import ProfileDetails from '../Profile_Details/Profile_Details';
+import Profile_Education from '../Profile_Education/Profile_Education';
+import Gallery, { IGalleryItem } from '../Gallery/Gallery';
 
-import { notFound } from "next/navigation";
+import { notFound } from 'next/navigation';
 
 export interface ILawyer {
   contact: string;
@@ -41,18 +41,18 @@ const Lawyer_Details = async ({
   email,
 }: ILawyer) => {
   return (
-    <>
-      <Section>
-        <BtnHomepage />
-        <ProfileLayout
-          contact={contact}
-          name={firstName + " " + lastName}
-          professions={professions}
-          profileSrc={profilePicture}
-          workplace={workplace}
-        />
-        <ProfileDetails bio={bio} />
-      </Section>
+    <div className={classes['main']}>
+      {/* <Section> */}
+      <BtnHomepage />
+      <ProfileLayout
+        contact={contact}
+        name={firstName + ' ' + lastName}
+        professions={professions}
+        profileSrc={profilePicture}
+        workplace={workplace}
+      />
+      <ProfileDetails bio={bio} />
+      {/* </Section> */}
       <Section>
         <Profile_Education expirenceArr={expirence} />
       </Section>
@@ -61,7 +61,7 @@ const Lawyer_Details = async ({
           <Gallery title="Gallery" images={gallery} />
         </Section>
       )}
-    </>
+    </div>
   );
 };
 

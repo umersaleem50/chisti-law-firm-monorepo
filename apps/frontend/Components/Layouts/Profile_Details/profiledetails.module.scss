@@ -1,11 +1,15 @@
-@import "~/utils/mixins/responsive.scss";
+@import '~/utils/mixins/responsive.scss';
 
 .container {
-  max-width: 60rem;
-  margin-top: 4rem;
+  // max-width: 60rem;
+  // margin-top: 4rem;
   margin-left: 24rem;
 
   @include respond(phone) {
     margin-left: auto;
   }
+}
+
+.bio {
+  column-count: 3;
 }

@@ -20,8 +20,8 @@ function Blogs({ dataArr }: { dataArr: IBlogCardLarge[] }) {
         alt="Blog"
         description="this is the description for the blog"
         heading="Blog for you"
-        readDuration="32min"
-        src="/services/family-civil.jpg"
+        readtime="32min"
+        coverPicture="/services/family-civil.jpg"
         slug="blog-for-you"
       />
     );

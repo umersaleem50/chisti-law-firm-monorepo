@@ -13,9 +13,9 @@ export const Primary: Story = {
   args: {
     alt: 'Blog of criminal Act',
     heading: 'Why you should file for the civil suit?',
-    paragraph:
+    description:
       'We’re offering a ton of services for you. Our lawyers are professionals and have ton of experience in their respected field.',
     isButtonActive: true,
-    src: 'blog.jpg',
+    coverPicture: 'blog.jpg',
   },
 };

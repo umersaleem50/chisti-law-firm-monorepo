@@ -68,7 +68,6 @@ export const uploadSingleImage = (field) => uploadImage.single(field);
 
 export const resizeSingleImage = (field, location, sizes) => {
   return catchAsync(async (req, res, next) => {
-    console.log(req.file, req.files);
     if (!req.file) return next();
     const filename = `${Date.now()}-${field}.jpeg`;
 
@@ -90,7 +89,6 @@ export const resizeSingleImage = (field, location, sizes) => {
 };
 export const resizeLawyerProfilePicture = (field, location, sizes) => {
   return catchAsync(async (req, res, next) => {
-    console.log(req.file, req.files);
     if (!req.files || !req.files[field]) return next();
     const filename = `${Date.now()}-${field}.jpeg`;
 

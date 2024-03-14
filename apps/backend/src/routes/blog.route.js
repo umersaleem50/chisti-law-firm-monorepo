@@ -20,7 +20,7 @@ blogRouter
   .patch(
     '/:id',
     uploadSingleImage('coverPicture'),
-    resizeImages('coverPicture', 'blogs', { width: 1200, height: 500 }),
+    resizeSingleImage('coverPicture', 'blogs', { width: 1200, height: 500 }),
     updateOneBlog
   )
   .post(

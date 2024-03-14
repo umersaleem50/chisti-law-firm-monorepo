@@ -1,13 +1,13 @@
-"use client";
-import Image from "next/image";
-import classes from "./navbar.module.scss";
-import Link from "next/link";
-import Button from "../../Button/Button";
-import { handle_appointment_event } from "@/utils/handler/bookeEventHandler";
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
-import { useCookies } from "react-cookie";
-import * as jose from "jose";
+'use client';
+import Image from 'next/image';
+import classes from './navbar.module.scss';
+import Link from 'next/link';
+import Button from '../../Button/Button';
+import { handle_appointment_event } from '@/utils/handler/bookeEventHandler';
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { useCookies } from 'react-cookie';
+import * as jose from 'jose';
 type navlinks = {
   name: string;
   url: string;
@@ -20,24 +20,24 @@ interface IProps {
 
 export const NAV_LINKS: navlinks[] = [
   {
-    name: "Home",
-    url: "/",
+    name: 'Home',
+    url: '/',
   },
   {
-    name: "Service",
-    url: "/services",
+    name: 'Service',
+    url: '/services',
+  },
+  // {
+  //   name: "Case Management",
+  //   url: "/",
+  // },
+  {
+    name: 'Blogs',
+    url: '/blogs',
   },
   {
-    name: "Case Management",
-    url: "/",
-  },
-  {
-    name: "Blogs",
-    url: "/blogs",
-  },
-  {
-    name: "All Lawyers",
-    url: "/lawyers",
+    name: 'All Lawyers',
+    url: '/lawyers',
   },
 ];
 
@@ -46,7 +46,7 @@ const generateLinks = (arr: navlinks[]) => {
     return (
       <li key={i}>
         <Link href={url} legacyBehavior>
-          <a className={classes["nav__link"]}>{name}</a>
+          <a className={classes['nav__link']}>{name}</a>
         </Link>
       </li>
     );
@@ -56,14 +56,14 @@ const Navbar = ({}) => {
   const [element, setElement] = useState<HTMLElement>();
   const router = useRouter();
   const handle_login_button = () => {
-    router.push("/auth");
+    router.push('/auth');
   };
 
   const handle_dashboard_redirect = () => {
-    router.push("/admin/appointments");
+    router.push('/admin/appointments');
   };
 
-  const [jwtCookie, setCookie] = useCookies(["jwt"]);
+  const [jwtCookie, setCookie] = useCookies(['jwt']);
   const [isAuth, setIsAuth] = useState(false);
   const verifyToken = async (token: any) => {
     try {
@@ -81,8 +81,8 @@ const Navbar = ({}) => {
   };
 
   const handle_logout = () => {
-    setCookie("jwt", "");
-    router.push("/auth");
+    setCookie('jwt', '');
+    router.push('/auth');
   };
 
   useEffect(() => {
@@ -90,28 +90,28 @@ const Navbar = ({}) => {
   }, []);
 
   useEffect(() => {
-    const appointmentElement = document.getElementById("appointment-id");
+    const appointmentElement = document.getElementById('appointment-id');
     if (appointmentElement) setElement(appointmentElement);
   }, [element]);
   return (
-    <div className={classes["navbar"]}>
-      <div className={classes["container"]}>
+    <div className={classes['navbar']}>
+      <div className={classes['container']}>
         <Image
           width={50}
           height={60}
           alt="logo"
-          src={"/assets/logo.png"}
-          style={{ objectFit: "cover" }}
+          src={'/assets/logo.png'}
+          style={{ objectFit: 'cover' }}
         />
         <nav>
-          <ul className={classes["nav"]}>{generateLinks(NAV_LINKS)}</ul>
+          <ul className={classes['nav']}>{generateLinks(NAV_LINKS)}</ul>
         </nav>
-        <div className={classes["container__buttons"]}>
+        <div className={classes['container__buttons']}>
           {!isAuth ? (
             <Button
               varient="primary"
               onClick={() => handle_appointment_event(element)}
-              customClasses={[classes["btn--cta"]]}
+              customClasses={[classes['btn--cta']]}
             >
               Book Appointment
             </Button>
@@ -119,7 +119,7 @@ const Navbar = ({}) => {
             <Button
               varient="outline"
               onClick={() => handle_dashboard_redirect()}
-              customClasses={[classes["btn--cta"]]}
+              customClasses={[classes['btn--cta']]}
             >
               Dashboard
             </Button>
@@ -128,7 +128,7 @@ const Navbar = ({}) => {
             <Button
               varient="outline"
               onClick={handle_login_button}
-              customClasses={[classes["btn--login"]]}
+              customClasses={[classes['btn--login']]}
             >
               login
             </Button>
@@ -136,7 +136,7 @@ const Navbar = ({}) => {
             <Button
               varient="primary"
               onClick={handle_logout}
-              customClasses={[classes["btn--logout"]]}
+              customClasses={[classes['btn--logout']]}
             >
               Logout
             </Button>
