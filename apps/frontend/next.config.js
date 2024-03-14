@@ -13,7 +13,7 @@ const nextConfig = {
     svgr: false,
   },
   images: { unoptimized: true },
-  output: 'export',
+  output: 'standalone',
   // async rewrites() {
   //   return [
   //     {

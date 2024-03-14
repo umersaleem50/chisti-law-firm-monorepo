@@ -7,7 +7,9 @@ import {
   updateOneBlog,
 } from '../controllers/blog.controller';
 import {
+  resizeImages,
   resizeSingleImage,
+  uploadBlogImages,
   uploadSingleImage,
 } from '../controllers/image.controller';
 
@@ -18,11 +20,13 @@ blogRouter
   .patch(
     '/:id',
     uploadSingleImage('coverPicture'),
-    resizeSingleImage('coverPicture', 'blogs', { width: 1200, height: 500 }),
+    resizeImages('coverPicture', 'blogs', { width: 1200, height: 500 }),
     updateOneBlog
   )
   .post(
     '/',
+    // uploadBlogImages,
+    // resizeImages('coverPicture', 'blogs', { width: 1200, height: 500 }),
     uploadSingleImage('coverPicture'),
     resizeSingleImage('coverPicture', 'blogs', { width: 1200, height: 500 }),
     createBlog

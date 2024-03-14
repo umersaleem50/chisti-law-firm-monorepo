@@ -1,11 +1,11 @@
-"use client";
-import { useEffect, useState } from "react";
+'use client';
+import { useEffect, useState } from 'react';
 import Lawyer_Card, {
   ILawyerCard,
-} from "../../Stateless/Lawyer_Card/Lawyer_Card";
-import Typography from "../../Typography/Typography";
-import classes from "./Lawyers_Results.module.scss";
-import axios from "axios";
+} from '../../Stateless/Lawyer_Card/Lawyer_Card';
+import Typography from '../../Typography/Typography';
+import classes from './Lawyers_Results.module.scss';
+import axios from 'axios';
 
 export interface IServiceResult {
   src: string;
@@ -38,9 +38,9 @@ const Lawyers_Results = () => {
     try {
       const response = await axios({
         url:
-          process.env.NEXT_PUBLIC_API_URL ||
-          "http://localhost:3333/api/v1" + "/lawyers",
-        method: "GET",
+          (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3333/api/v1') +
+          '/lawyers',
+        method: 'GET',
       });
       if (response.status === 200) {
         setLaywer(response.data.data);
@@ -54,12 +54,16 @@ const Lawyers_Results = () => {
   }, []);
 
   return (
-    <div className={classes["results"]}>
-      <div className={classes["results__top"]}>
+    <div className={classes['results']}>
+      <div className={classes['results__top']}>
         <Typography vairent="p" component="p" text={`Results:`} />
-        <Typography vairent="p" component="p" text={`+10 Results found`} />
+        <Typography
+          vairent="p"
+          component="p"
+          text={`${lawyers.length} Results found`}
+        />
       </div>
-      <div className={classes["container"]}>
+      <div className={classes['container']}>
         {error && (
           <Typography vairent="p" component="p">
             Something went wrong!

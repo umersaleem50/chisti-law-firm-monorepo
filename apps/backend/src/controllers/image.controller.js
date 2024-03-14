@@ -22,13 +22,20 @@ export const uploadLawyersImages = uploadImage.fields([
   { name: 'gallery', max: 6 },
 ]);
 
+export const uploadBlogImages = uploadImage.fields([
+  {
+    name: 'coverPicture',
+    max: 1,
+  },
+]);
+
 export const resizeImages = (field, location, sizes) =>
   catchAsync(async (req, res, next) => {
-    if (!req.files || !req.files.gallery) return next();
+    if (!req.files || !req.files[field]) return next();
     req.body[field] = [];
 
     await Promise.all(
-      req.files.gallery.map(async (file, i) => {
+      req.files[field].map(async (file, i) => {
         const fileName = `${field.toLowerCase().split(' ')}-${Date.now()}-${
           i + 1
         }.jpeg`;
@@ -61,23 +68,45 @@ export const uploadSingleImage = (field) => uploadImage.single(field);
 
 export const resizeSingleImage = (field, location, sizes) => {
   return catchAsync(async (req, res, next) => {
-    if (!req.files?.profilePicture) return next();
+    console.log(req.file, req.files);
+    if (!req.file) return next();
     const filename = `${Date.now()}-${field}.jpeg`;
 
-    await sharp(req.files?.profilePicture[0].buffer)
+    await sharp(req.file.buffer)
       .resize(sizes.width, sizes.height)
       .toFormat('jpeg')
       .jpeg({ quality: 90 })
       .toFile(path.join(__dirname, `assets/${location}/large/${filename}`));
 
-    await sharp(req.files?.profilePicture[0].buffer)
+    await sharp(req.file.buffer)
       .resize(sizes.width / 2, sizes.height / 2)
       .toFormat('jpeg')
       .jpeg({ quality: 90 })
       .toFile(path.join(__dirname, `assets/${location}/small/${filename}`));
 
-    req.body.profilePicture = filename;
+    req.body[field] = filename;
+    next();
+  });
+};
+export const resizeLawyerProfilePicture = (field, location, sizes) => {
+  return catchAsync(async (req, res, next) => {
+    console.log(req.file, req.files);
+    if (!req.files || !req.files[field]) return next();
+    const filename = `${Date.now()}-${field}.jpeg`;
 
+    await sharp(req.files[field][0].buffer)
+      .resize(sizes.width, sizes.height)
+      .toFormat('jpeg')
+      .jpeg({ quality: 90 })
+      .toFile(path.join(__dirname, `assets/${location}/large/${filename}`));
+
+    await sharp(req.files[field][0].buffer)
+      .resize(sizes.width / 2, sizes.height / 2)
+      .toFormat('jpeg')
+      .jpeg({ quality: 90 })
+      .toFile(path.join(__dirname, `assets/${location}/small/${filename}`));
+
+    req.body[field] = filename;
     next();
   });
 };

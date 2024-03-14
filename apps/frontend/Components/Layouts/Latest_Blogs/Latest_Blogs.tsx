@@ -1,12 +1,13 @@
-"use client";
-import Typography from "@/Components/Typography/Typography";
-import classes from "./Latest_Blogs.module.scss";
+'use client';
+import Typography from '@/Components/Typography/Typography';
+import classes from './Latest_Blogs.module.scss';
 import {
   Blog_Card_Large,
   IBlogCardLarge,
-} from "@/Components/Stateless/Blog_Card/Blog_Card";
-import { useEffect, useState } from "react";
-import axios from "axios";
+} from '@/Components/Stateless/Blog_Card/Blog_Card';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import GenerateUi from '@/utils/generate-ui/generate-ui';
 export interface ISuggestedBlogs {
   title: string;
 }
@@ -33,8 +34,9 @@ function Suggested_Blogs({ title }: ISuggestedBlogs) {
   const fetchBlogs = async () => {
     try {
       const response = await axios({
-        url: process.env.API_PATH || "http://localhost:3333/api/v1" + "/blogs",
-        method: "get",
+        url:
+          (process.env.API_PATH || 'http://localhost:3333/api/v1') + '/blogs',
+        method: 'get',
       });
       if (response.status === 200) {
         setBlogs(response.data.data);
@@ -47,12 +49,12 @@ function Suggested_Blogs({ title }: ISuggestedBlogs) {
     fetchBlogs();
   }, []);
   return (
-    <div className={classes["container"]}>
+    <div className={classes['container']}>
       <Typography vairent="secondary" component="h4">
         {title}
       </Typography>
-      <div className={classes["container__blogs"]}>
-        <Blogs dataArr={blogs} />
+      <div className={classes['container__blogs']}>
+        {GenerateUi({ RenderElement: Blog_Card_Large, dataArr: blogs })}
       </div>
     </div>
   );

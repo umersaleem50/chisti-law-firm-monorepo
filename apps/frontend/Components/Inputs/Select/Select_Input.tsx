@@ -18,7 +18,7 @@ const generateOptions = (options: IOptions[]) => {
 export type ISelect = {
   options: IOptions[];
   selected?: string;
-  value: string;
+  value?: string;
   onChange?: any;
   label?: string;
 };

@@ -8,10 +8,9 @@ import {
 } from '../controllers/lawyer.controller';
 import {
   resizeImages,
+  resizeLawyerProfilePicture,
   resizeSingleImage,
-  uploadImages,
   uploadLawyersImages,
-  uploadSingleImage,
 } from '../controllers/image.controller';
 
 const lawyerRoute = Router();
@@ -33,10 +32,11 @@ lawyerRoute
     uploadLawyersImages,
     resizeImages('gallery', 'gallery', { width: 1200, height: 900 }),
     // uploadSingleImage('profilePicture'),
-    resizeSingleImage('profilePicture', 'profile', {
+    resizeLawyerProfilePicture('profilePicture', 'profile', {
       width: 1000,
       height: 1000,
     }),
+    // resizeImages('profilePicture', 'profile', { width: 1000, height: 1000 }),
     createLawyer
   )
   .delete('/:id', deleteLawyer);

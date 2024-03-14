@@ -23,6 +23,7 @@ app.use(
     credentials: true,
   })
 );
+// app.use(cors({ origin: 'http://192.168.0.102:4200', credentials: true }));
 app.use(express.json());
 
 app.use('/assets', express.static(path.join(__dirname, 'assets')));

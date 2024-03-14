@@ -27,11 +27,10 @@ export const getDocument = (Model, options) => {
       findObject[findBy] = req.params.id;
       document = await Model.findOne(findObject);
     }
-    
 
     if (!document)
       return next(new ApiError('No document found with this Id.', 404));
-    
+
     res.status(200).json({ status: 'success', data: document });
   });
 };
@@ -42,6 +41,8 @@ export const createDocument = (Model, options) => {
     if (slugId) {
       req.body.slug = slugify(req.body[slugId], { lower: true });
     }
+    if (process.env.NODE_ENV === 'development')
+      console.log('handlerfactory.js', req.body);
     const document = await Model.create(req.body);
 
     if (!document)
