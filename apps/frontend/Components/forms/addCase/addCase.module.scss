@@ -1,20 +1,27 @@
 .modal {
   max-width: 45rem;
-  z-index: 200;
+  z-index: 200 !important;
   width: 100%;
   top: 50%;
   left: 50%;
   position: fixed;
   transform: translate(-50%, -50%);
+  background-color: orangered;
 }
 
 .form {
-  //   border-radius: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
   background-color: var(--color-secondary);
-  width: 100%;
-  height: 100%;
-  padding: 2rem 4rem;
+  padding: 1rem;
+  &__main {
+    //   border-radius: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    row-gap: 3rem;
+    // flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    height: 100%;
+    padding: 2rem 4rem;
+  }
 }

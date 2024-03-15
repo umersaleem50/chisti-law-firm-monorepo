@@ -1,6 +1,6 @@
 export const text = {
   heading: `Our Mission`,
-  paragraph: `Mission is missing....`,
+  paragraph: `Our Mission is to provide justice to people. Because we believe that everyone is inocent until proven guilty.`,
   subsection: [
     {
       heading: 'Unveiling Justice: Navigating Your Legal Landscape',

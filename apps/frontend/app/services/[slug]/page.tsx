@@ -6,6 +6,7 @@ import Navbar from '../../../Components/Stateful/Navbar/navbar';
 import Service_Filters from '../../../Components/Layouts/Filters/Service_Filters/Service_Filters';
 import Service_Results from '../../../Components/Layouts/services_results/Services_Results';
 import { notFound } from 'next/navigation';
+import classes from '../page.module.scss';
 
 const fetchData = async (slug: string | '' | undefined) => {
   // const url = 'https://dummyjson.com/products';
@@ -28,14 +29,16 @@ const Services = async ({ params }: any) => {
   return (
     <>
       <Navbar />
-      <Service_Filters>
-        <Service_Results
-          src={`${process.env.NEXT_PUBLIC_STORAGE_BUCKET_URL}/assets/services/${data?.image}`}
-          heading={data?.heading}
-          description={data?.description}
-          dataArr={data?.content}
-        />
-      </Service_Filters>
+      <div className={classes['main']}>
+        <Service_Filters>
+          <Service_Results
+            src={`${process.env.NEXT_PUBLIC_STORAGE_BUCKET_URL}/assets/services/${data?.image}`}
+            heading={data?.heading}
+            description={data?.description}
+            dataArr={data?.content}
+          />
+        </Service_Filters>
+      </div>
       <Finder />
       <Make_Appointment />
       <Testimonials />

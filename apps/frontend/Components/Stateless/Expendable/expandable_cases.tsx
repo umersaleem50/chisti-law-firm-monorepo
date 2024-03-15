@@ -1,12 +1,13 @@
 'use client';
 import Button from '@/Components/Button/Button';
 import Typography from '@/Components/Typography/Typography';
+import AddCase from '@/Components/forms/addCase/addCase';
 import axios from 'axios';
-import React from 'react';
+import React, { useState } from 'react';
 import { ExpanderComponentProps } from 'react-data-table-component';
 
 interface ICaseType {
-  _id?: string;
+  _id?: any;
   __v?: any;
   prevDate: string;
   title: string;
@@ -33,17 +34,25 @@ const ExpandableCase: React.FC<Props> = ({
   data: any;
   handleUpdate?: any;
 }) => {
-  const { _id, __v, ...restData } = data;
+  const { _id, __v, ...restData }: ICaseType = data;
   const objectKeys = Object.keys(restData);
   const objectValues = Object.values(restData);
-  // const router = useRouter();
+
+  const [isOpen, setIsOpen] = useState(false);
+  const [title, setTitle] = useState(restData.title);
+  const [prevDate, setPrevDate] = useState(restData.prevDate);
+  const [nextDate, setNextDate] = useState(restData.nextDate);
+  const [caseCategory, setCaseCategory] = useState(restData.caseCategory);
+  const [stage, setStage] = useState(restData.stage);
+  const [courtName, setCourtName] = useState(restData.courtName);
 
   const handleDelete = async (id: string) => {
     try {
       const response = await axios({
         url:
-          process.env.API_PATH ||
-          'http://localhost:3333/api/v1' + '/cases/' + id,
+          (process.env.API_PATH || 'http://localhost:3333/api/v1') +
+          '/cases/' +
+          id,
         method: 'delete',
       });
       if (response.status === 204) {
@@ -58,9 +67,58 @@ const ExpandableCase: React.FC<Props> = ({
     }
   };
 
+  const handleUpdateDataEvent = () => {
+    setIsOpen(true);
+  };
+
+  const onSumbitRequest = async (e: any) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios({
+        url:
+          (process.env.NEXT_PUBLIC_API_PATH || 'http://localhost:3333/api/v1') +
+          '/cases/' +
+          _id,
+        method: 'patch',
+        data: { title, prevDate, nextDate, caseCategory, stage, courtName },
+      });
+
+      if (response.status === 200) {
+        alert('Case updated!');
+        setIsOpen(false);
+        handleUpdate();
+      }
+    } catch (error: any) {
+      if (error.message) alert(error.message);
+      alert('Something went wrong!');
+    }
+  };
+
   return (
     <>
       <div style={{ padding: '2rem' }}>
+        <AddCase
+          onSubmit={onSumbitRequest}
+          setters={{
+            setCaseCategory,
+            setCourtName,
+            setIsOpen,
+            setNextDate,
+            setPrevDate,
+            setStage,
+            setTitle,
+          }}
+          values={{
+            caseCategory,
+            courtName,
+            isOpen,
+            nextDate,
+            prevDate,
+            stage,
+            title,
+          }}
+        />
         {objectKeys.map((el: any, i: number) => {
           if (isTypeDate(el)) {
             const dateString: string | any = objectValues[i];
@@ -76,7 +134,7 @@ const ExpandableCase: React.FC<Props> = ({
         <Button
           varient="primary"
           style={{ marginTop: '1rem' }}
-          // onClick={handleUpdate}
+          onClick={handleUpdateDataEvent}
         >
           Update
         </Button>

@@ -1,5 +1,10 @@
-@import "~/utils/mixins/responsive.scss";
+@import '~/utils/mixins/responsive.scss';
+
 .select {
+  display: flex;
+  flex-direction: column;
+}
+.input {
   padding: 1rem 2rem;
   width: 100%;
   max-width: var(--max-input-width);

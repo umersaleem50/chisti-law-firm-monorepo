@@ -5,14 +5,19 @@
   display: flex;
   align-items: center;
   padding: 0 2rem;
-  // z-index: 100;
-  position: relative;
+  z-index: 20;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  box-shadow: 0 0 1rem rgba($color: #000000, $alpha: 0.3);
 }
 .container {
   max-width: var(--max-width);
-  display: flex;
+  // display: flex;
+  display: grid;
+  grid-template-columns: 4fr 4fr 3fr;
   align-items: center;
-  justify-content: space-between;
+  // justify-content: space-between;
   width: 100%;
   margin: 0 auto;
   height: 100%;
@@ -21,8 +26,10 @@
 .nav {
   display: flex;
   list-style: none;
-  width: 60rem;
-  justify-content: space-between;
+  // width: 60rem;
+
+  // justify-content: space-between;
+  gap: 5rem;
 
   &__link {
     text-decoration: none;

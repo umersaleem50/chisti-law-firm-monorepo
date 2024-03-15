@@ -47,60 +47,72 @@ function AddCase({ values, setters, onSubmit }: IAddCase) {
       contentLabel="Add Case"
     >
       <form className={classes['form']} onSubmit={onSubmit}>
-        <Typography component="h5" vairent="secondary">
-          Add Case
-        </Typography>
+        {/* <Typography component="h5" vairent="secondary">
+          Case
+        </Typography> */}
+        <div className={classes['form__main']}>
+          <Select_Input
+            selected={values.caseCategory}
+            options={caseTypesPakistanObjects}
+            value={values.caseCategory}
+            onChange={handleSelectCase}
+            label="Select Case"
+          />
 
-        <Select_Input
-          selected={values.caseCategory}
-          options={caseTypesPakistanObjects}
-          value={values.caseCategory}
-          onChange={handleSelectCase}
-        />
+          <Textbox
+            label="Case Title"
+            placeholder="Enter the case title"
+            value={values.title}
+            varient="field"
+            onChange={(e) => setters.setTitle(e.target.value)}
+          />
+          <Textbox
+            label="Case Stage"
+            placeholder="Enter the Stage"
+            value={values.stage}
+            varient="field"
+            onChange={(e) => setters.setStage(e.target.value)}
+          />
+          <Textbox
+            label="Court Name"
+            placeholder="Enter the Court Name"
+            value={values.courtName}
+            varient="field"
+            onChange={(e) => setters.setCourtName(e.target.value)}
+          />
 
-        <Textbox
-          label="Case Title"
-          placeholder="Enter the case title"
-          value={values.title}
-          varient="field"
-          onChange={(e) => setters.setTitle(e.target.value)}
-        />
-        <Textbox
-          label="Case Stage"
-          placeholder="Enter the Stage"
-          value={values.stage}
-          varient="field"
-          onChange={(e) => setters.setStage(e.target.value)}
-        />
-        <Textbox
-          label="Court Name"
-          placeholder="Enter the Court Name"
-          value={values.courtName}
-          varient="field"
-          onChange={(e) => setters.setCourtName(e.target.value)}
-        />
+          <Textbox
+            label="Next Date"
+            value={values.nextDate}
+            varient="field"
+            type="date"
+            onChange={(e) => setters.setNextDate(e.target.value)}
+          />
+          <Textbox
+            label="Prev Date"
+            value={values.prevDate}
+            type="date"
+            onChange={(e) => setters.setPrevDate(e.target.value)}
+          />
 
-        <Textbox
-          label="Next Date"
-          value={values.nextDate}
-          varient="field"
-          type="date"
-          onChange={(e) => setters.setNextDate(e.target.value)}
-        />
-        <Textbox
-          label="Prev Date"
-          value={values.prevDate}
-          type="date"
-          onChange={(e) => setters.setPrevDate(e.target.value)}
-        />
-
-        <Button
-          style={{ textAlign: 'center', marginTop: '2rem' }}
-          isActive
-          varient="fullwidth"
-        >
-          Submit
-        </Button>
+          <Button
+            style={{ textAlign: 'center', marginTop: '2rem' }}
+            isActive
+            varient="fullwidth"
+            type="submit"
+            onClick={onSubmit}
+          >
+            Submit
+          </Button>
+          <Button
+            style={{ textAlign: 'center', marginTop: '2rem' }}
+            varient="outline"
+            type="button"
+            onClick={handleClose}
+          >
+            Cancel
+          </Button>
+        </div>
       </form>
     </Modal>
   );

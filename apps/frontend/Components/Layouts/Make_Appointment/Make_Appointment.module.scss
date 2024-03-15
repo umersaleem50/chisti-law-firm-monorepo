@@ -1,4 +1,4 @@
-@import "~/utils/mixins/responsive.scss";
+@import '~/utils/mixins/responsive.scss';
 .container {
   width: 100%;
   height: 65rem;
@@ -17,7 +17,7 @@
   right: 10rem;
   width: 100%;
   height: 100%;
-  z-index: 100;
+  z-index: 15;
   @include respond(phone) {
     position: relative;
     top: 0;

@@ -52,7 +52,7 @@ const generateLinks = (arr: navlinks[]) => {
     );
   });
 };
-const Navbar = ({}) => {
+const Navbar = () => {
   const [element, setElement] = useState<HTMLElement>();
   const router = useRouter();
   const handle_login_button = () => {

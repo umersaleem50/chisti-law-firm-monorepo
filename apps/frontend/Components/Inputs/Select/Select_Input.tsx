@@ -31,23 +31,23 @@ const Select_Input = ({
   label,
 }: ISelect) => {
   return (
-    <>
+    <div className={classes['select']}>
       {label && (
         <label>
-          <Typography vairent="p" component="p">
+          <Typography vairent="p" component="p" color="var(--color-font)">
             {label}
           </Typography>
         </label>
       )}
       <select
-        className={classes['select']}
+        className={classes['input']}
         defaultValue={selected}
         value={value}
         onChange={onChange}
       >
         {generateOptions(options)}
       </select>
-    </>
+    </div>
   );
 };
 

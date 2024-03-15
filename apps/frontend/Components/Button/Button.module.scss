@@ -1,4 +1,4 @@
-@import "~/utils/mixins/responsive.scss";
+@import '~/utils/mixins/responsive.scss';
 .button {
   display: inline-block;
   color: var(--color-font);
@@ -29,12 +29,13 @@
   padding: 1rem 2rem;
   border: 2px solid var(--color-accent);
   color: currentColor;
-  border-style: inset;
+  // border-style: inset;
   background-color: transparent;
   outline: none;
 
   &--secondary {
     border: 2px solid var(--color-secondary);
+
     color: var(--color-secondary);
 
     &:hover {

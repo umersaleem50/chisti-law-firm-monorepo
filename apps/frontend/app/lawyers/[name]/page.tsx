@@ -7,6 +7,7 @@ import Lawyer_Details, {
   ILawyer,
 } from '@/Components/Layouts/Lawyer_Detail/Lawyer_Details';
 import { notFound } from 'next/navigation';
+import classes from '../page.module.scss';
 
 const fetchData = async (slug: string | '' | undefined) => {
   const url =
@@ -28,19 +29,21 @@ const Lawyer_With_ID = async ({ params }: { params: any }) => {
   return (
     <>
       <Navbar />
-      <Lawyer_Details
-        bio={data.bio}
-        contact={data.contact}
-        expirence={data.expirence}
-        firstName={data.firstName}
-        gallery={data.gallery}
-        lastName={data.lastName}
-        professions={data.professions}
-        profilePicture={data.profilePicture}
-        workplace={data.workplace}
-        email={data.email}
-        key={122}
-      />
+      <div className={classes['main']}>
+        <Lawyer_Details
+          bio={data.bio}
+          contact={data.contact}
+          expirence={data.expirence}
+          firstName={data.firstName}
+          gallery={data.gallery}
+          lastName={data.lastName}
+          professions={data.professions}
+          profilePicture={data.profilePicture}
+          workplace={data.workplace}
+          email={data.email}
+          key={122}
+        />
+      </div>
       <Team />
       <Blogs />
       <Footer />

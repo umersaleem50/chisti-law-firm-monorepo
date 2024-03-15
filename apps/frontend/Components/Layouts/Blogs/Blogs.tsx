@@ -15,15 +15,12 @@ const fetchThreeLatestBlogs = async () => {
     if (dataObj.data) return dataObj.data;
     return dataObj;
   } catch (error) {
-    console.log(error);
-
     throw new Error('Error');
   }
 };
 
 const Blogs = async () => {
   const blogs = await fetchThreeLatestBlogs();
-  console.log(blogs);
 
   return (
     <aside className={classes['blogs']}>

@@ -61,7 +61,7 @@ function CasesTable() {
   const [caseCategory, setCaseCategory] = useState('Civil Cases');
   const [stage, setStage] = useState('');
   const [courtName, setCourtName] = useState('');
-  const [searchValue, setSearchValue] = useState('');
+  // const [searchValue, setSearchValue] = useState('');
   const [searchNextDate, setSearchNextDate] = useState('');
   const [searchPrevDate, setSearchPrevDate] = useState('');
   const [params, setParams] = useState({});
@@ -92,9 +92,8 @@ function CasesTable() {
         handleUpdate();
       }
     } catch (error: any) {
-      console.log(error);
-
       if (error.message) alert(error.message);
+      alert('Something went wrong!');
     }
   };
 
@@ -103,7 +102,8 @@ function CasesTable() {
 
     try {
       const response = await axios({
-        url: process.env.API_PATH || 'http://localhost:3333/api/v1' + '/cases',
+        url:
+          (process.env.API_PATH || 'http://localhost:3333/api/v1') + '/cases',
         method: 'get',
         params: params,
       });
@@ -172,7 +172,7 @@ function CasesTable() {
               handleUpdateParams('nextDate', e.target.value);
             }}
           />
-          <Textbox
+          {/* <Textbox
             value={searchValue}
             onChange={(e) => {
               setSearchValue(e.target.value);
@@ -180,7 +180,7 @@ function CasesTable() {
             type="search"
             label="Search"
             placeholder="Search by anything"
-          />
+          /> */}
           <Button
             varient="text"
             customClasses={[classes['button']]}
