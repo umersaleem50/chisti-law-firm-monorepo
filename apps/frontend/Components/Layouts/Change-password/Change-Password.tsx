@@ -1,47 +1,48 @@
-import Textbox from "@/Components/Inputs/Textbox/Textbox";
+import Textbox from '@/Components/Inputs/Textbox/Textbox';
 
-import { useState } from "react";
-import classes from "./Change-Password.module.scss";
-import axios from "axios";
-import Button from "@/Components/Button/Button";
-import Typography from "@/Components/Typography/Typography";
+import { useState } from 'react';
+import classes from './Change-Password.module.scss';
+import axios from 'axios';
+import Button from '@/Components/Button/Button';
+import Typography from '@/Components/Typography/Typography';
+import { envConfig } from '@/envConfig';
 function Change_Password() {
-  const [password, setPassword] = useState("");
-  const [oldPassword, setOldPassword] = useState("");
-  const [passwordConfirm, setPasswordConfirm] = useState("");
+  const [password, setPassword] = useState('');
+  const [oldPassword, setOldPassword] = useState('');
+  const [passwordConfirm, setPasswordConfirm] = useState('');
 
   const handle_form_submit = async (e: any) => {
     e.preventDefault();
     try {
       const response = await axios({
         url:
-          (process.env.NEXT_PUBLIC_API_PATH || "http://localhost:3000/api/v1") +
-          "/auth/change-password",
-        method: "POST",
+          (envConfig.API_PATH || 'http://localhost:3000/api/v1') +
+          '/auth/change-password',
+        method: 'POST',
         withCredentials: true,
         data: { password, oldPassword, passwordConfirm },
       });
 
-      if (response.status === 200 || response.statusText === "OK") {
-        alert("Password Changed Successfully!");
+      if (response.status === 200 || response.statusText === 'OK') {
+        alert('Password Changed Successfully!');
         handle_clear_fields();
       }
     } catch (error: any) {
       if (error.response && error.response.data) {
         return alert(error.response.data?.message);
       }
-      alert("Something went wrong!");
+      alert('Something went wrong!');
     }
   };
 
   const handle_clear_fields = () => {
-    setOldPassword("");
-    setPassword("");
-    setPasswordConfirm("");
+    setOldPassword('');
+    setPassword('');
+    setPasswordConfirm('');
   };
 
   return (
-    <form className={classes["form"]} onSubmit={handle_form_submit}>
+    <form className={classes['form']} onSubmit={handle_form_submit}>
       <Typography vairent="h6" component="h6">
         Change Password
       </Typography>
@@ -63,7 +64,7 @@ function Change_Password() {
         onChange={(e) => setPasswordConfirm(e.target.value)}
         type="password"
       />
-      <Button varient="fullwidth" isActive style={{ textAlign: "center" }}>
+      <Button varient="fullwidth" isActive style={{ textAlign: 'center' }}>
         Submit
       </Button>
     </form>

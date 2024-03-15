@@ -6,8 +6,9 @@ import Section from '../../Stateless/Section/Section';
 import classes from './Make_Appointment.module.scss';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import Form_Appointment from '../../forms/appointment/form_appointment';
+import { envConfig } from '@/envConfig';
 const Make_Appointment = ({ ref }: { ref: any }) => {
-  mapboxgl.accessToken = process.env.MAP_TOKEN || '';
+  mapboxgl.accessToken = envConfig.MAP_TOKEN || '';
 
   const mapContainer = useRef(null);
   const map: React.MutableRefObject<mapboxgl.Map | null> = useRef(null);

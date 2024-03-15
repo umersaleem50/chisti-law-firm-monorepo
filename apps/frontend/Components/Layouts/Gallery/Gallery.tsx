@@ -1,8 +1,9 @@
-"use client";
-import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
-import classes from "./Gallery.module.scss";
-import Typography from "@/Components/Typography/Typography";
+'use client';
+import Image from 'next/image';
+import { useEffect, useRef, useState } from 'react';
+import classes from './Gallery.module.scss';
+import Typography from '@/Components/Typography/Typography';
+import { envConfig } from '@/envConfig';
 
 export interface IGalleryItem {
   src: string;
@@ -27,18 +28,15 @@ function GalleryItems({
       {images.map((el, i) => {
         return (
           <div
-            className={classes["item"]}
+            className={classes['item']}
             key={i}
             onClick={() => setActive(i - 1)}
           >
             <Image
-              src={
-                process.env.NEXT_PUBLIC_STORAGE_BUCKET_URL +
-                `/assets/gallery/small/${el}`
-              }
+              src={envConfig.STORAGE_BUCKET_URL + `/assets/gallery/small/${el}`}
               alt={`Gallery Image ${i++}`}
               fill
-              style={{ objectFit: "cover" }}
+              style={{ objectFit: 'cover' }}
             />
           </div>
         );
@@ -47,7 +45,7 @@ function GalleryItems({
   );
 }
 
-function Gallery({ images, title = "Gallery" }: IGallery) {
+function Gallery({ images, title = 'Gallery' }: IGallery) {
   const [active, setActive] = useState(0);
 
   return (
@@ -56,23 +54,23 @@ function Gallery({ images, title = "Gallery" }: IGallery) {
         vairent="secondary"
         component="h5"
         color="var(--color-black)"
-        style={{ marginBottom: "4rem" }}
+        style={{ marginBottom: '4rem' }}
       >
         {title}
       </Typography>
-      <div className={classes["container"]}>
-        <div className={classes["container__main"]}>
+      <div className={classes['container']}>
+        <div className={classes['container__main']}>
           <Image
             src={
-              process.env.NEXT_PUBLIC_STORAGE_BUCKET_URL +
+              envConfig.STORAGE_BUCKET_URL +
               `/assets/gallery/large/${images[active]}`
             }
-            alt={"image"}
+            alt={'image'}
             fill
-            style={{ objectFit: "cover" }}
+            style={{ objectFit: 'cover' }}
           />
         </div>
-        <div className={classes["container__other"]}>
+        <div className={classes['container__other']}>
           <GalleryItems images={images} setActive={setActive} />
         </div>
       </div>

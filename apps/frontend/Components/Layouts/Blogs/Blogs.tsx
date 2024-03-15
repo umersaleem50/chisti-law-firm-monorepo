@@ -3,12 +3,12 @@ import classes from './Blogs.module.scss';
 import { text } from './text';
 import Blog_Card from '../../Stateless/Blog_Card/Blog_Card';
 import GenerateUi from '@/utils/generate-ui/generate-ui';
+import { envConfig } from '@/envConfig';
 
 const fetchThreeLatestBlogs = async () => {
   try {
     const res = await fetch(
-      (process.env.API_PATH || 'http://localhost:3333/api/v1') +
-        '/blogs?limit=3',
+      (envConfig.API_PATH || 'http://localhost:3333/api/v1') + '/blogs?limit=3',
       { method: 'get', cache: 'default' }
     );
     const dataObj = await res.json();

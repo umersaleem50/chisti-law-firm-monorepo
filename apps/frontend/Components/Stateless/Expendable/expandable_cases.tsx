@@ -2,6 +2,7 @@
 import Button from '@/Components/Button/Button';
 import Typography from '@/Components/Typography/Typography';
 import AddCase from '@/Components/forms/addCase/addCase';
+import { envConfig } from '@/envConfig';
 import axios from 'axios';
 import React, { useState } from 'react';
 import { ExpanderComponentProps } from 'react-data-table-component';
@@ -50,7 +51,7 @@ const ExpandableCase: React.FC<Props> = ({
     try {
       const response = await axios({
         url:
-          (process.env.API_PATH || 'http://localhost:3333/api/v1') +
+          (envConfig.API_PATH || 'http://localhost:3333/api/v1') +
           '/cases/' +
           id,
         method: 'delete',
@@ -77,7 +78,7 @@ const ExpandableCase: React.FC<Props> = ({
     try {
       const response = await axios({
         url:
-          (process.env.NEXT_PUBLIC_API_PATH || 'http://localhost:3333/api/v1') +
+          (envConfig.API_PATH || 'http://localhost:3333/api/v1') +
           '/cases/' +
           _id,
         method: 'patch',

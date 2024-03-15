@@ -6,6 +6,7 @@ import Typography from '../../Typography/Typography';
 import Button from '../../Button/Button';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { envConfig } from '@/envConfig';
 export interface IBlogCard {
   coverPicture: string;
   alt: string;
@@ -29,9 +30,7 @@ const Blog_Card = ({
       <div className={classes['card__image']}>
         <Image
           src={
-            process.env.NEXT_PUBLIC_STORAGE_BUCKET_URL +
-            '/assets/blogs/small/' +
-            coverPicture
+            envConfig.STORAGE_BUCKET_URL + '/assets/blogs/small/' + coverPicture
           }
           alt={alt}
           fill
@@ -97,9 +96,7 @@ export function Blog_Card_Large({
       <div className={classes['large__image']}>
         <Image
           src={
-            process.env.NEXT_PUBLIC_STORAGE_BUCKET_URL +
-            '/assets/blogs/small/' +
-            coverPicture
+            envConfig.STORAGE_BUCKET_URL + '/assets/blogs/small/' + coverPicture
           }
           fill
           alt={alt}

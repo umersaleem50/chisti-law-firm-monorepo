@@ -1,36 +1,37 @@
-import { useState } from "react";
-import { HiArrowUpRight as IconArrowUpRight } from "react-icons/hi2";
-import Typography from "../../Typography/Typography";
-import classes from "./form_appointment.module.scss";
-import Textbox from "../../Inputs/Textbox/Textbox";
-import Button from "../../Button/Button";
-import axios from "axios";
+import { useState } from 'react';
+import { HiArrowUpRight as IconArrowUpRight } from 'react-icons/hi2';
+import Typography from '../../Typography/Typography';
+import classes from './form_appointment.module.scss';
+import Textbox from '../../Inputs/Textbox/Textbox';
+import Button from '../../Button/Button';
+import axios from 'axios';
+import { envConfig } from '@/envConfig';
 const Form_Appointment = ({ customClasses }: { customClasses?: string[] }) => {
-  const [firstName, setFirstName] = useState<string>("");
-  const [lastName, setLastName] = useState<string>("");
-  const [email, setEmail] = useState<string>("");
-  const [country, setCountry] = useState<string>("");
-  const [phone, setPhone] = useState<string>("");
-  const [address, setAddress] = useState<string>("");
-  const [description, setDescription] = useState<string>("");
+  const [firstName, setFirstName] = useState<string>('');
+  const [lastName, setLastName] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
+  const [country, setCountry] = useState<string>('');
+  const [phone, setPhone] = useState<string>('');
+  const [address, setAddress] = useState<string>('');
+  const [description, setDescription] = useState<string>('');
 
   const handle_clear_fields = () => {
-    setFirstName("");
-    setLastName("");
-    setEmail("");
-    setCountry("");
-    setPhone("");
-    setAddress("");
-    setDescription("");
+    setFirstName('');
+    setLastName('');
+    setEmail('');
+    setCountry('');
+    setPhone('');
+    setAddress('');
+    setDescription('');
   };
 
   const handle_make_appointment = async () => {
     try {
       const response = await axios({
         url:
-          (process.env.NEXT_PUBLIC_API_PATH || "http://localhost:3333/api/v1") +
-          "/appointments",
-        method: "POST",
+          (envConfig.API_PATH || 'http://localhost:3333/api/v1') +
+          '/appointments',
+        method: 'POST',
         data: {
           firstName,
           lastName,
@@ -41,15 +42,13 @@ const Form_Appointment = ({ customClasses }: { customClasses?: string[] }) => {
           subject: description,
         },
       });
-      
 
-      if (response.status === 201 || response.statusText === "Created") {
-        alert("Thanks for submitting your request.");
+      if (response.status === 201 || response.statusText === 'Created') {
+        alert('Thanks for submitting your request.');
         handle_clear_fields();
       }
     } catch (error) {
-     
-      alert("Failed to create an appointment. Try again later!");
+      alert('Failed to create an appointment. Try again later!');
     }
   };
 
@@ -59,10 +58,10 @@ const Form_Appointment = ({ customClasses }: { customClasses?: string[] }) => {
   };
   return (
     <form
-      className={[classes["form"], customClasses].flat().join(" ")}
+      className={[classes['form'], customClasses].flat().join(' ')}
       onSubmit={submitForm}
     >
-      <div className={classes["form__top"]}>
+      <div className={classes['form__top']}>
         <Typography
           vairent="secondary"
           component="h6"
@@ -70,9 +69,9 @@ const Form_Appointment = ({ customClasses }: { customClasses?: string[] }) => {
         >
           Tell us about your issue.
         </Typography>
-        <IconArrowUpRight className={classes["icon"]} />
+        <IconArrowUpRight className={classes['icon']} />
       </div>
-      <div className={classes["container"]}>
+      <div className={classes['container']}>
         <Textbox
           type="text"
           value={firstName}
@@ -127,10 +126,10 @@ const Form_Appointment = ({ customClasses }: { customClasses?: string[] }) => {
           onChange={(e) => setDescription(e.target.value)}
           label="Subject Matter"
           placeholder="Explain Subject Matter"
-          customClasses={[classes["textarea"]]}
+          customClasses={[classes['textarea']]}
           required
         />
-        <Button customClasses={[classes["button"]]} varient="primary">
+        <Button customClasses={[classes['button']]} varient="primary">
           submit
         </Button>
       </div>

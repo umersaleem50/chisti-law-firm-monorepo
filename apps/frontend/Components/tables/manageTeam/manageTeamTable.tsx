@@ -1,13 +1,14 @@
-"use client";
-import ExpandedComponent from "@/Components/Stateless/Expendable/expandable";
-import Loading_Spinner from "@/Components/Stateless/Loading_Spinner/Loading_Spinner";
-import Typography from "@/Components/Typography/Typography";
-import axios from "axios";
-import { useEffect, useState } from "react";
-import DataTable from "react-data-table-component";
-import { ILawyer } from "@/Components/Layouts/Lawyer_Detail/Lawyer_Details";
-import Team_Manager_Expendable from "@/Components/Stateless/Expendable/team_manager_expendable";
-import Edit_Profile_Modal from "@/Components/Stateful/Edit_Profile_Modal/Edit_Profile_Modal";
+'use client';
+import ExpandedComponent from '@/Components/Stateless/Expendable/expandable';
+import Loading_Spinner from '@/Components/Stateless/Loading_Spinner/Loading_Spinner';
+import Typography from '@/Components/Typography/Typography';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import DataTable from 'react-data-table-component';
+import { ILawyer } from '@/Components/Layouts/Lawyer_Detail/Lawyer_Details';
+import Team_Manager_Expendable from '@/Components/Stateless/Expendable/team_manager_expendable';
+import Edit_Profile_Modal from '@/Components/Stateful/Edit_Profile_Modal/Edit_Profile_Modal';
+import { envConfig } from '@/envConfig';
 // export interface I {
 //   firstName: string;
 //   lastName: string;
@@ -26,31 +27,31 @@ function Manage_Team_Table() {
   const [toggleModal, setToggleModal] = useState(false);
   const columns = [
     {
-      name: "Firstname",
+      name: 'Firstname',
       selector: (row: any) => row.firstName,
     },
     {
-      name: "Lastname",
+      name: 'Lastname',
       selector: (row: any) => row.lastName,
     },
     {
-      name: "Emails",
+      name: 'Emails',
       selector: (row: any) => row.email,
     },
     {
-      name: "Workplace",
+      name: 'Workplace',
       selector: (row: any) => row.workplace,
     },
     {
-      name: "Professions",
-      selector: (row: any) => row.professions.join(", "),
+      name: 'Professions',
+      selector: (row: any) => row.professions.join(', '),
     },
     {
-      name: "Contact",
+      name: 'Contact',
       selector: (row: any) => row.contact,
     },
     {
-      name: "Bio",
+      name: 'Bio',
       selector: (row: any) => row.bio,
     },
   ];
@@ -60,8 +61,8 @@ function Manage_Team_Table() {
     try {
       const response = await axios({
         url:
-          process.env.API_PATH || "http://localhost:3333/api/v1" + "/lawyers",
-        method: "get",
+          (envConfig.API_PATH || 'http://localhost:3333/api/v1') + '/lawyers',
+        method: 'get',
       });
 
       if (response.status === 200) {
@@ -98,7 +99,7 @@ function Manage_Team_Table() {
       )}
       {error && (
         <Typography vairent="secondary" component="h5">
-          {error || "Failed to fetch lawyers, something went wrong!"}
+          {error || 'Failed to fetch lawyers, something went wrong!'}
         </Typography>
       )}
     </>

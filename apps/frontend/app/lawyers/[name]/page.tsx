@@ -6,10 +6,11 @@ import Navbar from '../../../Components/Stateful/Navbar/navbar';
 import Lawyer_Details from '@/Components/Layouts/Lawyer_Detail/Lawyer_Details'; // ILawyer,
 import { notFound } from 'next/navigation';
 import classes from '../page.module.scss';
+import { envConfig } from '@/envConfig';
 
 const fetchData = async (slug: string | '' | undefined) => {
   const url =
-    `${process.env.API_PATH || 'http://localhost:3333/api/v1'}/lawyers/` + slug;
+    `${envConfig.API_PATH || 'http://localhost:3333/api/v1'}/lawyers/` + slug;
   const res = await fetch(url, { method: 'get' });
   if (!res.ok) {
     notFound();

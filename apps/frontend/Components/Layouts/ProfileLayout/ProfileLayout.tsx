@@ -1,7 +1,8 @@
-import Image from "next/image";
-import classes from "./profilelayout.module.scss";
-import Button from "@/Components/Button/Button";
-import Typography from "@/Components/Typography/Typography";
+import Image from 'next/image';
+import classes from './profilelayout.module.scss';
+import Button from '@/Components/Button/Button';
+import Typography from '@/Components/Typography/Typography';
+import { envConfig } from '@/envConfig';
 
 export interface IProfileLayout {
   profileSrc: string;
@@ -23,32 +24,32 @@ function ProfileLayout({
 }: IProfileLayout) {
   return (
     <>
-      <div className={classes["container"]}>
-        <div className={classes["container__picture"]}>
+      <div className={classes['container']}>
+        <div className={classes['container__picture']}>
           <Image
             src={
-              process.env.NEXT_PUBLIC_STORAGE_BUCKET_URL +
+              envConfig.STORAGE_BUCKET_URL +
               `/assets/profile/large/${profileSrc}`
             }
             alt="Profile Picture"
             fill
-            style={{ objectFit: "cover" }}
+            style={{ objectFit: 'cover' }}
           />
         </div>
-        <div className={classes["container__details"]}>
+        <div className={classes['container__details']}>
           <div>
             <Typography
               component="h2"
               vairent="secondary"
               color="--color-accent"
-              style={{ fontWeight: "bold" }}
-              text={"Advocate, " + name}
+              style={{ fontWeight: 'bold' }}
+              text={'Advocate, ' + name}
             />
 
             <Typography
               component="h4"
               vairent="secondary"
-              text={professions?.join(", ")}
+              text={professions?.join(', ')}
             />
 
             <Typography
@@ -59,13 +60,13 @@ function ProfileLayout({
             />
           </div>
           <Button
-            customClasses={[classes["mg-top"]]}
+            customClasses={[classes['mg-top']]}
             varient="primary"
             // text="Contact Lawyer"
           >
             <a
               href={`phone:${contact}`}
-              style={{ textDecoration: "none", color: "currentcolor" }}
+              style={{ textDecoration: 'none', color: 'currentcolor' }}
             >
               Contact Lawyer
             </a>

@@ -4,6 +4,7 @@ import Typography from '@/Components/Typography/Typography';
 import { Back_to_Home_Button } from '@/Components/Button/Button';
 import GenerateUi from '@/utils/generate-ui/generate-ui';
 import Blog_Content, { IBlogContent } from './Blog_Content';
+import { envConfig } from '@/envConfig';
 export interface IBlogLayout {
   coverPicture: string;
   heading: string;
@@ -31,9 +32,7 @@ const BlogLayout = ({
       <figure className={classes['coverPicture']}>
         <Image
           src={
-            process.env.NEXT_PUBLIC_STORAGE_BUCKET_URL +
-            '/assets/blogs/large/' +
-            coverPicture
+            envConfig.STORAGE_BUCKET_URL + '/assets/blogs/large/' + coverPicture
           }
           alt="Blog"
           fill

@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useCookies } from 'react-cookie';
 import * as jose from 'jose';
+import { envConfig } from '@/envConfig';
 type navlinks = {
   name: string;
   url: string;
@@ -69,7 +70,7 @@ const Navbar = () => {
     try {
       const data = await jose.jwtVerify(
         token,
-        new TextEncoder().encode(process.env.NEXT_PUBLIC_JWT_SECRETKEY)
+        new TextEncoder().encode(envConfig.JWT_SECRETKEY)
       );
       if (data.payload && data.protectedHeader) {
         setIsAuth(true);

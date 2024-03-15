@@ -6,6 +6,7 @@ import Lawyer_Card, {
 import Typography from '../../Typography/Typography';
 import classes from './Lawyers_Results.module.scss';
 import axios from 'axios';
+import { envConfig } from '@/envConfig';
 
 export interface IServiceResult {
   src: string;
@@ -37,8 +38,7 @@ const Lawyers_Results = () => {
   const fetchLawyers = async () => {
     try {
       const response = await axios({
-        url:
-          (process.env.API_URL || 'http://localhost:3333/api/v1') + '/lawyers',
+        url: (envConfig.API_URL || 'http://localhost:3333/api/v1') + '/lawyers',
         method: 'GET',
       });
       if (response.status === 200) {
