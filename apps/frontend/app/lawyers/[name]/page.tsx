@@ -3,18 +3,14 @@ import Footer from '../../../Components/Layouts/Footer/Footer';
 import Blogs from '../../../Components/Layouts/Blogs/Blogs';
 import Team from '../../../Components/Layouts/Team/Team';
 import Navbar from '../../../Components/Stateful/Navbar/navbar';
-import Lawyer_Details, {
-  ILawyer,
-} from '@/Components/Layouts/Lawyer_Detail/Lawyer_Details';
+import Lawyer_Details from '@/Components/Layouts/Lawyer_Detail/Lawyer_Details'; // ILawyer,
 import { notFound } from 'next/navigation';
 import classes from '../page.module.scss';
 
 const fetchData = async (slug: string | '' | undefined) => {
   const url =
-    `${
-      process.env.NEXT_PUBLIC_API_PATH || 'http://localhost:3333/api/v1'
-    }/lawyers/` + slug;
-  const res = await fetch(url, { cache: 'force-cache' });
+    `${process.env.API_PATH || 'http://localhost:3333/api/v1'}/lawyers/` + slug;
+  const res = await fetch(url, { method: 'get' });
   if (!res.ok) {
     notFound();
   }
@@ -24,7 +20,7 @@ const fetchData = async (slug: string | '' | undefined) => {
 const Lawyer_With_ID = async ({ params }: { params: any }) => {
   const { name } = params;
 
-  const { data }: { data: ILawyer } = await fetchData(name);
+  const { data } = await fetchData(name);
 
   return (
     <>

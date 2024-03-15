@@ -38,8 +38,7 @@ const Lawyers_Results = () => {
     try {
       const response = await axios({
         url:
-          (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3333/api/v1') +
-          '/lawyers',
+          (process.env.API_URL || 'http://localhost:3333/api/v1') + '/lawyers',
         method: 'GET',
       });
       if (response.status === 200) {

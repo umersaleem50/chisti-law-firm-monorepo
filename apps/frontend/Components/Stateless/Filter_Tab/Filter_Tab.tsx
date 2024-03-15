@@ -5,7 +5,6 @@ import Textbox from '../../Inputs/Textbox/Textbox';
 import classes from './Filter_Tab.module.scss';
 import Typography from '../../Typography/Typography';
 import Checkbox from '../../Inputs/Checkbox/Checkbox';
-import { useRouter } from 'next/navigation';
 
 export type IFilterOptions = {
   type: 'text' | 'button' | 'checkbox';
@@ -23,7 +22,9 @@ export interface IFilter {
 const Filter_Tab = ({
   data,
   activeId,
-  handleCheckbox,
+  handleCheckbox = () => {
+    return;
+  },
   isSearchBar = true,
   filter_title = 'Filters',
 }: {

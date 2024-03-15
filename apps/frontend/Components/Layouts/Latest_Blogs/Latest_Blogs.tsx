@@ -8,6 +8,7 @@ import {
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import GenerateUi from '@/utils/generate-ui/generate-ui';
+import { envConfig } from '@/envConfig';
 export interface ISuggestedBlogs {
   title: string;
 }
@@ -34,8 +35,7 @@ function Suggested_Blogs({ title }: ISuggestedBlogs) {
   const fetchBlogs = async () => {
     try {
       const response = await axios({
-        url:
-          (process.env.API_PATH || 'http://localhost:3333/api/v1') + '/blogs',
+        url: (envConfig.API_PATH || 'http://localhost:3333/api/v1') + '/blogs',
         method: 'get',
       });
       if (response.status === 200) {

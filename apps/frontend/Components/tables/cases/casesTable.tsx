@@ -11,6 +11,7 @@ import Button from '@/Components/Button/Button';
 import AddCase from '@/Components/forms/addCase/addCase';
 import { Input } from '@/Components/Inputs/Textbox/Textbox.stories';
 import Textbox from '@/Components/Inputs/Textbox/Textbox';
+import { envConfig } from '@/envConfig';
 
 export interface ICaseType {
   _id?: string;
@@ -79,9 +80,7 @@ function CasesTable() {
     e.preventDefault();
     try {
       const response = await axios({
-        url:
-          (process.env.NEXT_PUBLIC_API_PATH || 'http://localhost:3333/api/v1') +
-          '/cases',
+        url: (envConfig.API_PATH || 'http://localhost:3333/api/v1') + '/cases',
         method: 'post',
         data: { title, prevDate, nextDate, caseCategory, stage, courtName },
       });
@@ -102,8 +101,7 @@ function CasesTable() {
 
     try {
       const response = await axios({
-        url:
-          (process.env.API_PATH || 'http://localhost:3333/api/v1') + '/cases',
+        url: (envConfig.API_PATH || 'http://localhost:3333/api/v1') + '/cases',
         method: 'get',
         params: params,
       });

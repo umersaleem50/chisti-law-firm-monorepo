@@ -3,15 +3,14 @@ import Blogs from '../../../Components/Layouts/Blogs/Blogs';
 import Navbar from '../../../Components/Stateful/Navbar/navbar';
 import BlogLayout from '@/Components/Layouts/Blog_Layout/Blog_Layout';
 import classes from '../page.module.scss';
-import { Metadata, ResolvingMetadata } from 'next';
+import { envConfig } from '@/envConfig';
+// import { Metadata, ResolvingMetadata } from 'next';
 
 const fetchBlogs = async (slug: string) => {
   try {
     const response = await fetch(
-      (process.env.API_PATH || 'http://localhost:3333/api/v1') +
-        '/blogs/' +
-        slug,
-      { method: 'get', cache: 'force-cache' }
+      (envConfig.API_PATH || 'http://localhost:3333/api/v1') + '/blogs/' + slug,
+      { method: 'get', cache: 'no-store' }
     );
 
     const dataObj: any = await response.json();
@@ -24,22 +23,22 @@ const fetchBlogs = async (slug: string) => {
   }
 };
 
-export async function generateMetadata(
-  { params }: { params: any },
-  parent: ResolvingMetadata
-): Promise<Metadata> {
-  const data = await fetchBlogs(params.slug);
+// export async function generateMetadata(
+//   { params }: { params: any },
+//   parent: ResolvingMetadata
+// ): Promise<Metadata> {
+//   const data = await fetchBlogs(params.slug);
 
-  if (data)
-    return {
-      title: data.title,
-      description: data.description,
-    };
-  return {
-    title: 'Read the blog',
-    description: 'Read the blogs to get information about legal cases.',
-  };
-}
+//   if (data)
+//     return {
+//       title: data.title,
+//       description: data.description,
+//     };
+//   return {
+//     title: 'Read the blog',
+//     description: 'Read the blogs to get information about legal cases.',
+//   };
+// }
 
 const Blog_With_ID = async ({ params }: { params: any }) => {
   const { slug } = params;
@@ -81,5 +80,7 @@ const Blog_With_ID = async ({ params }: { params: any }) => {
 
 //   return params;
 // }
+
+export const dynamic = 'force-dynamic';
 
 export default Blog_With_ID;

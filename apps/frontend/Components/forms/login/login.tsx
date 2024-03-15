@@ -6,6 +6,7 @@ import classes from './login.module.scss';
 import { useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
+import { envConfig } from '@/envConfig';
 export interface ILoginForm {
   email: string;
   password: string;
@@ -23,7 +24,7 @@ function LoginForm() {
     try {
       const response = await axios({
         url:
-          (process.env.NEXT_PUBLIC_API_PATH || 'http://localhost:3000/api/v1') +
+          (envConfig.API_PATH || 'http://localhost:3000/api/v1') +
           '/auth/signin',
         method: 'POST',
         withCredentials: true,
@@ -32,7 +33,7 @@ function LoginForm() {
 
       if (response.status === 200 || response.statusText === 'OK') {
         alert('Login successful');
-        router.push('/admin/appointments');
+        router.push('/admin/cases');
       }
     } catch (error: any) {
       if (error.response && error.response.data) {

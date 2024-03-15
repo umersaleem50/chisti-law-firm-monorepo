@@ -46,7 +46,7 @@ export default async function Index() {
       <Header />
       <Finder />
       <Services />
-      {/* <Certificate images={images} title={"Certificates"} /> */}
+
       <Mission />
       <Team />
       <Blogs />
@@ -56,3 +56,5 @@ export default async function Index() {
     </main>
   );
 }
+
+// export const dynamic = 'force-static';

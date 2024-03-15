@@ -8,11 +8,6 @@ import Lawyers_Results from '@/Components/Layouts/Lawyers_Results/Lawyers_Result
 import classes from './page.module.scss';
 
 const Lawyers = () => {
-  // const handleCheckboxChange = (event: any) => {
-  //   // alert("set change handler at lawyers[page.tsx]");
-  //   return;
-  // };
-
   return (
     <>
       <Navbar />
@@ -27,5 +22,7 @@ const Lawyers = () => {
     </>
   );
 };
+
+export const dynamic = 'force-dynamic';
 
 export default Lawyers;

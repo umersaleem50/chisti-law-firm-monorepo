@@ -1,0 +1,21 @@
+{
+  "run": {
+    "command": "nx run frontend:export",
+    "startTime": "2024-03-15T11:32:43.309Z",
+    "endTime": "2024-03-15T12:25:41.033Z",
+    "inner": false
+  },
+  "tasks": [
+    {
+      "taskId": "frontend:export",
+      "target": "export",
+      "projectName": "frontend",
+      "hash": "8163089507116679772",
+      "startTime": "2024-03-15T11:32:43.319Z",
+      "endTime": "2024-03-15T12:25:41.025Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 1
+    }
+  ]
+}

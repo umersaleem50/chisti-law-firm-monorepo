@@ -1,9 +1,10 @@
-import ExpandedComponent from "@/Components/Stateless/Expendable/expandable";
-import Loading_Spinner from "@/Components/Stateless/Loading_Spinner/Loading_Spinner";
-import Typography from "@/Components/Typography/Typography";
-import axios from "axios";
-import { useEffect, useState } from "react";
-import DataTable from "react-data-table-component";
+import ExpandedComponent from '@/Components/Stateless/Expendable/expandable';
+import Loading_Spinner from '@/Components/Stateless/Loading_Spinner/Loading_Spinner';
+import Typography from '@/Components/Typography/Typography';
+import { envConfig } from '@/envConfig';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import DataTable from 'react-data-table-component';
 
 export interface IAppointment {
   firstName: string;
@@ -22,35 +23,35 @@ function Appointment_Table() {
   const [isLoading, setLoading] = useState(false);
   const columns = [
     {
-      name: "Firstname",
+      name: 'Firstname',
       selector: (row: IAppointment) => row.firstName,
     },
     {
-      name: "Lastname",
+      name: 'Lastname',
       selector: (row: IAppointment) => row.lastName,
     },
     {
-      name: "Emails",
+      name: 'Emails',
       selector: (row: IAppointment) => row.email,
     },
     {
-      name: "Country",
+      name: 'Country',
       selector: (row: IAppointment) => row.country,
     },
     {
-      name: "Phone No.",
+      name: 'Phone No.',
       selector: (row: IAppointment) => row.phone,
     },
     {
-      name: "Address",
+      name: 'Address',
       selector: (row: IAppointment) => row.address,
     },
     {
-      name: "Subject Matter",
+      name: 'Subject Matter',
       selector: (row: IAppointment) => row.subject,
     },
     {
-      name: "Created On",
+      name: 'Created On',
       selector: (row: IAppointment) => new Date(row.createdOn).toDateString(),
     },
   ];
@@ -60,9 +61,9 @@ function Appointment_Table() {
     try {
       const response = await axios({
         url:
-          process.env.API_PATH ||
-          "http://localhost:3333/api/v1" + "/appointments",
-        method: "get",
+          envConfig.API_PATH ||
+          'http://localhost:3333/api/v1' + '/appointments',
+        method: 'get',
       });
 
       if (response.status === 200) {
@@ -92,7 +93,7 @@ function Appointment_Table() {
       )}
       {error && (
         <Typography vairent="secondary" component="h5">
-          {error || "Failed to fetch appointments, something went wrong!"}
+          {error || 'Failed to fetch appointments, something went wrong!'}
         </Typography>
       )}
     </>

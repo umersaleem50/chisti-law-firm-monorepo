@@ -9,13 +9,15 @@ const fetchThreeLatestBlogs = async () => {
     const res = await fetch(
       (process.env.API_PATH || 'http://localhost:3333/api/v1') +
         '/blogs?limit=3',
-      { method: 'get', cache: 'no-store' }
+      { method: 'get', cache: 'default' }
     );
     const dataObj = await res.json();
     if (dataObj.data) return dataObj.data;
     return dataObj;
   } catch (error) {
-    throw new Error('Error');
+    console.log('this is error at blogs.tsx');
+
+    throw new Error('this is error that is causes');
   }
 };
 
