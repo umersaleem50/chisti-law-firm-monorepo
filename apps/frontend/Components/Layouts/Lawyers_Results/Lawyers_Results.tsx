@@ -38,7 +38,8 @@ const Lawyers_Results = () => {
   const fetchLawyers = async () => {
     try {
       const response = await axios({
-        url: (envConfig.API_URL || 'http://localhost:3333/api/v1') + '/lawyers',
+        url:
+          (envConfig.API_PATH || 'http://localhost:3333/api/v1') + '/lawyers',
         method: 'GET',
       });
       if (response.status === 200) {

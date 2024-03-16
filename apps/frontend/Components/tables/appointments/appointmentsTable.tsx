@@ -61,8 +61,8 @@ function Appointment_Table() {
     try {
       const response = await axios({
         url:
-          envConfig.API_PATH ||
-          'http://localhost:3333/api/v1' + '/appointments',
+          (envConfig.API_PATH || 'http://localhost:3333/api/v1') +
+          '/appointments',
         method: 'get',
       });
 

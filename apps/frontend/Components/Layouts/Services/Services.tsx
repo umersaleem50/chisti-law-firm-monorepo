@@ -1,3 +1,4 @@
+'use client';
 import { services_data } from '@/text/homepage_texts';
 import { text } from './text';
 import Section from '../../Stateless/Section/Section';

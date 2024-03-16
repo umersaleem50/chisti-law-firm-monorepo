@@ -1,21 +1,21 @@
 {
   "run": {
-    "command": "nx run frontend:export",
-    "startTime": "2024-03-15T11:32:43.309Z",
-    "endTime": "2024-03-15T12:25:41.033Z",
+    "command": "nx run frontend:build",
+    "startTime": "2024-03-16T17:15:27.984Z",
+    "endTime": "2024-03-16T17:20:27.237Z",
     "inner": false
   },
   "tasks": [
     {
-      "taskId": "frontend:export",
-      "target": "export",
+      "taskId": "frontend:build:production",
+      "target": "build",
       "projectName": "frontend",
-      "hash": "8163089507116679772",
-      "startTime": "2024-03-15T11:32:43.319Z",
-      "endTime": "2024-03-15T12:25:41.025Z",
+      "hash": "13055940525375058876",
+      "startTime": "2024-03-16T17:15:28.035Z",
+      "endTime": "2024-03-16T17:20:27.235Z",
       "params": "",
       "cacheStatus": "cache-miss",
-      "status": 1
+      "status": 0
     }
   ]
 }
