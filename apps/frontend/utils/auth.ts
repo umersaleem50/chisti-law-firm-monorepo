@@ -4,28 +4,31 @@ import type { AuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 
 // import GoogleProvider from 'next-auth/providers/google';
-const authenticate = async ({
-  email,
-  password,
-}: {
-  email: string;
-  password: string;
-}) => {
-  const data = { email, password };
-  const url = 'https://api.chishtilawfirm.com.pk/api/v1' + '/auth/signin';
-  try {
-    const response = await axios({
-      url,
-      method: 'POST',
-      data,
-      withCredentials: true,
-    });
+// const authenticate = async ({
+//   email,
+//   password,
+// }: {
+//   email: string;
+//   password: string;
+// }) => {
+//   const data = { email, password };
+//   // const url = 'https://api.chishtilawfirm.com.pk/api/v1' + '/auth/signin';
+//   const url = envConfig.API_PATH + '/auth/signin';
+//   try {
+//     const response = await axios({
+//       url,
+//       method: 'POST',
+//       data,
+//     });
+//     console.log('this is the res', response);
 
-    if (response.data) return Promise.resolve(response.data);
-  } catch (error: any) {
-    return Promise.reject(error);
-  }
-};
+//     if (response.data) return Promise.resolve(response.data);
+//   } catch (error: any) {
+//     console.log(error);
+
+//     return Promise.reject(error);
+//   }
+// };
 
 export const authOptions: AuthOptions = {
   secret: envConfig.JWT_SECRETKEY,
@@ -60,11 +63,24 @@ export const authOptions: AuthOptions = {
           //   email: credentials.email,
           //   password: credentials.password,
           // });
-          if (credentials.email && credentials.password)
-            // if (res) return { ...res.data, token: res.token };
-            return { user: { email: 'test@test.com' }, token: 'jfdkjfkd' };
+          // const url = envConfig.API_PATH + '/auth/signin';
+          const url = 'http://localhost:3333/api/v1' + '/auth/signin';
+          const data = {
+            email: credentials.email,
+            password: credentials.password,
+          };
+          const response = await axios({
+            url,
+            method: 'POST',
+            data,
+          });
+          const resObj = response.data;
+
+          if (resObj.data) return { ...resObj.data, token: resObj.token };
+          // return { user: { email: 'test@test.com' }, token: 'jfdkjfkd' };
           //   return { user: { email: 'test@test.com', token: 'jfkdjfkdjkl' } };
         } catch (error: any) {
+          console.log(error);
           return null;
         }
       },

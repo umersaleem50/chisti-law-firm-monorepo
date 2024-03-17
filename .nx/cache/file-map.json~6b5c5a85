@@ -1,0 +1,2515 @@
+{
+  "version": "6.0",
+  "nxVersion": "16.7.4",
+  "deps": {
+    "@nx/next": "16.7.4",
+    "axios": "^1.0.0",
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^9.0.2",
+    "mapbox-gl": "^2.15.0",
+    "multer": "^1.4.5-lts.1",
+    "next": "^14.0.3",
+    "next-auth": "^4.24.7",
+    "nodemailer": "^6.9.8",
+    "react": "18.2.0",
+    "react-data-table-component": "^7.6.2",
+    "react-dom": "18.2.0",
+    "react-icons": "^4.10.1",
+    "react-images-uploading": "^3.1.7",
+    "react-modal": "^3.16.1",
+    "react-parallax-mouse": "^2.1.0",
+    "sharp": "^0.33.2",
+    "tslib": "^2.3.0",
+    "validator": "^13.11.0",
+    "@nx/cypress": "16.7.4",
+    "@nx/eslint-plugin": "16.7.4",
+    "@nx/express": "16.9.1",
+    "@nx/jest": "16.7.4",
+    "@nx/js": "16.10.0",
+    "@nx/linter": "16.7.4",
+    "@nx/node": "16.9.1",
+    "@nx/react": "16.7.4",
+    "@nx/rollup": "16.7.4",
+    "@nx/storybook": "^16.7.4",
+    "@nx/webpack": "16.9.1",
+    "@nx/workspace": "16.7.4",
+    "@rollup/plugin-url": "^7.0.0",
+    "@storybook/addon-essentials": "^7.2.1",
+    "@storybook/addon-interactions": "^7.2.1",
+    "@storybook/core-server": "^7.2.1",
+    "@storybook/jest": "~0.1.0",
+    "@storybook/nextjs": "^7.2.1",
+    "@storybook/react": "^7.3.2",
+    "@storybook/test-runner": "^0.13.0",
+    "@storybook/testing-library": "~0.2.0",
+    "@svgr/rollup": "^8.0.1",
+    "@swc/cli": "~0.1.62",
+    "@swc/core": "~1.3.51",
+    "@swc/helpers": "~0.5.0",
+    "@testing-library/react": "14.0.0",
+    "@types/express": "4.17.13",
+    "@types/jest": "^29.4.0",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/mapbox-gl": "^2.7.13",
+    "@types/node": "18.14.2",
+    "@types/react": "18.2.14",
+    "@types/react-dom": "18.2.6",
+    "@types/react-modal": "^3.16.3",
+    "@typescript-eslint/eslint-plugin": "^5.60.1",
+    "@typescript-eslint/parser": "^5.60.1",
+    "babel-jest": "^29.4.1",
+    "cypress": "^12.16.0",
+    "dotenv": "^16.3.1",
+    "eslint": "~8.46.0",
+    "eslint-config-next": "13.4.1",
+    "eslint-config-prettier": "8.1.0",
+    "eslint-plugin-import": "2.27.5",
+    "eslint-plugin-jsx-a11y": "6.7.1",
+    "eslint-plugin-react": "7.32.2",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "jest": "^29.4.1",
+    "jest-environment-jsdom": "^29.4.1",
+    "mongoose": "^7.6.3",
+    "nx": "16.7.4",
+    "nx-cloud": "latest",
+    "prettier": "^2.6.2",
+    "sass": "1.62.1",
+    "slugify": "^1.6.6",
+    "swc-loader": "0.1.15",
+    "ts-jest": "^29.1.0",
+    "ts-node": "10.9.1",
+    "tsconfig-paths-webpack-plugin": "^4.1.0",
+    "typescript": "~5.1.3"
+  },
+  "pathMappings": {
+    "@handler/book-appointment-handler": [
+      "libs/handlers/book-appointment-handler/src/index.ts"
+    ],
+    "@law-firm/generate-ui": [
+      "libs/generate-ui/src/index.ts"
+    ],
+    "@law-firm/generate-ui/server": [
+      "libs/generate-ui/src/server.ts"
+    ],
+    "@shared/caseType": [
+      "libs/shared/case-type/src/index.ts"
+    ]
+  },
+  "nxJsonPlugins": [],
+  "projectFileMap": {
+    "case-type": [
+      {
+        "file": "libs/shared/case-type/README.md",
+        "hash": "11620758126303659691"
+      },
+      {
+        "file": "libs/shared/case-type/project.json",
+        "hash": "6589794201773564789"
+      },
+      {
+        "file": "libs/shared/case-type/src/index.ts",
+        "hash": "3766687583311619159"
+      },
+      {
+        "file": "libs/shared/case-type/src/lib/case-type.ts",
+        "hash": "13109400802790316718"
+      },
+      {
+        "file": "libs/shared/case-type/tsconfig.json",
+        "hash": "11362601880824838265"
+      },
+      {
+        "file": "libs/shared/case-type/tsconfig.lib.json",
+        "hash": "5554291030212586824"
+      }
+    ],
+    "generate-ui": [
+      {
+        "file": "libs/generate-ui/.eslintrc.json",
+        "hash": "14830867113928387670"
+      },
+      {
+        "file": "libs/generate-ui/README.md",
+        "hash": "5432303871478871242"
+      },
+      {
+        "file": "libs/generate-ui/project.json",
+        "hash": "7095934038075636253"
+      },
+      {
+        "file": "libs/generate-ui/src/index.ts",
+        "hash": "7792982587108759944"
+      },
+      {
+        "file": "libs/generate-ui/src/lib/generate-ui.spec.tsx",
+        "hash": "12766634825822095557",
+        "deps": [
+          "npm:@testing-library/react"
+        ]
+      },
+      {
+        "file": "libs/generate-ui/src/lib/generate-ui.tsx",
+        "hash": "2820649808741374812",
+        "deps": [
+          "npm:react"
+        ]
+      },
+      {
+        "file": "libs/generate-ui/src/lib/hello-server.tsx",
+        "hash": "4430793549903582581"
+      },
+      {
+        "file": "libs/generate-ui/src/server.ts",
+        "hash": "358709210498179477"
+      },
+      {
+        "file": "libs/generate-ui/tsconfig.json",
+        "hash": "13979398437825372391"
+      },
+      {
+        "file": "libs/generate-ui/tsconfig.lib.json",
+        "hash": "6604186782021510538"
+      }
+    ],
+    "book-appointment-handler": [
+      {
+        "file": "libs/handlers/book-appointment-handler/README.md",
+        "hash": "7040802319482672591"
+      },
+      {
+        "file": "libs/handlers/book-appointment-handler/project.json",
+        "hash": "6514546645548358847"
+      },
+      {
+        "file": "libs/handlers/book-appointment-handler/src/index.ts",
+        "hash": "9685641398118945026"
+      },
+      {
+        "file": "libs/handlers/book-appointment-handler/src/lib/book-appointment-handler.ts",
+        "hash": "11265700792681349704"
+      },
+      {
+        "file": "libs/handlers/book-appointment-handler/tsconfig.json",
+        "hash": "11694468379504486425"
+      },
+      {
+        "file": "libs/handlers/book-appointment-handler/tsconfig.lib.json",
+        "hash": "11624129529813747059"
+      }
+    ],
+    "frontend": [
+      {
+        "file": "apps/frontend/.eslintrc.json",
+        "hash": "808702126789923909"
+      },
+      {
+        "file": "apps/frontend/.storybook/main.ts",
+        "hash": "1693592732249176536",
+        "deps": [
+          "npm:@storybook/nextjs"
+        ]
+      },
+      {
+        "file": "apps/frontend/.storybook/preview.ts",
+        "hash": "8782664224459483476"
+      },
+      {
+        "file": "apps/frontend/Components/Button/Button.module.scss",
+        "hash": "2535839930838379033"
+      },
+      {
+        "file": "apps/frontend/Components/Button/Button.stories.tsx",
+        "hash": "14121753278822780940"
+      },
+      {
+        "file": "apps/frontend/Components/Button/Button.tsx",
+        "hash": "378720058203710001",
+        "deps": [
+          "npm:react",
+          "npm:react-icons",
+          "npm:next"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Inputs/Checkbox/Checkbox.module.scss",
+        "hash": "14302829616822737781"
+      },
+      {
+        "file": "apps/frontend/Components/Inputs/Checkbox/Checkbox.stories.tsx",
+        "hash": "15344703609284491751",
+        "deps": [
+          "npm:@storybook/react"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Inputs/Checkbox/Checkbox.tsx",
+        "hash": "298715227679308511",
+        "deps": [
+          "npm:react",
+          "npm:next"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Inputs/ImageUploading/ButtonImageDrag.module.scss",
+        "hash": "4821649594569331257"
+      },
+      {
+        "file": "apps/frontend/Components/Inputs/ImageUploading/ButtonImageDrag.tsx",
+        "hash": "15762549669676808819",
+        "deps": [
+          "npm:next"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Inputs/ImageUploading/ImageUploading.tsx",
+        "hash": "3887860812802070358",
+        "deps": [
+          "npm:react-images-uploading",
+          "npm:next",
+          "npm:react"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Inputs/Select/Select_Input.module.scss",
+        "hash": "551958684218969074"
+      },
+      {
+        "file": "apps/frontend/Components/Inputs/Select/Select_Input.stories.tsx",
+        "hash": "8155091822409937256",
+        "deps": [
+          "npm:@storybook/react"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Inputs/Select/Select_Input.tsx",
+        "hash": "16822617991457737787",
+        "deps": [
+          "npm:@/Components/Typography/Typography"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Inputs/Textbox/Textbox.module.scss",
+        "hash": "13363876194213628651"
+      },
+      {
+        "file": "apps/frontend/Components/Inputs/Textbox/Textbox.stories.tsx",
+        "hash": "3178388736588793577",
+        "deps": [
+          "npm:@storybook/react"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Inputs/Textbox/Textbox.tsx",
+        "hash": "13120912250120118969",
+        "deps": [
+          "npm:react"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Blog_Layout/Blog_Content.tsx",
+        "hash": "9757217016481468883",
+        "deps": [
+          "npm:@/Components/Typography/Typography"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Blog_Layout/Blog_Layout.module.scss",
+        "hash": "11159019268145835748"
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Blog_Layout/Blog_Layout.tsx",
+        "hash": "15179125713608589743",
+        "deps": [
+          "npm:next",
+          "npm:@/Components/Typography/Typography",
+          "npm:@/Components/Button/Button",
+          "npm:@/utils/generate-ui/generate-ui",
+          "npm:@/envConfig"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Blogs/Blogs.module.scss",
+        "hash": "15371925591638099044"
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Blogs/Blogs.stories.tsx",
+        "hash": "6449907733493523705",
+        "deps": [
+          "npm:@storybook/react"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Blogs/Blogs.tsx",
+        "hash": "303152439012464131",
+        "deps": [
+          "npm:@/utils/generate-ui/generate-ui",
+          "npm:@/envConfig"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Blogs/text.ts",
+        "hash": "4044839403520281816"
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Certificates/Certificates.module.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Certificates/Certificates.tsx",
+        "hash": "4267641041611329555",
+        "deps": [
+          "npm:@/Components/Stateless/Section/Section"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Change-password/Change-Password.module.scss",
+        "hash": "1320226703855144266"
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Change-password/Change-Password.tsx",
+        "hash": "1766325923907380724",
+        "deps": [
+          "npm:@/Components/Inputs/Textbox/Textbox",
+          "npm:react",
+          "npm:axios",
+          "npm:@/Components/Button/Button",
+          "npm:@/Components/Typography/Typography",
+          "npm:@/envConfig"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Filters/Filters.module.scss",
+        "hash": "16375966882040527066"
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Filters/Filters.stories.tsx",
+        "hash": "11703667091423306188",
+        "deps": [
+          "npm:@storybook/react"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Filters/Filters.tsx",
+        "hash": "14226936707372133458"
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Filters/Service_Filters/Service_Filters.module.scss",
+        "hash": "11866076698243534916"
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Filters/Service_Filters/Service_Filters.tsx",
+        "hash": "1686025154229636012",
+        "deps": [
+          "npm:next"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Filters/Team_Filters/Team_Filters.module.scss",
+        "hash": "11866076698243534916"
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Filters/Team_Filters/Team_Filters.tsx",
+        "hash": "11531454394234141935"
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Filters/default-sass.scss",
+        "hash": "16654035196734267730"
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Footer/Footer.module.scss",
+        "hash": "16578991817062520984"
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Footer/Footer.stories.tsx",
+        "hash": "11849892123354483506",
+        "deps": [
+          "npm:@storybook/react"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Footer/Footer.tsx",
+        "hash": "17231984357537342483",
+        "deps": [
+          "npm:next"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Gallery/Gallery.module.scss",
+        "hash": "15646449029550575271"
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Gallery/Gallery.tsx",
+        "hash": "18052925922088073697",
+        "deps": [
+          "npm:next",
+          "npm:react",
+          "npm:@/Components/Typography/Typography",
+          "npm:@/envConfig"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Latest_Blogs/Latest_Blogs.module.scss",
+        "hash": "6426235251825568545"
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Latest_Blogs/Latest_Blogs.tsx",
+        "hash": "4979765518437269826",
+        "deps": [
+          "npm:@/Components/Typography/Typography",
+          "npm:@/Components/Stateless/Blog_Card/Blog_Card",
+          "npm:react",
+          "npm:axios",
+          "npm:@/utils/generate-ui/generate-ui",
+          "npm:@/envConfig"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Lawyer_Detail/Lawyer_Details.module.scss",
+        "hash": "4588656385481396879"
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Lawyer_Detail/Lawyer_Details.stories.backup",
+        "hash": "1487202075079439203"
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Lawyer_Detail/Lawyer_Details.tsx",
+        "hash": "13220610510667612274",
+        "deps": [
+          "npm:@/Components/Stateless/Section/Section",
+          "npm:@/Components/Button/Button.stories",
+          "npm:next"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Lawyers_Results/Lawyers_Results.module.scss",
+        "hash": "8307294517820315278"
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Lawyers_Results/Lawyers_Results.tsx",
+        "hash": "2663051543714576180",
+        "deps": [
+          "npm:react",
+          "npm:axios",
+          "npm:@/envConfig"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Make_Appointment/Make_Appointment.module.scss",
+        "hash": "9840735504067080144"
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Make_Appointment/Make_Appointment.stories.tsx",
+        "hash": "13718555187716302122",
+        "deps": [
+          "npm:@storybook/react"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Make_Appointment/Make_Appointment.tsx",
+        "hash": "15495942637239381179",
+        "deps": [
+          "npm:react",
+          "npm:mapbox-gl",
+          "npm:@/envConfig"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Make_Appointment/text.ts",
+        "hash": "9140745944064229532"
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Mission/Mission.module.scss",
+        "hash": "17790548339544523757"
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Mission/Mission.tsx",
+        "hash": "1778295164986310776",
+        "deps": [
+          "npm:next",
+          "npm:@/utils/generate-ui/generate-ui",
+          "npm:react-icons"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Mission/Misson.stories.tsx",
+        "hash": "7972098062109726483",
+        "deps": [
+          "npm:@storybook/react"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Mission/text.ts",
+        "hash": "14783871936832995259"
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/ProfileLayout/ProfileLayout.tsx",
+        "hash": "16534551548122200239",
+        "deps": [
+          "npm:next",
+          "npm:@/Components/Button/Button",
+          "npm:@/Components/Typography/Typography",
+          "npm:@/envConfig"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/ProfileLayout/profilelayout.module.scss",
+        "hash": "1572264364994074195"
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Profile_Details/Profile_Details.tsx",
+        "hash": "2186656062805526032",
+        "deps": [
+          "npm:@/Components/Typography/Typography"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Profile_Details/profiledetails.module.scss",
+        "hash": "1515714326259783674"
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Profile_Education/Profile_Education.stories.tsx",
+        "hash": "918959443594944122",
+        "deps": [
+          "npm:@storybook/react"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Profile_Education/Profile_Education.tsx",
+        "hash": "9435007981436638495",
+        "deps": [
+          "npm:@/Components/Typography/Typography",
+          "npm:react"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Profile_Education/profile_education.module.scss",
+        "hash": "5609580688872713051"
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Services/Service.module.scss",
+        "hash": "12443791214411452762"
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Services/Service.stories.tsx",
+        "hash": "10189302006018328713",
+        "deps": [
+          "npm:@storybook/react"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Services/Services.tsx",
+        "hash": "9764613583507355070",
+        "deps": [
+          "npm:@/text/homepage_texts"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Services/text.ts",
+        "hash": "16918426070529780667"
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Settings/Settings.module.scss",
+        "hash": "8907865904065026435"
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Settings/Settings.tsx",
+        "hash": "15111161052359341023",
+        "deps": [
+          "npm:@/Components/Inputs/Textbox/Textbox",
+          "npm:react",
+          "npm:react-images-uploading",
+          "npm:@/Components/Inputs/ImageUploading/ImageUploading"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Team/Team.module.scss",
+        "hash": "13616680067141065204"
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Team/Team.stories.tsx",
+        "hash": "16987818547292090605",
+        "deps": [
+          "npm:@storybook/react"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Team/Team.tsx",
+        "hash": "13513586827760169022",
+        "deps": [
+          "npm:react",
+          "npm:@/utils/generate-ui/generate-ui",
+          "npm:axios",
+          "npm:@/config"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Team/text.ts",
+        "hash": "11267982403726429172"
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Testimonials/Testimonial.module.scss",
+        "hash": "14655536305185206188"
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Testimonials/Testimonial.stories.tsx",
+        "hash": "6364520815724315002",
+        "deps": [
+          "npm:@storybook/react"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Testimonials/Testimonials.tsx",
+        "hash": "5272109445283985207",
+        "deps": [
+          "npm:react",
+          "npm:@/utils/generate-ui/generate-ui"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/Testimonials/text.ts",
+        "hash": "358817727891392762"
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/hero_container/hero_container.module.scss",
+        "hash": "13394298928270500904"
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/hero_container/hero_container.tsx",
+        "hash": "7375489866049031790",
+        "deps": [
+          "npm:next"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/services_results/Services_Results.tsx",
+        "hash": "8148363252909815155",
+        "deps": [
+          "npm:next"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Layouts/services_results/Services_results.module.scss",
+        "hash": "4232564749543205603"
+      },
+      {
+        "file": "apps/frontend/Components/Stateful/Edit_Profile_Modal/Edit_Profile_Modal.module.scss",
+        "hash": "13422223141946687937"
+      },
+      {
+        "file": "apps/frontend/Components/Stateful/Edit_Profile_Modal/Edit_Profile_Modal.tsx",
+        "hash": "4670568939491625137",
+        "deps": [
+          "npm:@/Components/Inputs/Textbox/Textbox",
+          "npm:react-modal",
+          "npm:react"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Stateful/Navbar/navbar.module.scss",
+        "hash": "6072367608432491816"
+      },
+      {
+        "file": "apps/frontend/Components/Stateful/Navbar/navbar.stories.tsx",
+        "hash": "5613332081418353627"
+      },
+      {
+        "file": "apps/frontend/Components/Stateful/Navbar/navbar.tsx",
+        "hash": "13763298212824032251",
+        "deps": [
+          "npm:next",
+          "npm:@/utils/handler/bookeEventHandler",
+          "npm:react",
+          "npm:next-auth"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Stateless/Blog_Card/Blog_Card.module.scss",
+        "hash": "1360102223945261422"
+      },
+      {
+        "file": "apps/frontend/Components/Stateless/Blog_Card/Blog_Card.stories.tsx",
+        "hash": "10115361936617665106",
+        "deps": [
+          "npm:@storybook/react"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Stateless/Blog_Card/Blog_Card.tsx",
+        "hash": "15585898149685965290",
+        "deps": [
+          "npm:next",
+          "npm:react-icons",
+          "npm:@/envConfig"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Stateless/Dashboard_Filter/Dashboard_Filter.module.scss",
+        "hash": "9926653484704296272"
+      },
+      {
+        "file": "apps/frontend/Components/Stateless/Dashboard_Filter/Dashboard_Filter.tsx",
+        "hash": "4315722989996921777",
+        "deps": [
+          "npm:next"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Stateless/Expendable/expandable.tsx",
+        "hash": "512898651612914344",
+        "deps": [
+          "npm:@/Components/Button/Button",
+          "npm:@/Components/Typography/Typography"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Stateless/Expendable/expandable_cases.tsx",
+        "hash": "9916977814274675238",
+        "deps": [
+          "npm:@/Components/Button/Button",
+          "npm:@/Components/Typography/Typography",
+          "npm:@/Components/forms/addCase/addCase",
+          "npm:@/envConfig",
+          "npm:axios",
+          "npm:react",
+          "npm:react-data-table-component"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Stateless/Expendable/team_manager_expendable.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "apps/frontend/Components/Stateless/Expendable/team_manager_expendable.tsx",
+        "hash": "10048652875398239387",
+        "deps": [
+          "npm:@/Components/Button/Button",
+          "npm:@/Components/Typography/Typography"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Stateless/Filter_Tab/Filter_Tab.module.scss",
+        "hash": "10052303176380376172"
+      },
+      {
+        "file": "apps/frontend/Components/Stateless/Filter_Tab/Filter_Tab.stories.tsx",
+        "hash": "165296294476810771",
+        "deps": [
+          "npm:@storybook/react"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Stateless/Filter_Tab/Filter_Tab.tsx",
+        "hash": "9506236410391536902",
+        "deps": [
+          "npm:react"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Stateless/Finder/Finder.module.scss",
+        "hash": "14024682216204544649"
+      },
+      {
+        "file": "apps/frontend/Components/Stateless/Finder/Finder.stories.tsx",
+        "hash": "7413814149863449819",
+        "deps": [
+          "npm:@storybook/react"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Stateless/Finder/Finder.tsx",
+        "hash": "7043583285906946655",
+        "deps": [
+          "npm:next"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Stateless/Finder/text.ts",
+        "hash": "14046111787389172205"
+      },
+      {
+        "file": "apps/frontend/Components/Stateless/Lawyer_Card/Lawyer_Card.module.scss",
+        "hash": "14899648050181296073"
+      },
+      {
+        "file": "apps/frontend/Components/Stateless/Lawyer_Card/Lawyer_Card.stories.tsx",
+        "hash": "7496174415058707209",
+        "deps": [
+          "npm:@storybook/react"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Stateless/Lawyer_Card/Lawyer_Card.tsx",
+        "hash": "12093850869537283519",
+        "deps": [
+          "npm:next",
+          "npm:@/envConfig"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Stateless/Loading_Spinner/Loading_Spinner.tsx",
+        "hash": "17058633111996977108"
+      },
+      {
+        "file": "apps/frontend/Components/Stateless/Section/Section.module.scss",
+        "hash": "1045947832432224708"
+      },
+      {
+        "file": "apps/frontend/Components/Stateless/Section/Section.stories.tsx",
+        "hash": "2920981413738540189",
+        "deps": [
+          "npm:@storybook/react"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Stateless/Section/Section.tsx",
+        "hash": "4539576170793486489",
+        "deps": [
+          "npm:react",
+          "npm:react-icons",
+          "npm:next"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Stateless/Service_Card/Service_Card.stories.tsx",
+        "hash": "1031993673730513516",
+        "deps": [
+          "npm:@storybook/react",
+          "npm:react-icons"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Stateless/Service_Card/Service_Card.tsx",
+        "hash": "3175572418675831301",
+        "deps": [
+          "npm:react-icons",
+          "npm:next"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Stateless/Service_Card/Service_Casd.module.scss",
+        "hash": "6196818313128852748"
+      },
+      {
+        "file": "apps/frontend/Components/Stateless/Slider_Dots/Slider_Dots.module.scss",
+        "hash": "18115483746587353593"
+      },
+      {
+        "file": "apps/frontend/Components/Stateless/Slider_Dots/Slider_Dots.stories.tsx",
+        "hash": "5949211802120975362",
+        "deps": [
+          "npm:@storybook/react"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Stateless/Slider_Dots/Slider_Dots.tsx",
+        "hash": "17099015641423314237",
+        "deps": [
+          "npm:react-icons"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Stateless/Tags/Tags.module.scss",
+        "hash": "12647950665511376580"
+      },
+      {
+        "file": "apps/frontend/Components/Stateless/Tags/Tags.stories.tsx",
+        "hash": "11570717650480108897"
+      },
+      {
+        "file": "apps/frontend/Components/Stateless/Tags/Tags.tsx",
+        "hash": "16871356096955301769"
+      },
+      {
+        "file": "apps/frontend/Components/Stateless/Team_Card/Team_Card.module.scss",
+        "hash": "8173961192392460638"
+      },
+      {
+        "file": "apps/frontend/Components/Stateless/Team_Card/Team_Card.stories.tsx",
+        "hash": "15060297541544279354",
+        "deps": [
+          "npm:@storybook/react"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Stateless/Team_Card/Team_Card.tsx",
+        "hash": "15428908586018178253",
+        "deps": [
+          "npm:next",
+          "npm:react-icons",
+          "npm:react",
+          "npm:@/envConfig"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Stateless/Testimonial_Card/Testimonial_Card.module.scss",
+        "hash": "10686652640380530477"
+      },
+      {
+        "file": "apps/frontend/Components/Stateless/Testimonial_Card/Testimonial_Card.stories.tsx",
+        "hash": "8470265525499134950",
+        "deps": [
+          "npm:@storybook/react"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Stateless/Testimonial_Card/Testimonial_Card.tsx",
+        "hash": "6402181426462920822",
+        "deps": [
+          "npm:react"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Stateless/header/header.module.scss",
+        "hash": "13727614169458350540"
+      },
+      {
+        "file": "apps/frontend/Components/Stateless/header/header.spec.tsx",
+        "hash": "13127992392719568682",
+        "deps": [
+          "npm:@testing-library/react"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Stateless/header/header.stories.tsx",
+        "hash": "14232455538472847331"
+      },
+      {
+        "file": "apps/frontend/Components/Stateless/header/header.tsx",
+        "hash": "12854799396537513186",
+        "deps": [
+          "npm:@/utils/handler/bookeEventHandler",
+          "npm:react",
+          "npm:@/Components/Layouts/hero_container/hero_container"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Stateless/header/text.ts",
+        "hash": "10854886225302525462"
+      },
+      {
+        "file": "apps/frontend/Components/Stateless/header_slider/header_slider.module.scss",
+        "hash": "2586214147048372109"
+      },
+      {
+        "file": "apps/frontend/Components/Stateless/header_slider/header_slider.tsx",
+        "hash": "7256045046437941098",
+        "deps": [
+          "npm:next",
+          "npm:react-parallax-mouse"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/Typography/Typography.module.scss",
+        "hash": "17021646391198596625"
+      },
+      {
+        "file": "apps/frontend/Components/Typography/Typography.stories.tsx",
+        "hash": "7489537385212321567"
+      },
+      {
+        "file": "apps/frontend/Components/Typography/Typography.tsx",
+        "hash": "247583649509111163",
+        "deps": [
+          "npm:react"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/forms/addCase/addCase.module.scss",
+        "hash": "16278166903495599003"
+      },
+      {
+        "file": "apps/frontend/Components/forms/addCase/addCase.tsx",
+        "hash": "17533151000497491616",
+        "deps": [
+          "npm:@/Components/Inputs/Textbox/Textbox",
+          "npm:react-modal",
+          "npm:@/Components/Button/Button",
+          "npm:@/Components/Typography/Typography",
+          "npm:@/Components/Inputs/Select/Select_Input"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/forms/addCase/caseType.ts",
+        "hash": "3757747139928498799"
+      },
+      {
+        "file": "apps/frontend/Components/forms/appointment/form_appointment.module.scss",
+        "hash": "11595912640481871778"
+      },
+      {
+        "file": "apps/frontend/Components/forms/appointment/form_appointment.stories.tsx",
+        "hash": "2983787979730522982",
+        "deps": [
+          "npm:@storybook/react"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/forms/appointment/form_appointment.tsx",
+        "hash": "16614244087053205042",
+        "deps": [
+          "npm:react",
+          "npm:react-icons",
+          "npm:axios",
+          "npm:@/envConfig"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/forms/login/login.module.scss",
+        "hash": "15331053579429555075"
+      },
+      {
+        "file": "apps/frontend/Components/forms/login/login.tsx",
+        "hash": "4003524301342086856",
+        "deps": [
+          "npm:@/Components/Button/Button",
+          "npm:@/Components/Inputs/Textbox/Textbox",
+          "npm:@/Components/Typography/Typography",
+          "npm:react",
+          "npm:axios",
+          "npm:next",
+          "npm:@/envConfig",
+          "npm:next-auth"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/tables/appointments/appointmentsTable.tsx",
+        "hash": "5498828767166502519",
+        "deps": [
+          "npm:@/Components/Stateless/Expendable/expandable",
+          "npm:@/Components/Stateless/Loading_Spinner/Loading_Spinner",
+          "npm:@/Components/Typography/Typography",
+          "npm:@/envConfig",
+          "npm:axios",
+          "npm:react",
+          "npm:react-data-table-component"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/tables/cases/caseTable.module.scss",
+        "hash": "10260633226310640976"
+      },
+      {
+        "file": "apps/frontend/Components/tables/cases/casesTable.tsx",
+        "hash": "7785635033334069838",
+        "deps": [
+          "npm:@/Components/Stateless/Expendable/expandable_cases",
+          "npm:@/Components/Stateless/Loading_Spinner/Loading_Spinner",
+          "npm:@/Components/Typography/Typography",
+          "npm:axios",
+          "npm:react",
+          "npm:react-data-table-component",
+          "npm:react-icons",
+          "npm:@/Components/Button/Button",
+          "npm:@/Components/forms/addCase/addCase",
+          "npm:@/Components/Inputs/Textbox/Textbox.stories",
+          "npm:@/Components/Inputs/Textbox/Textbox",
+          "npm:@/envConfig"
+        ]
+      },
+      {
+        "file": "apps/frontend/Components/tables/manageTeam/manageTeamTable.tsx",
+        "hash": "7639497291850766424",
+        "deps": [
+          "npm:@/Components/Stateless/Expendable/expandable",
+          "npm:@/Components/Stateless/Loading_Spinner/Loading_Spinner",
+          "npm:@/Components/Typography/Typography",
+          "npm:axios",
+          "npm:react",
+          "npm:react-data-table-component",
+          "npm:@/Components/Layouts/Lawyer_Detail/Lawyer_Details",
+          "npm:@/Components/Stateless/Expendable/team_manager_expendable",
+          "npm:@/Components/Stateful/Edit_Profile_Modal/Edit_Profile_Modal",
+          "npm:@/envConfig"
+        ]
+      },
+      {
+        "file": "apps/frontend/alpha-pages/blogs/[slug]/page.tsx",
+        "hash": "6175951729322516386",
+        "deps": [
+          "npm:next",
+          "npm:@/envConfig"
+        ]
+      },
+      {
+        "file": "apps/frontend/alpha-pages/blogs/page.module.scss",
+        "hash": "17111142758793361799"
+      },
+      {
+        "file": "apps/frontend/alpha-pages/blogs/page.tsx",
+        "hash": "9225439814113672105",
+        "deps": [
+          "npm:@/Components/Layouts/Latest_Blogs/Latest_Blogs",
+          "npm:@/Components/Stateless/Section/Section"
+        ]
+      },
+      {
+        "file": "apps/frontend/app/admin/appointments/page.tsx",
+        "hash": "12098797595881373894",
+        "deps": [
+          "npm:@/Components/Typography/Typography",
+          "npm:@/Components/tables/appointments/appointmentsTable"
+        ]
+      },
+      {
+        "file": "apps/frontend/app/admin/blogs/page.tsx",
+        "hash": "4064306962728585772"
+      },
+      {
+        "file": "apps/frontend/app/admin/cases/page.module.scss",
+        "hash": "539112740560276934"
+      },
+      {
+        "file": "apps/frontend/app/admin/cases/page.tsx",
+        "hash": "5247196620948758421",
+        "deps": [
+          "npm:@/Components/tables/cases/casesTable"
+        ]
+      },
+      {
+        "file": "apps/frontend/app/admin/layout.module.scss",
+        "hash": "13879173410201874882"
+      },
+      {
+        "file": "apps/frontend/app/admin/layout.tsx",
+        "hash": "3993231678323683800",
+        "deps": [
+          "npm:@/Components/Stateful/Navbar/navbar",
+          "npm:@/Components/Stateless/Dashboard_Filter/Dashboard_Filter",
+          "npm:@/providers/protectedProvider"
+        ]
+      },
+      {
+        "file": "apps/frontend/app/admin/loading.tsx",
+        "hash": "5705216177506487445",
+        "deps": [
+          "npm:@/Components/Stateless/Loading_Spinner/Loading_Spinner"
+        ]
+      },
+      {
+        "file": "apps/frontend/app/admin/manage-team/page.tsx",
+        "hash": "12949337794555990144",
+        "deps": [
+          "npm:@/Components/tables/manageTeam/manageTeamTable"
+        ]
+      },
+      {
+        "file": "apps/frontend/app/admin/page.tsx",
+        "hash": "9645969710068681173",
+        "deps": [
+          "npm:@/Components/Typography/Typography"
+        ]
+      },
+      {
+        "file": "apps/frontend/app/admin/settings/page.tsx",
+        "hash": "17709975709123873042",
+        "deps": [
+          "npm:@/Components/Layouts/Change-password/Change-Password",
+          "npm:@/Components/Layouts/Settings/Settings",
+          "npm:axios",
+          "npm:react"
+        ]
+      },
+      {
+        "file": "apps/frontend/app/api/auth/[...nextauth]/route.ts",
+        "hash": "14908317703952289143",
+        "deps": [
+          "npm:@/utils/auth",
+          "npm:next-auth"
+        ]
+      },
+      {
+        "file": "apps/frontend/app/api/hello/route.ts",
+        "hash": "12159998604013879547"
+      },
+      {
+        "file": "apps/frontend/app/api/session/route.ts",
+        "hash": "4330897195526789913",
+        "deps": [
+          "npm:next-auth",
+          "npm:@/utils/auth",
+          "npm:next"
+        ]
+      },
+      {
+        "file": "apps/frontend/app/auth/layout.tsx",
+        "hash": "4988570404699024228"
+      },
+      {
+        "file": "apps/frontend/app/auth/page.module.scss",
+        "hash": "4189183510768761830"
+      },
+      {
+        "file": "apps/frontend/app/auth/page.tsx",
+        "hash": "5261414540806588100",
+        "deps": [
+          "npm:next",
+          "npm:@/Components/forms/login/login",
+          "npm:@/Components/Stateful/Navbar/navbar",
+          "npm:@/Components/Layouts/Footer/Footer"
+        ]
+      },
+      {
+        "file": "apps/frontend/app/blogs/[slug]/page.tsx",
+        "hash": "4419744048754406200",
+        "deps": [
+          "npm:@/Components/Layouts/Blog_Layout/Blog_Layout",
+          "npm:@/envConfig"
+        ]
+      },
+      {
+        "file": "apps/frontend/app/blogs/page.module.scss",
+        "hash": "3069294334678988151"
+      },
+      {
+        "file": "apps/frontend/app/blogs/page.tsx",
+        "hash": "4241476253621331619",
+        "deps": [
+          "npm:@/Components/Layouts/Latest_Blogs/Latest_Blogs",
+          "npm:@/Components/Layouts/Team/Team",
+          "npm:@/Components/Layouts/Make_Appointment/Make_Appointment"
+        ]
+      },
+      {
+        "file": "apps/frontend/app/global.scss",
+        "hash": "10472708158832693173"
+      },
+      {
+        "file": "apps/frontend/app/lawyers/[name]/page.tsx",
+        "hash": "6622068406953714736",
+        "deps": [
+          "npm:@/Components/Layouts/Lawyer_Detail/Lawyer_Details",
+          "npm:next",
+          "npm:@/envConfig"
+        ]
+      },
+      {
+        "file": "apps/frontend/app/lawyers/layout.tsx",
+        "hash": "1607759158083814388"
+      },
+      {
+        "file": "apps/frontend/app/lawyers/page.module.scss",
+        "hash": "13879173410201874882"
+      },
+      {
+        "file": "apps/frontend/app/lawyers/page.tsx",
+        "hash": "10351956276913234373",
+        "deps": [
+          "npm:@/Components/Layouts/Lawyers_Results/Lawyers_Results"
+        ]
+      },
+      {
+        "file": "apps/frontend/app/layout.tsx",
+        "hash": "10003574399350170800",
+        "deps": [
+          "npm:next-auth",
+          "npm:@/utils/auth"
+        ]
+      },
+      {
+        "file": "apps/frontend/app/loading.tsx",
+        "hash": "5705216177506487445",
+        "deps": [
+          "npm:@/Components/Stateless/Loading_Spinner/Loading_Spinner"
+        ]
+      },
+      {
+        "file": "apps/frontend/app/not-found.module.scss",
+        "hash": "8810818570300872469"
+      },
+      {
+        "file": "apps/frontend/app/not-found.tsx",
+        "hash": "3472076202954308742",
+        "deps": [
+          "npm:@/Components/Stateful/Navbar/navbar",
+          "npm:@/Components/Typography/Typography",
+          "npm:next"
+        ]
+      },
+      {
+        "file": "apps/frontend/app/page.module.scss",
+        "hash": "2971255283094933631"
+      },
+      {
+        "file": "apps/frontend/app/page.tsx",
+        "hash": "2174732387230593826"
+      },
+      {
+        "file": "apps/frontend/app/services/[slug]/page.tsx",
+        "hash": "13834598925729655487",
+        "deps": [
+          "npm:next",
+          "npm:@/envConfig"
+        ]
+      },
+      {
+        "file": "apps/frontend/app/services/layout.tsx",
+        "hash": "1607759158083814388"
+      },
+      {
+        "file": "apps/frontend/app/services/page.module.scss",
+        "hash": "13879173410201874882"
+      },
+      {
+        "file": "apps/frontend/app/services/page.tsx",
+        "hash": "14655668695941894599"
+      },
+      {
+        "file": "apps/frontend/config.ts",
+        "hash": "11142401455319359448"
+      },
+      {
+        "file": "apps/frontend/dev-data/lawfirm.services.json",
+        "hash": "7592381349723543137"
+      },
+      {
+        "file": "apps/frontend/envConfig.ts",
+        "hash": "5383027637800660755"
+      },
+      {
+        "file": "apps/frontend/index.d.ts",
+        "hash": "17021007320214501298"
+      },
+      {
+        "file": "apps/frontend/jest.config.ts",
+        "hash": "15431173560995393225"
+      },
+      {
+        "file": "apps/frontend/next-env.d.ts",
+        "hash": "650381615855576712"
+      },
+      {
+        "file": "apps/frontend/next.config.js",
+        "hash": "10317305859409355708",
+        "deps": [
+          "npm:@nx/next"
+        ]
+      },
+      {
+        "file": "apps/frontend/old.rar",
+        "hash": "2264383033374371620"
+      },
+      {
+        "file": "apps/frontend/out/.gitkeep",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "apps/frontend/out/404.html",
+        "hash": "9393547145819266865"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/chunks/081ca426-9b2c038df7b45aa8.js",
+        "hash": "17175556123315541246"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/chunks/129-707b67b208a06a8f.js",
+        "hash": "3110011374039701526"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/chunks/243-ec737c02853b9afe.js",
+        "hash": "4067694561589680651"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/chunks/261-cd98503f98ee6497.js",
+        "hash": "900208000492013337"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/chunks/385cb88d-79f2571c64a3cbf9.js",
+        "hash": "13198965703483590799"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/chunks/400-e4addefaed0c80ee.js",
+        "hash": "15423665223944031124"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/chunks/472-b089c74c8f7ea035.js",
+        "hash": "2163357159993709694"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/chunks/479ba886-e6c8aac2a128af23.js",
+        "hash": "7823238309323278961"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/chunks/580-4aff3d158574d813.js",
+        "hash": "16141814654158444750"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/chunks/5e22fd23-1e74609c404d92bb.js",
+        "hash": "4397144012989190820"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/chunks/66ec4792-3fdca9affe1fa763.js",
+        "hash": "7430079896848345895"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/chunks/691-f6507f9475e33dcb.js",
+        "hash": "2905757501483692824"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/chunks/769-897d9a121a68ad98.js",
+        "hash": "11375416499388565839"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/chunks/9c4e2130-4f69c4642c785475.js",
+        "hash": "1088449106258096828"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/chunks/app/_not-found-3394e1a8ffa30fc5.js",
+        "hash": "10912564509665595464"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/chunks/app/admin/appointments/page-d31caa3a79e19918.js",
+        "hash": "8167022622031276211"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/chunks/app/admin/blogs/page-a356c37a462ac962.js",
+        "hash": "17388148648239285864"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/chunks/app/admin/layout-6b263041a23ff403.js",
+        "hash": "13045463522393127520"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/chunks/app/admin/loading-21fb3ef53088bcb5.js",
+        "hash": "1692954344158493003"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/chunks/app/admin/manage-team/page-4f46fea2c37564b9.js",
+        "hash": "12227160676461025534"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/chunks/app/admin/page-b87d18568fc1716d.js",
+        "hash": "587850129970956039"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/chunks/app/admin/settings/page-23026b2a47186ced.js",
+        "hash": "3022284005248067877"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/chunks/app/auth/layout-3250c53d1a77633c.js",
+        "hash": "309610087755887116"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/chunks/app/auth/page-2bfa4652f402fe0b.js",
+        "hash": "5244786813144323257"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/chunks/app/blogs/[slug]/page-4119e73a2ded653b.js",
+        "hash": "414992136406724475"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/chunks/app/blogs/page-f592865a1537f27f.js",
+        "hash": "11419429788828405025"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/chunks/app/lawyers/[name]/page-8ce3da4b500959ce.js",
+        "hash": "1964371549376642392"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/chunks/app/lawyers/page-6abf0dc4e0c9cf4f.js",
+        "hash": "14215831061776823199"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/chunks/app/layout-5b1aab02d76901ae.js",
+        "hash": "2879612949488419695"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/chunks/app/loading-efa3a2b36f6849c2.js",
+        "hash": "599239544514783971"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/chunks/app/page-480913257985f5b6.js",
+        "hash": "7378548872087345792"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/chunks/app/services/[slug]/page-469905a82d449d62.js",
+        "hash": "625959138302711207"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/chunks/app/services/page-97c0cfa95654447d.js",
+        "hash": "10616193270173388187"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/chunks/c36f3faa-26d8e858d0da5d93.js",
+        "hash": "7180387667011621972"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/chunks/f7333993-408d01de79bba5e6.js",
+        "hash": "15352973440238517929"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/chunks/fd9d1056-69baea914a25c06c.js",
+        "hash": "7716657404715152210"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/chunks/framework-8883d1e9be70c3da.js",
+        "hash": "2098824072304663553"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/chunks/main-app-7300269d7b8d1985.js",
+        "hash": "6706381546661274529"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/chunks/main-be3667b751a5c854.js",
+        "hash": "1557541504358555510"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/chunks/pages/_app-ee276fea40a4b191.js",
+        "hash": "17716557260647034202"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/chunks/pages/_error-deeb844d2074b9d8.js",
+        "hash": "2135790061175447156"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js",
+        "hash": "3837536670243305325"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/chunks/webpack-e3d67d2b8d6d9d6d.js",
+        "hash": "1482797695169850477"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/css/04283fefbc48163e.css",
+        "hash": "11881240600990787214"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/css/0acdefde68e01199.css",
+        "hash": "8486384141703214660"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/css/0d5ab7f6fb23a54b.css",
+        "hash": "10777191477567664348"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/css/106a1903e1a1180c.css",
+        "hash": "5385505881592925053"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/css/1ca6f3812755e4d9.css",
+        "hash": "738694298890306031"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/css/260fe26d5079380b.css",
+        "hash": "7125222096932555972"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/css/27fa8948d43044ac.css",
+        "hash": "11320876609180633379"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/css/3df371dcbb69b2db.css",
+        "hash": "13456456902245160019"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/css/4e8e777e4765e99f.css",
+        "hash": "795893997560831226"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/css/6094a6783dc94888.css",
+        "hash": "15367232748290991598"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/css/733b7aa7167c83f2.css",
+        "hash": "964590901616830369"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/css/97aec2ffe0645e84.css",
+        "hash": "17340802418452288014"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/css/a140471b00062b05.css",
+        "hash": "5140363362201873988"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/css/b5920b06e9f2579b.css",
+        "hash": "16128288206988495446"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/jbu1U6efUGpwJlUPcCOKO/_buildManifest.js",
+        "hash": "5450812334815884828"
+      },
+      {
+        "file": "apps/frontend/out/_next/static/jbu1U6efUGpwJlUPcCOKO/_ssgManifest.js",
+        "hash": "14820051597897362914"
+      },
+      {
+        "file": "apps/frontend/out/admin.html",
+        "hash": "965795209406376420"
+      },
+      {
+        "file": "apps/frontend/out/admin.txt",
+        "hash": "14737219773485758376"
+      },
+      {
+        "file": "apps/frontend/out/admin/appointments.html",
+        "hash": "546887869941363909"
+      },
+      {
+        "file": "apps/frontend/out/admin/appointments.txt",
+        "hash": "15287324129113898094"
+      },
+      {
+        "file": "apps/frontend/out/admin/blogs.html",
+        "hash": "17934762491790105337"
+      },
+      {
+        "file": "apps/frontend/out/admin/blogs.txt",
+        "hash": "8479489364239347228"
+      },
+      {
+        "file": "apps/frontend/out/admin/manage-team.html",
+        "hash": "14945731261025971137"
+      },
+      {
+        "file": "apps/frontend/out/admin/manage-team.txt",
+        "hash": "12103460030321080635"
+      },
+      {
+        "file": "apps/frontend/out/admin/settings.html",
+        "hash": "751562933019955032"
+      },
+      {
+        "file": "apps/frontend/out/admin/settings.txt",
+        "hash": "8039111791729372537"
+      },
+      {
+        "file": "apps/frontend/out/api/hello",
+        "hash": "368059014246027513"
+      },
+      {
+        "file": "apps/frontend/out/assets/background.png",
+        "hash": "17894230157960451332"
+      },
+      {
+        "file": "apps/frontend/out/assets/gallery/1.jpg",
+        "hash": "14626541099892802046"
+      },
+      {
+        "file": "apps/frontend/out/assets/gallery/2.jpg",
+        "hash": "7703593083643371834"
+      },
+      {
+        "file": "apps/frontend/out/assets/gallery/3.jpg",
+        "hash": "8397043070610084095"
+      },
+      {
+        "file": "apps/frontend/out/assets/homepage/mian_shafeeq_chishti.jpeg",
+        "hash": "4776414700563139987"
+      },
+      {
+        "file": "apps/frontend/out/assets/homepage/mian_shafeeq_profile.jpeg",
+        "hash": "18187021153886231681"
+      },
+      {
+        "file": "apps/frontend/out/assets/homepage/person.jpg",
+        "hash": "9429003266552004745"
+      },
+      {
+        "file": "apps/frontend/out/assets/homepage/statue.jpg",
+        "hash": "16607478227205916872"
+      },
+      {
+        "file": "apps/frontend/out/assets/logo.png",
+        "hash": "11086278797771286648"
+      },
+      {
+        "file": "apps/frontend/out/assets/sir.png",
+        "hash": "13089102338043919701"
+      },
+      {
+        "file": "apps/frontend/out/assets/upload_image.png",
+        "hash": "14215840261818545991"
+      },
+      {
+        "file": "apps/frontend/out/auth.html",
+        "hash": "14831248846074638966"
+      },
+      {
+        "file": "apps/frontend/out/auth.txt",
+        "hash": "16556735367503327552"
+      },
+      {
+        "file": "apps/frontend/out/blogs.html",
+        "hash": "1746755548129891617"
+      },
+      {
+        "file": "apps/frontend/out/blogs.txt",
+        "hash": "7418103567773631558"
+      },
+      {
+        "file": "apps/frontend/out/blogs/65aceb274b9d98cadfa430b0.html",
+        "hash": "7670022295775680027"
+      },
+      {
+        "file": "apps/frontend/out/blogs/65aceb274b9d98cadfa430b0.txt",
+        "hash": "12865540320249703368"
+      },
+      {
+        "file": "apps/frontend/out/blogs/65acf3ae325fc94690f9cfdc.html",
+        "hash": "11991837979894511353"
+      },
+      {
+        "file": "apps/frontend/out/blogs/65acf3ae325fc94690f9cfdc.txt",
+        "hash": "17752714521867811632"
+      },
+      {
+        "file": "apps/frontend/out/favicon.ico",
+        "hash": "9303420814833116677"
+      },
+      {
+        "file": "apps/frontend/out/index.html",
+        "hash": "15166509778255357505"
+      },
+      {
+        "file": "apps/frontend/out/index.txt",
+        "hash": "17718569341657981215"
+      },
+      {
+        "file": "apps/frontend/out/lawyers.html",
+        "hash": "8687278227132262466"
+      },
+      {
+        "file": "apps/frontend/out/lawyers.txt",
+        "hash": "12566178430511870094"
+      },
+      {
+        "file": "apps/frontend/out/lawyers/65aebdea0effc2a32014e221.html",
+        "hash": "17430246287078560789"
+      },
+      {
+        "file": "apps/frontend/out/lawyers/65aebdea0effc2a32014e221.txt",
+        "hash": "5278433818099152134"
+      },
+      {
+        "file": "apps/frontend/out/lawyers/65aebf0cd6d467471a33a086.html",
+        "hash": "17633450634885338438"
+      },
+      {
+        "file": "apps/frontend/out/lawyers/65aebf0cd6d467471a33a086.txt",
+        "hash": "3320302091536112310"
+      },
+      {
+        "file": "apps/frontend/out/lawyers/65b01a2e17e638faec4aed86.html",
+        "hash": "11013121830909104188"
+      },
+      {
+        "file": "apps/frontend/out/lawyers/65b01a2e17e638faec4aed86.txt",
+        "hash": "3672545562622209166"
+      },
+      {
+        "file": "apps/frontend/out/lawyers/65b0212530e38943b7307179.html",
+        "hash": "8789059188801275848"
+      },
+      {
+        "file": "apps/frontend/out/lawyers/65b0212530e38943b7307179.txt",
+        "hash": "210397870481394879"
+      },
+      {
+        "file": "apps/frontend/out/next.svg",
+        "hash": "8300767200008744458"
+      },
+      {
+        "file": "apps/frontend/out/services.html",
+        "hash": "12760143967457559219"
+      },
+      {
+        "file": "apps/frontend/out/services.txt",
+        "hash": "2930771110948305945"
+      },
+      {
+        "file": "apps/frontend/out/services/302-criminal.html",
+        "hash": "11190485609933649999"
+      },
+      {
+        "file": "apps/frontend/out/services/302-criminal.txt",
+        "hash": "11241853069130341380"
+      },
+      {
+        "file": "apps/frontend/out/services/criminal-cases.html",
+        "hash": "5398556650647653390"
+      },
+      {
+        "file": "apps/frontend/out/services/criminal-cases.txt",
+        "hash": "14446423664610092213"
+      },
+      {
+        "file": "apps/frontend/out/services/family-cases.html",
+        "hash": "637629361693769169"
+      },
+      {
+        "file": "apps/frontend/out/services/family-cases.txt",
+        "hash": "12592231235540368523"
+      },
+      {
+        "file": "apps/frontend/out/services/fia-cases.html",
+        "hash": "7507785715127585586"
+      },
+      {
+        "file": "apps/frontend/out/services/fia-cases.txt",
+        "hash": "160896419619841859"
+      },
+      {
+        "file": "apps/frontend/out/services/imigration-cases.html",
+        "hash": "10347706755798895024"
+      },
+      {
+        "file": "apps/frontend/out/services/imigration-cases.txt",
+        "hash": "1158514839618812258"
+      },
+      {
+        "file": "apps/frontend/out/services/trademark-and-copyright.html",
+        "hash": "14221126398672728449"
+      },
+      {
+        "file": "apps/frontend/out/services/trademark-and-copyright.txt",
+        "hash": "882684417499167980"
+      },
+      {
+        "file": "apps/frontend/out/temp/services/civil.jpg",
+        "hash": "1993110163814609338"
+      },
+      {
+        "file": "apps/frontend/out/temp/services/family.jpg",
+        "hash": "14237732687440087585"
+      },
+      {
+        "file": "apps/frontend/out/temp/storage/bilalzahid.jpg",
+        "hash": "8056059447220840260"
+      },
+      {
+        "file": "apps/frontend/out/temp/storage/blog.jpg",
+        "hash": "9429003266552004745"
+      },
+      {
+        "file": "apps/frontend/out/temp/storage/mian_shafeeq_profile.jpeg",
+        "hash": "18187021153886231681"
+      },
+      {
+        "file": "apps/frontend/out/vercel.svg",
+        "hash": "2376673330454856631"
+      },
+      {
+        "file": "apps/frontend/project.json",
+        "hash": "12603273027639178859"
+      },
+      {
+        "file": "apps/frontend/providers/AuthProvider.tsx",
+        "hash": "743585820334802589",
+        "deps": [
+          "npm:next-auth"
+        ]
+      },
+      {
+        "file": "apps/frontend/providers/ErrorPage.tsx",
+        "hash": "16485063551863583263",
+        "deps": [
+          "npm:@/Components/Stateful/Navbar/navbar",
+          "npm:@/Components/Typography/Typography",
+          "npm:next"
+        ]
+      },
+      {
+        "file": "apps/frontend/providers/page.module.scss",
+        "hash": "8810818570300872469"
+      },
+      {
+        "file": "apps/frontend/providers/protectedProvider.tsx",
+        "hash": "5306139083040801162",
+        "deps": [
+          "npm:@/envConfig",
+          "npm:react-cookie",
+          "npm:jose"
+        ]
+      },
+      {
+        "file": "apps/frontend/proxy.conf.json",
+        "hash": "2514318380189041036"
+      },
+      {
+        "file": "apps/frontend/public/.gitkeep",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "apps/frontend/public/assets/background.png",
+        "hash": "17894230157960451332"
+      },
+      {
+        "file": "apps/frontend/public/assets/gallery/1.jpg",
+        "hash": "14626541099892802046"
+      },
+      {
+        "file": "apps/frontend/public/assets/gallery/2.jpg",
+        "hash": "7703593083643371834"
+      },
+      {
+        "file": "apps/frontend/public/assets/gallery/3.jpg",
+        "hash": "8397043070610084095"
+      },
+      {
+        "file": "apps/frontend/public/assets/homepage/mian_shafeeq_chishti.jpeg",
+        "hash": "4776414700563139987"
+      },
+      {
+        "file": "apps/frontend/public/assets/homepage/mian_shafeeq_profile.jpeg",
+        "hash": "18187021153886231681"
+      },
+      {
+        "file": "apps/frontend/public/assets/homepage/person.jpg",
+        "hash": "9429003266552004745"
+      },
+      {
+        "file": "apps/frontend/public/assets/homepage/statue.jpg",
+        "hash": "16607478227205916872"
+      },
+      {
+        "file": "apps/frontend/public/assets/logo.png",
+        "hash": "11086278797771286648"
+      },
+      {
+        "file": "apps/frontend/public/assets/paper.jpg",
+        "hash": "6306797086355952853"
+      },
+      {
+        "file": "apps/frontend/public/assets/sir-image-text.png",
+        "hash": "2674282661945913989"
+      },
+      {
+        "file": "apps/frontend/public/assets/sir-image.png",
+        "hash": "228857790693357158"
+      },
+      {
+        "file": "apps/frontend/public/assets/sir.png",
+        "hash": "13089102338043919701"
+      },
+      {
+        "file": "apps/frontend/public/assets/upload_image.png",
+        "hash": "14215840261818545991"
+      },
+      {
+        "file": "apps/frontend/public/favicon-white.png",
+        "hash": "6566946225283195125"
+      },
+      {
+        "file": "apps/frontend/public/favicon.ico",
+        "hash": "11952417666309942857"
+      },
+      {
+        "file": "apps/frontend/public/logo-bg.png",
+        "hash": "14960212745374866835"
+      },
+      {
+        "file": "apps/frontend/public/logo-nobg.png",
+        "hash": "12641300005685563504"
+      },
+      {
+        "file": "apps/frontend/public/logo-white.png",
+        "hash": "8990513522066355912"
+      },
+      {
+        "file": "apps/frontend/public/next.svg",
+        "hash": "8300767200008744458"
+      },
+      {
+        "file": "apps/frontend/public/temp/services/civil.jpg",
+        "hash": "1993110163814609338"
+      },
+      {
+        "file": "apps/frontend/public/temp/services/family.jpg",
+        "hash": "14237732687440087585"
+      },
+      {
+        "file": "apps/frontend/public/temp/storage/bilalzahid.jpg",
+        "hash": "8056059447220840260"
+      },
+      {
+        "file": "apps/frontend/public/temp/storage/blog.jpg",
+        "hash": "9429003266552004745"
+      },
+      {
+        "file": "apps/frontend/public/temp/storage/mian_shafeeq_profile.jpeg",
+        "hash": "18187021153886231681"
+      },
+      {
+        "file": "apps/frontend/public/vercel.svg",
+        "hash": "2376673330454856631"
+      },
+      {
+        "file": "apps/frontend/server.js",
+        "hash": "2373538087301297671",
+        "deps": [
+          "npm:http",
+          "npm:url",
+          "npm:next"
+        ]
+      },
+      {
+        "file": "apps/frontend/stories/Button.stories.ts",
+        "hash": "4606922015962579914",
+        "deps": [
+          "npm:@storybook/react"
+        ]
+      },
+      {
+        "file": "apps/frontend/stories/Button.tsx",
+        "hash": "4626484574113805405",
+        "deps": [
+          "npm:react"
+        ]
+      },
+      {
+        "file": "apps/frontend/stories/Configure.mdx",
+        "hash": "3965105427665173359"
+      },
+      {
+        "file": "apps/frontend/stories/Header.stories.ts",
+        "hash": "7547223787883069087",
+        "deps": [
+          "npm:@storybook/react"
+        ]
+      },
+      {
+        "file": "apps/frontend/stories/Header.tsx",
+        "hash": "14523355132317639777",
+        "deps": [
+          "npm:react"
+        ]
+      },
+      {
+        "file": "apps/frontend/stories/Page.stories.ts",
+        "hash": "6482874642959648691",
+        "deps": [
+          "npm:@storybook/react",
+          "npm:@storybook/testing-library"
+        ]
+      },
+      {
+        "file": "apps/frontend/stories/Page.tsx",
+        "hash": "16597526023869900701",
+        "deps": [
+          "npm:react"
+        ]
+      },
+      {
+        "file": "apps/frontend/stories/assets/accessibility.png",
+        "hash": "8320090732909952534"
+      },
+      {
+        "file": "apps/frontend/stories/assets/accessibility.svg",
+        "hash": "5992034062424773352"
+      },
+      {
+        "file": "apps/frontend/stories/assets/addon-library.png",
+        "hash": "16374768047356923990"
+      },
+      {
+        "file": "apps/frontend/stories/assets/assets.png",
+        "hash": "1689741917386238418"
+      },
+      {
+        "file": "apps/frontend/stories/assets/context.png",
+        "hash": "1348985643342670004"
+      },
+      {
+        "file": "apps/frontend/stories/assets/discord.svg",
+        "hash": "11465543081718704772"
+      },
+      {
+        "file": "apps/frontend/stories/assets/docs.png",
+        "hash": "18280049778802555454"
+      },
+      {
+        "file": "apps/frontend/stories/assets/figma-plugin.png",
+        "hash": "6723570263244528263"
+      },
+      {
+        "file": "apps/frontend/stories/assets/github.svg",
+        "hash": "10505510754582308685"
+      },
+      {
+        "file": "apps/frontend/stories/assets/share.png",
+        "hash": "2975175390326490054"
+      },
+      {
+        "file": "apps/frontend/stories/assets/styling.png",
+        "hash": "7588361746934983524"
+      },
+      {
+        "file": "apps/frontend/stories/assets/testing.png",
+        "hash": "9937432921968504604"
+      },
+      {
+        "file": "apps/frontend/stories/assets/theming.png",
+        "hash": "10878554446503237882"
+      },
+      {
+        "file": "apps/frontend/stories/assets/tutorials.svg",
+        "hash": "3640280263585758293"
+      },
+      {
+        "file": "apps/frontend/stories/assets/youtube.svg",
+        "hash": "1178162723556483154"
+      },
+      {
+        "file": "apps/frontend/stories/button.css",
+        "hash": "7166667014997996771"
+      },
+      {
+        "file": "apps/frontend/stories/header.css",
+        "hash": "1346283867141966967"
+      },
+      {
+        "file": "apps/frontend/stories/page.css",
+        "hash": "5296377203020343430"
+      },
+      {
+        "file": "apps/frontend/text/blog_section_texts.tsx",
+        "hash": "12101248497137069450"
+      },
+      {
+        "file": "apps/frontend/text/homepage_texts.tsx",
+        "hash": "12132922342739030495",
+        "deps": [
+          "npm:react-icons"
+        ]
+      },
+      {
+        "file": "apps/frontend/text/make_appoinement_data.tsx",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "apps/frontend/text/mission_raw_data.tsx",
+        "hash": "905354487352964543"
+      },
+      {
+        "file": "apps/frontend/text/sections_raw_data.tsx",
+        "hash": "5587198155267535203"
+      },
+      {
+        "file": "apps/frontend/text/service_section_data.tsx",
+        "hash": "17670070970775133289",
+        "deps": [
+          "npm:next"
+        ]
+      },
+      {
+        "file": "apps/frontend/text/testimonial_section_text.tsx",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "apps/frontend/tsconfig.json",
+        "hash": "12122299688456474080"
+      },
+      {
+        "file": "apps/frontend/tsconfig.spec.json",
+        "hash": "4919308245432237962"
+      },
+      {
+        "file": "apps/frontend/tsconfig.storybook.json",
+        "hash": "6449747975117948326"
+      },
+      {
+        "file": "apps/frontend/utils/auth.ts",
+        "hash": "1236261482844078549",
+        "deps": [
+          "npm:@/envConfig",
+          "npm:axios",
+          "npm:next-auth"
+        ]
+      },
+      {
+        "file": "apps/frontend/utils/generate-ui/generate-ui.tsx",
+        "hash": "2820649808741374812",
+        "deps": [
+          "npm:react"
+        ]
+      },
+      {
+        "file": "apps/frontend/utils/handler/bookeEventHandler.ts",
+        "hash": "13630763204578193176"
+      },
+      {
+        "file": "apps/frontend/utils/mixins/responsive.scss",
+        "hash": "11343004690315112808"
+      }
+    ],
+    "backend-e2e": [
+      {
+        "file": "apps/backend-e2e/.eslintrc.json",
+        "hash": "14921153827776288937"
+      },
+      {
+        "file": "apps/backend-e2e/jest.config.js",
+        "hash": "14431208338104345705"
+      },
+      {
+        "file": "apps/backend-e2e/project.json",
+        "hash": "3756338916787603404"
+      },
+      {
+        "file": "apps/backend-e2e/src/backend/backend.spec.js",
+        "hash": "11995527825573506885",
+        "deps": [
+          "npm:axios"
+        ]
+      },
+      {
+        "file": "apps/backend-e2e/src/support/global-setup.js",
+        "hash": "6263092253678059726"
+      },
+      {
+        "file": "apps/backend-e2e/src/support/global-teardown.js",
+        "hash": "9301694959833719729"
+      },
+      {
+        "file": "apps/backend-e2e/src/support/test-setup.js",
+        "hash": "14330298251753713578",
+        "deps": [
+          "npm:axios"
+        ]
+      },
+      {
+        "file": "apps/backend-e2e/tsconfig.json",
+        "hash": "1422418700492434985"
+      },
+      {
+        "file": "apps/backend-e2e/tsconfig.spec.json",
+        "hash": "5623794208198348967"
+      }
+    ],
+    "backend": [
+      {
+        "file": "apps/backend/.eslintrc.json",
+        "hash": "14921153827776288937"
+      },
+      {
+        "file": "apps/backend/project.json",
+        "hash": "2832317452927634057"
+      },
+      {
+        "file": "apps/backend/src/assets/.gitkeep",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "apps/backend/src/assets/services/302-criminal.jpg",
+        "hash": "9902292594669470062"
+      },
+      {
+        "file": "apps/backend/src/assets/services/criminal-cases.jpg",
+        "hash": "15528334587121142035"
+      },
+      {
+        "file": "apps/backend/src/assets/services/family-civil.jpg",
+        "hash": "14237732687440087585"
+      },
+      {
+        "file": "apps/backend/src/assets/services/fia.jpg",
+        "hash": "12501857378237520402"
+      },
+      {
+        "file": "apps/backend/src/assets/services/imigration-cases.jpg",
+        "hash": "7619291033509845400"
+      },
+      {
+        "file": "apps/backend/src/assets/services/trademark-and-copyrights.jpg",
+        "hash": "1993110163814609338"
+      },
+      {
+        "file": "apps/backend/src/controllers/appointment.controller.js",
+        "hash": "7122721195466784328"
+      },
+      {
+        "file": "apps/backend/src/controllers/auth.controller.js",
+        "hash": "4527690169624969042",
+        "deps": [
+          "npm:jsonwebtoken",
+          "npm:crypto",
+          "npm:util"
+        ]
+      },
+      {
+        "file": "apps/backend/src/controllers/blog.controller.js",
+        "hash": "15135467020206306920"
+      },
+      {
+        "file": "apps/backend/src/controllers/case.controller.js",
+        "hash": "2245217151816662433"
+      },
+      {
+        "file": "apps/backend/src/controllers/errorHandler.js",
+        "hash": "5489136837720280906"
+      },
+      {
+        "file": "apps/backend/src/controllers/image.controller.js",
+        "hash": "9397714632791112456",
+        "deps": [
+          "npm:multer",
+          "npm:sharp",
+          "npm:path"
+        ]
+      },
+      {
+        "file": "apps/backend/src/controllers/lawyer.controller.js",
+        "hash": "2268145974688748305"
+      },
+      {
+        "file": "apps/backend/src/controllers/service.controller.js",
+        "hash": "15635719763333427390"
+      },
+      {
+        "file": "apps/backend/src/main.js",
+        "hash": "3770704205500630133",
+        "deps": [
+          "npm:express",
+          "npm:path",
+          "npm:mongoose",
+          "npm:dotenv",
+          "npm:cors",
+          "npm:cookie-parser"
+        ]
+      },
+      {
+        "file": "apps/backend/src/mainRouter.js",
+        "hash": "18088327372432776215",
+        "deps": [
+          "npm:express"
+        ]
+      },
+      {
+        "file": "apps/backend/src/models/appointment.model.js",
+        "hash": "12522582190720407308",
+        "deps": [
+          "npm:mongoose"
+        ]
+      },
+      {
+        "file": "apps/backend/src/models/blog.model.js",
+        "hash": "719461324947097870",
+        "deps": [
+          "npm:mongoose"
+        ]
+      },
+      {
+        "file": "apps/backend/src/models/case.model.js",
+        "hash": "12957914069401280057",
+        "deps": [
+          "npm:mongoose",
+          "case-type"
+        ]
+      },
+      {
+        "file": "apps/backend/src/models/lawyer.model.js",
+        "hash": "5887700646849251700",
+        "deps": [
+          "npm:mongoose"
+        ]
+      },
+      {
+        "file": "apps/backend/src/models/service.model.js",
+        "hash": "17809267835972755710",
+        "deps": [
+          "npm:mongoose"
+        ]
+      },
+      {
+        "file": "apps/backend/src/models/user.model.js",
+        "hash": "10169299295216356988",
+        "deps": [
+          "npm:validator",
+          "npm:bcrypt",
+          "npm:crypto",
+          "npm:mongoose"
+        ]
+      },
+      {
+        "file": "apps/backend/src/routes/appointment.route.js",
+        "hash": "6369880076855517506",
+        "deps": [
+          "npm:express"
+        ]
+      },
+      {
+        "file": "apps/backend/src/routes/auth.route.js",
+        "hash": "17298939894134606451",
+        "deps": [
+          "npm:express"
+        ]
+      },
+      {
+        "file": "apps/backend/src/routes/blog.route.js",
+        "hash": "17030494734124880540",
+        "deps": [
+          "npm:express"
+        ]
+      },
+      {
+        "file": "apps/backend/src/routes/case.route.js",
+        "hash": "177564348160170463",
+        "deps": [
+          "npm:express"
+        ]
+      },
+      {
+        "file": "apps/backend/src/routes/lawyer.route.js",
+        "hash": "4845870012287335878",
+        "deps": [
+          "npm:express"
+        ]
+      },
+      {
+        "file": "apps/backend/src/routes/service.route.js",
+        "hash": "2381970130865255917",
+        "deps": [
+          "npm:express"
+        ]
+      },
+      {
+        "file": "apps/backend/src/utils/apiError.js",
+        "hash": "3688715260296695926"
+      },
+      {
+        "file": "apps/backend/src/utils/apiFeatures.js",
+        "hash": "14103040325707952821"
+      },
+      {
+        "file": "apps/backend/src/utils/caseTypes.js",
+        "hash": "151471854980686528"
+      },
+      {
+        "file": "apps/backend/src/utils/catchAsync.js",
+        "hash": "17945249143726780164"
+      },
+      {
+        "file": "apps/backend/src/utils/handlerFactory.js",
+        "hash": "16507257360097572676",
+        "deps": [
+          "npm:slugify"
+        ]
+      },
+      {
+        "file": "apps/backend/src/utils/sendMail.js",
+        "hash": "5724431144636982639",
+        "deps": [
+          "npm:nodemailer"
+        ]
+      },
+      {
+        "file": "apps/backend/tsconfig.app.json",
+        "hash": "15276330101424291956"
+      },
+      {
+        "file": "apps/backend/tsconfig.json",
+        "hash": "11725813418806162258"
+      },
+      {
+        "file": "apps/backend/webpack.config.js",
+        "hash": "3897808457268280331",
+        "deps": [
+          "npm:@nx/webpack"
+        ]
+      }
+    ]
+  }
+}

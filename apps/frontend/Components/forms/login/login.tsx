@@ -4,9 +4,7 @@ import Textbox from '@/Components/Inputs/Textbox/Textbox';
 import Typography from '@/Components/Typography/Typography';
 import classes from './login.module.scss';
 import { useState } from 'react';
-import axios from 'axios';
 import { useRouter } from 'next/navigation';
-import { envConfig } from '@/envConfig';
 import { signIn } from 'next-auth/react';
 export interface ILoginForm {
   email: string;
@@ -18,7 +16,6 @@ export interface ILoginForm {
 function LoginForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const router = useRouter();
 
   // const handle_on_submit = async (e: any) => {
   //   e.preventDefault();
@@ -49,7 +46,7 @@ function LoginForm() {
       const res = await signIn('credentials', {
         email,
         password,
-        redirect: true,
+        // redirect: true,
         callbackUrl: '/admin/cases',
       });
 

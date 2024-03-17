@@ -1,14 +1,19 @@
-'use client';
-// import Loading_Spinner from '@/Components/Stateless/Loading_Spinner/Loading_Spinner';
-
-import * as jose from 'jose';
-// import { useRouter } from 'next/navigation';
-// import { useEffect, useState } from 'react';
 import { envConfig } from '@/envConfig';
-import { CookiesProvider, useCookies } from 'react-cookie';
-// import Typography from '@/Components/Typography/Typography';
-// import Navbar from '@/Components/Stateful/Navbar/navbar';
 import ErrorPage from './ErrorPage';
+import { CookiesProvider, useCookies } from 'react-cookie';
+import * as jose from 'jose';
+// async function Protected({ children }: { children: any }) {
+//   const cookieStore = cookies();
+//   const token = cookieStore.get('jwt');
+
+//   const decodeToken = jwt.verify(
+//     token?.value as string,
+//     envConfig.JWT_SECRETKEY as string
+//   );
+
+//   if (decodeToken) return children;
+//   return <ErrorPage />;
+// }
 function Protected({ children }: { children: any }) {
   const [jwtCookie] = useCookies(['jwt']);
   // const [isAuth, setIsAuth] = useState(false);

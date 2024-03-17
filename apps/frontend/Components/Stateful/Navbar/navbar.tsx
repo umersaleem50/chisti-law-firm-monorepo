@@ -6,19 +6,12 @@ import Button from '../../Button/Button';
 import { handle_appointment_event } from '@/utils/handler/bookeEventHandler';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { useCookies } from 'react-cookie';
-import * as jose from 'jose';
-import { envConfig } from '@/envConfig';
+
 import { signOut, useSession } from 'next-auth/react';
 type navlinks = {
   name: string;
   url: string;
 };
-
-interface IProps {
-  onClickAppointment?: (e: React.MouseEvent) => void;
-  onClickLogin?: (e: React.MouseEvent) => void;
-}
 
 export const NAV_LINKS: navlinks[] = [
   {
@@ -67,7 +60,6 @@ const Navbar = () => {
 
   // const [jwtCookie, setCookie] = useCookies(['jwt']);
   const { data: session } = useSession();
-  const [isAuth, setIsAuth] = useState(false);
   // const verifyToken = async (token: any) => {
   //   try {
   //     const data = await jose.jwtVerify(
@@ -103,7 +95,7 @@ const Navbar = () => {
           width={50}
           height={60}
           alt="logo"
-          src={'/assets/logo.png'}
+          src={'/logo-nobg.png'}
           style={{ objectFit: 'cover' }}
         />
         <nav>

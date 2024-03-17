@@ -14,9 +14,9 @@ export const metadata = {
 
 async function Auth_Layout({ children }: { children: any }) {
   const session = await getServerSession(authOptions);
+
   return (
-    // <Protected>
-    <NextAuthProvider>
+    <NextAuthProvider session={session}>
       {session ? (
         <>
           <Navbar />
@@ -28,8 +28,15 @@ async function Auth_Layout({ children }: { children: any }) {
         <ErrorPage />
       )}
     </NextAuthProvider>
-    // </Protected>
   );
 }
+// <Protected>
+//   <>
+//     <Navbar />
+//     <div className={classes['main']}>
+//       <Dashboard_Filter>{children}</Dashboard_Filter>
+//     </div>
+//   </>
+// </Protected>
 
 export default Auth_Layout;
