@@ -9,6 +9,7 @@ import { useRouter } from 'next/navigation';
 import { useCookies } from 'react-cookie';
 import * as jose from 'jose';
 import { envConfig } from '@/envConfig';
+import { signOut, useSession } from 'next-auth/react';
 type navlinks = {
   name: string;
   url: string;
@@ -64,31 +65,32 @@ const Navbar = () => {
     router.push('/admin/appointments');
   };
 
-  const [jwtCookie, setCookie] = useCookies(['jwt']);
+  // const [jwtCookie, setCookie] = useCookies(['jwt']);
+  const { data: session } = useSession();
   const [isAuth, setIsAuth] = useState(false);
-  const verifyToken = async (token: any) => {
-    try {
-      const data = await jose.jwtVerify(
-        token,
-        new TextEncoder().encode(envConfig.JWT_SECRETKEY)
-      );
-      if (data.payload && data.protectedHeader) {
-        setIsAuth(true);
-      }
-    } catch (error) {
-      //   alert(error);
-      // router.push("/auth");
-    }
-  };
+  // const verifyToken = async (token: any) => {
+  //   try {
+  //     const data = await jose.jwtVerify(
+  //       token,
+  //       new TextEncoder().encode(envConfig.JWT_SECRETKEY)
+  //     );
+  //     if (data.payload && data.protectedHeader) {
+  //       setIsAuth(true);
+  //     }
+  //   } catch (error) {
+  //     //   alert(error);
+  //     // router.push("/auth");
+  //   }
+  // };
 
-  const handle_logout = () => {
-    setCookie('jwt', '');
-    router.push('/auth');
-  };
+  // const handle_logout = () => {
+  //   setCookie('jwt', '');
+  //   router.push('/auth');
+  // };
 
-  useEffect(() => {
-    verifyToken(jwtCookie.jwt);
-  }, []);
+  // useEffect(() => {
+  //   verifyToken(jwtCookie.jwt);
+  // }, []);
 
   useEffect(() => {
     const appointmentElement = document.getElementById('appointment-id');
@@ -108,7 +110,7 @@ const Navbar = () => {
           <ul className={classes['nav']}>{generateLinks(NAV_LINKS)}</ul>
         </nav>
         <div className={classes['container__buttons']}>
-          {!isAuth ? (
+          {!session ? (
             <Button
               varient="primary"
               onClick={() => handle_appointment_event(element)}
@@ -125,7 +127,7 @@ const Navbar = () => {
               Dashboard
             </Button>
           )}
-          {!isAuth ? (
+          {!session ? (
             <Button
               varient="outline"
               onClick={handle_login_button}
@@ -136,7 +138,7 @@ const Navbar = () => {
           ) : (
             <Button
               varient="primary"
-              onClick={handle_logout}
+              onClick={signOut}
               customClasses={[classes['btn--logout']]}
             >
               Logout

@@ -3,20 +3,30 @@ import Dashboard_Filter from '@/Components/Stateless/Dashboard_Filter/Dashboard_
 // import Protected from '@/providers/protectedProvider';
 import classes from './layout.module.scss';
 import { NextAuthProvider } from '@/providers/AuthProvider';
+import { getServerSession } from 'next-auth';
+import { authOptions } from '@/utils/auth';
+import ErrorPage from '@/providers/ErrorPage';
 
 export const metadata = {
   title: 'Admin Dashboard',
   description: 'Organize your appointments, cases and more.',
 };
 
-function Auth_Layout({ children }: { children: any }) {
+async function Auth_Layout({ children }: { children: any }) {
+  const session = await getServerSession(authOptions);
   return (
     // <Protected>
     <NextAuthProvider>
-      <Navbar />
-      <div className={classes['main']}>
-        <Dashboard_Filter>{children}</Dashboard_Filter>
-      </div>
+      {session ? (
+        <>
+          <Navbar />
+          <div className={classes['main']}>
+            <Dashboard_Filter>{children}</Dashboard_Filter>
+          </div>
+        </>
+      ) : (
+        <ErrorPage />
+      )}
     </NextAuthProvider>
     // </Protected>
   );

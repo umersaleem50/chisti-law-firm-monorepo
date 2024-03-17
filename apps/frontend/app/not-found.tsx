@@ -15,7 +15,7 @@ const NotFoundPage = () => {
           <Link href={'/'}>Go back to homepage</Link>
         </Typography>
         <Typography vairent="hero" component="h1" color="var(--color-primary)">
-          400 Error.
+          404 Error.
         </Typography>
       </div>
     </main>

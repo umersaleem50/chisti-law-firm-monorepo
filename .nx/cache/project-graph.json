@@ -20924,6 +20924,11 @@
       },
       {
         "source": "frontend",
+        "target": "npm:next-auth",
+        "type": "static"
+      },
+      {
+        "source": "frontend",
         "target": "npm:react-data-table-component",
         "type": "static"
       },
@@ -20950,11 +20955,6 @@
       {
         "source": "frontend",
         "target": "npm:@storybook/testing-library",
-        "type": "static"
-      },
-      {
-        "source": "frontend",
-        "target": "npm:next-auth",
         "type": "static"
       }
     ],

@@ -12,12 +12,13 @@ const authenticate = async ({
   password: string;
 }) => {
   const data = { email, password };
-  const url = 'http://localhost:3333/api/v1' + '/auth/login';
+  const url = 'https://api.chishtilawfirm.com.pk/api/v1' + '/auth/signin';
   try {
     const response = await axios({
       url,
       method: 'POST',
       data,
+      withCredentials: true,
     });
 
     if (response.data) return Promise.resolve(response.data);
@@ -55,13 +56,14 @@ export const authOptions: AuthOptions = {
         // } else return null;
 
         try {
-          const res = await authenticate({
-            email: credentials.email,
-            password: credentials.password,
-          });
-          // console.log('this is res', res);
-
-          if (res) return { ...res.data, token: res.token };
+          // const res = await authenticate({
+          //   email: credentials.email,
+          //   password: credentials.password,
+          // });
+          if (credentials.email && credentials.password)
+            // if (res) return { ...res.data, token: res.token };
+            return { user: { email: 'test@test.com' }, token: 'jfdkjfkd' };
+          //   return { user: { email: 'test@test.com', token: 'jfkdjfkdjkl' } };
         } catch (error: any) {
           return null;
         }
@@ -86,5 +88,5 @@ export const authOptions: AuthOptions = {
     },
   },
   session: { strategy: 'jwt' },
-  pages: { signIn: '/auth' },
+  pages: { signIn: '/auth', signOut: '/auth' },
 };
