@@ -6,19 +6,24 @@ import { sendMail } from '../utils/sendMail';
 import catchAsync from '../utils/catchAsync';
 import apiError from '../utils/apiError';
 
-const sendTokenRes = (res, status, data) => {
-  const cookieOptions = {
-    maxAge: process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000,
-    // new Date(
-    //   Date.now() + (process.env.JWT_COOKIE_EXPIRES_IN || 15) * 24 * 60 * 60 * 1000
-    // ),
+const sendTokenRes = (req, res, status, data) => {
+  // const cookieOptions = {
+  //   maxAge: process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000,
+  //   // new Date(
+  //   //   Date.now() + (process.env.JWT_COOKIE_EXPIRES_IN || 15) * 24 * 60 * 60 * 1000
+  //   // ),
 
+  //   httpOnly: true,
+  // };
+
+  // if (process.env.NODE_ENV === 'production') cookieOptions.secure = true;
+
+  res.cookie('jwt', data.token, {
+    expires: new Date(Date.now() + 15 * 24 * 60 * 60 * 1000),
+    maxAge: 15 * 24 * 60 * 60 * 1000,
     httpOnly: true,
-  };
-
-  if (process.env.NODE_ENV === 'production') cookieOptions.secure = true;
-
-  res.cookie('jwt', data.token, {});
+    secure: req.secure || req.headers['x-forwarded-proto'] === 'https',
+  });
 
   return res.status(status).json({ status: 'success', data });
 };
@@ -36,7 +41,7 @@ export const signUp = catchAsync(async (req, res, next) => {
   const token = createToken(user._id);
 
   //Send Response
-  sendTokenRes(res, 201, { token, data: user });
+  sendTokenRes(req, res, 201, { token, data: user });
 });
 
 export const login = catchAsync(async (req, res, next) => {
@@ -55,7 +60,7 @@ export const login = catchAsync(async (req, res, next) => {
 
   const token = createToken(user._id);
 
-  sendTokenRes(res, 200, { token, data: user });
+  sendTokenRes(req, res, 200, { token, data: user });
 });
 
 export const protectedRoute = catchAsync(async (req, res, next) => {
@@ -227,6 +232,3 @@ export const restrictedTo = (...users) => {
     next();
   };
 };
-
-
-

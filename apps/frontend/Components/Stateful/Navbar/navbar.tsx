@@ -7,7 +7,10 @@ import { handle_appointment_event } from '@/utils/handler/bookeEventHandler';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
-import { signOut, useSession } from 'next-auth/react';
+// import { signOut, useSession } from 'next-auth/react';
+import { jwtVerify } from 'jose';
+import { envConfig } from '@/envConfig';
+import { useCookies } from 'react-cookie';
 type navlinks = {
   name: string;
   url: string;
@@ -49,6 +52,7 @@ const generateLinks = (arr: navlinks[]) => {
 };
 const Navbar = () => {
   const [element, setElement] = useState<HTMLElement>();
+  const [jwtCookie] = useCookies(['jwt']);
   const router = useRouter();
   const handle_login_button = () => {
     router.push('/auth');
@@ -74,6 +78,17 @@ const Navbar = () => {
   //     // router.push("/auth");
   //   }
   // };
+
+  const verifyToken = async (token: string) => {
+    const verified = await jwtVerify(
+      token,
+      new TextEncoder().encode(envConfig.JWT_SECRETKEY)
+    );
+    if (verified && verified.payload.id) {
+      return true;
+    }
+    return false;
+  };
 
   // const handle_logout = () => {
   //   setCookie('jwt', '');
@@ -101,8 +116,8 @@ const Navbar = () => {
         <nav>
           <ul className={classes['nav']}>{generateLinks(NAV_LINKS)}</ul>
         </nav>
-        {/* <div className={classes['container__buttons']}>
-          {true ? (
+        <div className={classes['container__buttons']}>
+          {!jwtCookie.jwt ? (
             <Button
               varient="primary"
               onClick={() => handle_appointment_event(element)}
@@ -119,7 +134,7 @@ const Navbar = () => {
               Dashboard
             </Button>
           )}
-          {true ? (
+          {!jwtCookie.jwt ? (
             <Button
               varient="outline"
               onClick={handle_login_button}
@@ -130,13 +145,13 @@ const Navbar = () => {
           ) : (
             <Button
               varient="primary"
-              onClick={signOut}
+              onClick={handle_login_button}
               customClasses={[classes['btn--logout']]}
             >
               Logout
             </Button>
           )}
-        </div> */}
+        </div>
       </div>
     </div>
   );

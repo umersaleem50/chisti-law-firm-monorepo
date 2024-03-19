@@ -5,7 +5,9 @@ import Typography from '@/Components/Typography/Typography';
 import classes from './login.module.scss';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { signIn } from 'next-auth/react';
+// import { signIn } from 'next-auth/react';
+import { envConfig } from '@/envConfig';
+import axios from 'axios';
 export interface ILoginForm {
   email: string;
   password: string;
@@ -16,53 +18,55 @@ export interface ILoginForm {
 function LoginForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const router = useRouter();
 
-  // const handle_on_submit = async (e: any) => {
-  //   e.preventDefault();
-  //   try {
-  //     const response = await axios({
-  //       url:
-  //         (envConfig.API_PATH || 'http://localhost:3000/api/v1') +
-  //         '/auth/signin',
-  //       method: 'POST',
-  //       withCredentials: true,
-  //       data: { email, password },
-  //     });
-
-  //     if (response.status === 200 || response.statusText === 'OK') {
-  //       alert('Login successful');
-  //       router.push('/admin/cases');
-  //     }
-  //   } catch (error: any) {
-  //     if (error.response && error.response.data) {
-  //       return alert(error.response.data?.message);
-  //     }
-  //     alert('Something went wrong!');
-  //   }
-  // };
-  const handle_submit = async (e: any) => {
+  const handle_on_submit = async (e: any) => {
     e.preventDefault();
     try {
-      const res = await signIn('credentials', {
-        email,
-        password,
-        // redirect: true,
-        callbackUrl: '/admin/cases',
+      const response = await axios({
+        url:
+          (envConfig.API_PATH || 'http://localhost:3000/api/v1') +
+          '/auth/signin',
+        method: 'POST',
+        withCredentials: true,
+        data: { email, password },
       });
 
-      if (res?.ok) {
-        alert('Login successful!');
+      if (response.status === 200 || response.statusText === 'OK') {
+        alert('Login successful');
+        localStorage.setItem('user', 'true');
+        router.push('/admin/cases');
       }
-    } catch (error) {
-      console.log(error);
-
-      // if (res?.error) {
-      return alert('Invalid email or password.');
-      // }
+    } catch (error: any) {
+      if (error.response && error.response.data) {
+        return alert(error.response.data?.message);
+      }
+      alert('Something went wrong!');
     }
   };
+  // const handle_submit = async (e: any) => {
+  //   e.preventDefault();
+  //   try {
+  //     const res = await signIn('credentials', {
+  //       email,
+  //       password,
+  //       // redirect: true,
+  //       callbackUrl: '/admin/cases',
+  //     });
+
+  //     if (res?.ok) {
+  //       alert('Login successful!');
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+
+  //     // if (res?.error) {
+  //     return alert('Invalid email or password.');
+  //     // }
+  //   }
+  // };
   return (
-    <form className={classes['form']} onSubmit={handle_submit}>
+    <form className={classes['form']} onSubmit={handle_on_submit}>
       <div className={classes['form__typo']}>
         <Typography
           vairent="secondary"

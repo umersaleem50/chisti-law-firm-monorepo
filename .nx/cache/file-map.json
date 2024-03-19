@@ -100,264 +100,6 @@
   },
   "nxJsonPlugins": [],
   "projectFileMap": {
-    "backend": [
-      {
-        "file": "apps/backend/.eslintrc.json",
-        "hash": "14921153827776288937"
-      },
-      {
-        "file": "apps/backend/project.json",
-        "hash": "2832317452927634057"
-      },
-      {
-        "file": "apps/backend/src/assets/.gitkeep",
-        "hash": "3244421341483603138"
-      },
-      {
-        "file": "apps/backend/src/assets/services/302-criminal.jpg",
-        "hash": "9902292594669470062"
-      },
-      {
-        "file": "apps/backend/src/assets/services/criminal-cases.jpg",
-        "hash": "15528334587121142035"
-      },
-      {
-        "file": "apps/backend/src/assets/services/family-civil.jpg",
-        "hash": "14237732687440087585"
-      },
-      {
-        "file": "apps/backend/src/assets/services/fia.jpg",
-        "hash": "12501857378237520402"
-      },
-      {
-        "file": "apps/backend/src/assets/services/imigration-cases.jpg",
-        "hash": "7619291033509845400"
-      },
-      {
-        "file": "apps/backend/src/assets/services/trademark-and-copyrights.jpg",
-        "hash": "1993110163814609338"
-      },
-      {
-        "file": "apps/backend/src/controllers/appointment.controller.js",
-        "hash": "7122721195466784328"
-      },
-      {
-        "file": "apps/backend/src/controllers/auth.controller.js",
-        "hash": "4527690169624969042",
-        "deps": [
-          "npm:jsonwebtoken",
-          "npm:crypto",
-          "npm:util"
-        ]
-      },
-      {
-        "file": "apps/backend/src/controllers/blog.controller.js",
-        "hash": "15135467020206306920"
-      },
-      {
-        "file": "apps/backend/src/controllers/case.controller.js",
-        "hash": "2245217151816662433"
-      },
-      {
-        "file": "apps/backend/src/controllers/errorHandler.js",
-        "hash": "5489136837720280906"
-      },
-      {
-        "file": "apps/backend/src/controllers/image.controller.js",
-        "hash": "9397714632791112456",
-        "deps": [
-          "npm:multer",
-          "npm:sharp",
-          "npm:path"
-        ]
-      },
-      {
-        "file": "apps/backend/src/controllers/lawyer.controller.js",
-        "hash": "2268145974688748305"
-      },
-      {
-        "file": "apps/backend/src/controllers/service.controller.js",
-        "hash": "15635719763333427390"
-      },
-      {
-        "file": "apps/backend/src/main.js",
-        "hash": "3770704205500630133",
-        "deps": [
-          "npm:express",
-          "npm:path",
-          "npm:mongoose",
-          "npm:dotenv",
-          "npm:cors",
-          "npm:cookie-parser"
-        ]
-      },
-      {
-        "file": "apps/backend/src/mainRouter.js",
-        "hash": "18088327372432776215",
-        "deps": [
-          "npm:express"
-        ]
-      },
-      {
-        "file": "apps/backend/src/models/appointment.model.js",
-        "hash": "12522582190720407308",
-        "deps": [
-          "npm:mongoose"
-        ]
-      },
-      {
-        "file": "apps/backend/src/models/blog.model.js",
-        "hash": "719461324947097870",
-        "deps": [
-          "npm:mongoose"
-        ]
-      },
-      {
-        "file": "apps/backend/src/models/case.model.js",
-        "hash": "12957914069401280057",
-        "deps": [
-          "npm:mongoose",
-          "case-type"
-        ]
-      },
-      {
-        "file": "apps/backend/src/models/lawyer.model.js",
-        "hash": "5887700646849251700",
-        "deps": [
-          "npm:mongoose"
-        ]
-      },
-      {
-        "file": "apps/backend/src/models/service.model.js",
-        "hash": "17809267835972755710",
-        "deps": [
-          "npm:mongoose"
-        ]
-      },
-      {
-        "file": "apps/backend/src/models/user.model.js",
-        "hash": "10169299295216356988",
-        "deps": [
-          "npm:validator",
-          "npm:bcrypt",
-          "npm:crypto",
-          "npm:mongoose"
-        ]
-      },
-      {
-        "file": "apps/backend/src/routes/appointment.route.js",
-        "hash": "6369880076855517506",
-        "deps": [
-          "npm:express"
-        ]
-      },
-      {
-        "file": "apps/backend/src/routes/auth.route.js",
-        "hash": "17298939894134606451",
-        "deps": [
-          "npm:express"
-        ]
-      },
-      {
-        "file": "apps/backend/src/routes/blog.route.js",
-        "hash": "17030494734124880540",
-        "deps": [
-          "npm:express"
-        ]
-      },
-      {
-        "file": "apps/backend/src/routes/case.route.js",
-        "hash": "177564348160170463",
-        "deps": [
-          "npm:express"
-        ]
-      },
-      {
-        "file": "apps/backend/src/routes/lawyer.route.js",
-        "hash": "4845870012287335878",
-        "deps": [
-          "npm:express"
-        ]
-      },
-      {
-        "file": "apps/backend/src/routes/service.route.js",
-        "hash": "2381970130865255917",
-        "deps": [
-          "npm:express"
-        ]
-      },
-      {
-        "file": "apps/backend/src/utils/apiError.js",
-        "hash": "3688715260296695926"
-      },
-      {
-        "file": "apps/backend/src/utils/apiFeatures.js",
-        "hash": "14103040325707952821"
-      },
-      {
-        "file": "apps/backend/src/utils/caseTypes.js",
-        "hash": "151471854980686528"
-      },
-      {
-        "file": "apps/backend/src/utils/catchAsync.js",
-        "hash": "17945249143726780164"
-      },
-      {
-        "file": "apps/backend/src/utils/handlerFactory.js",
-        "hash": "16507257360097572676",
-        "deps": [
-          "npm:slugify"
-        ]
-      },
-      {
-        "file": "apps/backend/src/utils/sendMail.js",
-        "hash": "5724431144636982639",
-        "deps": [
-          "npm:nodemailer"
-        ]
-      },
-      {
-        "file": "apps/backend/tsconfig.app.json",
-        "hash": "15276330101424291956"
-      },
-      {
-        "file": "apps/backend/tsconfig.json",
-        "hash": "11725813418806162258"
-      },
-      {
-        "file": "apps/backend/webpack.config.js",
-        "hash": "3897808457268280331",
-        "deps": [
-          "npm:@nx/webpack"
-        ]
-      }
-    ],
-    "case-type": [
-      {
-        "file": "libs/shared/case-type/README.md",
-        "hash": "11620758126303659691"
-      },
-      {
-        "file": "libs/shared/case-type/project.json",
-        "hash": "6589794201773564789"
-      },
-      {
-        "file": "libs/shared/case-type/src/index.ts",
-        "hash": "3766687583311619159"
-      },
-      {
-        "file": "libs/shared/case-type/src/lib/case-type.ts",
-        "hash": "13109400802790316718"
-      },
-      {
-        "file": "libs/shared/case-type/tsconfig.json",
-        "hash": "11362601880824838265"
-      },
-      {
-        "file": "libs/shared/case-type/tsconfig.lib.json",
-        "hash": "5554291030212586824"
-      }
-    ],
     "frontend": [
       {
         "file": "apps/frontend/.eslintrc.json",
@@ -875,12 +617,14 @@
       },
       {
         "file": "apps/frontend/Components/Stateful/Navbar/navbar.tsx",
-        "hash": "3080634663460531643",
+        "hash": "7121088221822726104",
         "deps": [
           "npm:next",
           "npm:@/utils/handler/bookeEventHandler",
           "npm:react",
-          "npm:next-auth"
+          "npm:jose",
+          "npm:@/envConfig",
+          "npm:react-cookie"
         ]
       },
       {
@@ -1220,14 +964,15 @@
       },
       {
         "file": "apps/frontend/Components/forms/login/login.tsx",
-        "hash": "2440818817153507726",
+        "hash": "11616891843819871869",
         "deps": [
           "npm:@/Components/Button/Button",
           "npm:@/Components/Inputs/Textbox/Textbox",
           "npm:@/Components/Typography/Typography",
           "npm:react",
           "npm:next",
-          "npm:next-auth"
+          "npm:@/envConfig",
+          "npm:axios"
         ]
       },
       {
@@ -1432,6 +1177,19 @@
         ]
       },
       {
+        "file": "apps/frontend/app/error.module.scss",
+        "hash": "8810818570300872469"
+      },
+      {
+        "file": "apps/frontend/app/error.tsx",
+        "hash": "11283294607695643426",
+        "deps": [
+          "npm:@/Components/Stateful/Navbar/navbar",
+          "npm:@/Components/Typography/Typography",
+          "npm:next"
+        ]
+      },
+      {
         "file": "apps/frontend/app/global.scss",
         "hash": "10472708158832693173"
       },
@@ -1535,6 +1293,14 @@
       {
         "file": "apps/frontend/jest.config.ts",
         "hash": "15431173560995393225"
+      },
+      {
+        "file": "apps/frontend/middleware.ts",
+        "hash": "17973868462565040530",
+        "deps": [
+          "npm:next",
+          "npm:jose"
+        ]
       },
       {
         "file": "apps/frontend/next-env.d.ts",
@@ -2393,13 +2159,58 @@
       {
         "file": "apps/frontend/utils/mixins/responsive.scss",
         "hash": "11343004690315112808"
+      }
+    ],
+    "case-type": [
+      {
+        "file": "libs/shared/case-type/README.md",
+        "hash": "11620758126303659691"
       },
       {
-        "file": "apps/frontend/middleware.ts",
-        "hash": "5858799407608086064",
-        "deps": [
-          "npm:next"
-        ]
+        "file": "libs/shared/case-type/project.json",
+        "hash": "6589794201773564789"
+      },
+      {
+        "file": "libs/shared/case-type/src/index.ts",
+        "hash": "3766687583311619159"
+      },
+      {
+        "file": "libs/shared/case-type/src/lib/case-type.ts",
+        "hash": "13109400802790316718"
+      },
+      {
+        "file": "libs/shared/case-type/tsconfig.json",
+        "hash": "11362601880824838265"
+      },
+      {
+        "file": "libs/shared/case-type/tsconfig.lib.json",
+        "hash": "5554291030212586824"
+      }
+    ],
+    "book-appointment-handler": [
+      {
+        "file": "libs/handlers/book-appointment-handler/README.md",
+        "hash": "7040802319482672591"
+      },
+      {
+        "file": "libs/handlers/book-appointment-handler/project.json",
+        "hash": "6514546645548358847"
+      },
+      {
+        "file": "libs/handlers/book-appointment-handler/src/index.ts",
+        "hash": "9685641398118945026"
+      },
+      {
+        "file": "libs/handlers/book-appointment-handler/src/lib/book-appointment-handler.ts",
+        "hash": "11265700792681349704"
+      },
+      {
+        "file": "libs/handlers/book-appointment-handler/tsconfig.json",
+        "hash": "11694468379504486425"
+      },
+      {
+        "file": "libs/handlers/book-appointment-handler/tsconfig.lib.json",
+        "hash": "11624129529813747059"
       }
     ],
     "backend-e2e": [
@@ -2446,30 +2257,236 @@
         "hash": "5623794208198348967"
       }
     ],
-    "book-appointment-handler": [
+    "backend": [
       {
-        "file": "libs/handlers/book-appointment-handler/README.md",
-        "hash": "7040802319482672591"
+        "file": "apps/backend/.eslintrc.json",
+        "hash": "14921153827776288937"
       },
       {
-        "file": "libs/handlers/book-appointment-handler/project.json",
-        "hash": "6514546645548358847"
+        "file": "apps/backend/project.json",
+        "hash": "2832317452927634057"
       },
       {
-        "file": "libs/handlers/book-appointment-handler/src/index.ts",
-        "hash": "9685641398118945026"
+        "file": "apps/backend/src/assets/.gitkeep",
+        "hash": "3244421341483603138"
       },
       {
-        "file": "libs/handlers/book-appointment-handler/src/lib/book-appointment-handler.ts",
-        "hash": "11265700792681349704"
+        "file": "apps/backend/src/assets/services/302-criminal.jpg",
+        "hash": "9902292594669470062"
       },
       {
-        "file": "libs/handlers/book-appointment-handler/tsconfig.json",
-        "hash": "11694468379504486425"
+        "file": "apps/backend/src/assets/services/criminal-cases.jpg",
+        "hash": "15528334587121142035"
       },
       {
-        "file": "libs/handlers/book-appointment-handler/tsconfig.lib.json",
-        "hash": "11624129529813747059"
+        "file": "apps/backend/src/assets/services/family-civil.jpg",
+        "hash": "14237732687440087585"
+      },
+      {
+        "file": "apps/backend/src/assets/services/fia.jpg",
+        "hash": "12501857378237520402"
+      },
+      {
+        "file": "apps/backend/src/assets/services/imigration-cases.jpg",
+        "hash": "7619291033509845400"
+      },
+      {
+        "file": "apps/backend/src/assets/services/trademark-and-copyrights.jpg",
+        "hash": "1993110163814609338"
+      },
+      {
+        "file": "apps/backend/src/controllers/appointment.controller.js",
+        "hash": "7122721195466784328"
+      },
+      {
+        "file": "apps/backend/src/controllers/auth.controller.js",
+        "hash": "18009802445739087566",
+        "deps": [
+          "npm:jsonwebtoken",
+          "npm:crypto",
+          "npm:util"
+        ]
+      },
+      {
+        "file": "apps/backend/src/controllers/blog.controller.js",
+        "hash": "15135467020206306920"
+      },
+      {
+        "file": "apps/backend/src/controllers/case.controller.js",
+        "hash": "2245217151816662433"
+      },
+      {
+        "file": "apps/backend/src/controllers/errorHandler.js",
+        "hash": "5489136837720280906"
+      },
+      {
+        "file": "apps/backend/src/controllers/image.controller.js",
+        "hash": "9397714632791112456",
+        "deps": [
+          "npm:multer",
+          "npm:sharp",
+          "npm:path"
+        ]
+      },
+      {
+        "file": "apps/backend/src/controllers/lawyer.controller.js",
+        "hash": "2268145974688748305"
+      },
+      {
+        "file": "apps/backend/src/controllers/service.controller.js",
+        "hash": "15635719763333427390"
+      },
+      {
+        "file": "apps/backend/src/main.js",
+        "hash": "3770704205500630133",
+        "deps": [
+          "npm:express",
+          "npm:path",
+          "npm:mongoose",
+          "npm:dotenv",
+          "npm:cors",
+          "npm:cookie-parser"
+        ]
+      },
+      {
+        "file": "apps/backend/src/mainRouter.js",
+        "hash": "18088327372432776215",
+        "deps": [
+          "npm:express"
+        ]
+      },
+      {
+        "file": "apps/backend/src/models/appointment.model.js",
+        "hash": "12522582190720407308",
+        "deps": [
+          "npm:mongoose"
+        ]
+      },
+      {
+        "file": "apps/backend/src/models/blog.model.js",
+        "hash": "719461324947097870",
+        "deps": [
+          "npm:mongoose"
+        ]
+      },
+      {
+        "file": "apps/backend/src/models/case.model.js",
+        "hash": "12957914069401280057",
+        "deps": [
+          "npm:mongoose",
+          "case-type"
+        ]
+      },
+      {
+        "file": "apps/backend/src/models/lawyer.model.js",
+        "hash": "5887700646849251700",
+        "deps": [
+          "npm:mongoose"
+        ]
+      },
+      {
+        "file": "apps/backend/src/models/service.model.js",
+        "hash": "17809267835972755710",
+        "deps": [
+          "npm:mongoose"
+        ]
+      },
+      {
+        "file": "apps/backend/src/models/user.model.js",
+        "hash": "10169299295216356988",
+        "deps": [
+          "npm:validator",
+          "npm:bcrypt",
+          "npm:crypto",
+          "npm:mongoose"
+        ]
+      },
+      {
+        "file": "apps/backend/src/routes/appointment.route.js",
+        "hash": "6369880076855517506",
+        "deps": [
+          "npm:express"
+        ]
+      },
+      {
+        "file": "apps/backend/src/routes/auth.route.js",
+        "hash": "17298939894134606451",
+        "deps": [
+          "npm:express"
+        ]
+      },
+      {
+        "file": "apps/backend/src/routes/blog.route.js",
+        "hash": "17030494734124880540",
+        "deps": [
+          "npm:express"
+        ]
+      },
+      {
+        "file": "apps/backend/src/routes/case.route.js",
+        "hash": "177564348160170463",
+        "deps": [
+          "npm:express"
+        ]
+      },
+      {
+        "file": "apps/backend/src/routes/lawyer.route.js",
+        "hash": "4845870012287335878",
+        "deps": [
+          "npm:express"
+        ]
+      },
+      {
+        "file": "apps/backend/src/routes/service.route.js",
+        "hash": "2381970130865255917",
+        "deps": [
+          "npm:express"
+        ]
+      },
+      {
+        "file": "apps/backend/src/utils/apiError.js",
+        "hash": "3688715260296695926"
+      },
+      {
+        "file": "apps/backend/src/utils/apiFeatures.js",
+        "hash": "14103040325707952821"
+      },
+      {
+        "file": "apps/backend/src/utils/caseTypes.js",
+        "hash": "151471854980686528"
+      },
+      {
+        "file": "apps/backend/src/utils/catchAsync.js",
+        "hash": "17945249143726780164"
+      },
+      {
+        "file": "apps/backend/src/utils/handlerFactory.js",
+        "hash": "16507257360097572676",
+        "deps": [
+          "npm:slugify"
+        ]
+      },
+      {
+        "file": "apps/backend/src/utils/sendMail.js",
+        "hash": "5724431144636982639",
+        "deps": [
+          "npm:nodemailer"
+        ]
+      },
+      {
+        "file": "apps/backend/tsconfig.app.json",
+        "hash": "15276330101424291956"
+      },
+      {
+        "file": "apps/backend/tsconfig.json",
+        "hash": "11725813418806162258"
+      },
+      {
+        "file": "apps/backend/webpack.config.js",
+        "hash": "3897808457268280331",
+        "deps": [
+          "npm:@nx/webpack"
+        ]
       }
     ],
     "generate-ui": [
