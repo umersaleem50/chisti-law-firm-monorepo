@@ -59,7 +59,7 @@ const Navbar = () => {
   };
 
   // const [jwtCookie, setCookie] = useCookies(['jwt']);
-  const { data: session } = useSession();
+  // const { data: session } = useSession();
   // const verifyToken = async (token: any) => {
   //   try {
   //     const data = await jose.jwtVerify(
@@ -101,8 +101,8 @@ const Navbar = () => {
         <nav>
           <ul className={classes['nav']}>{generateLinks(NAV_LINKS)}</ul>
         </nav>
-        <div className={classes['container__buttons']}>
-          {!session ? (
+        {/* <div className={classes['container__buttons']}>
+          {true ? (
             <Button
               varient="primary"
               onClick={() => handle_appointment_event(element)}
@@ -119,7 +119,7 @@ const Navbar = () => {
               Dashboard
             </Button>
           )}
-          {!session ? (
+          {true ? (
             <Button
               varient="outline"
               onClick={handle_login_button}
@@ -136,7 +136,7 @@ const Navbar = () => {
               Logout
             </Button>
           )}
-        </div>
+        </div> */}
       </div>
     </div>
   );

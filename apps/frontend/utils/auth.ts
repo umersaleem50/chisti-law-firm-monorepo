@@ -63,8 +63,8 @@ export const authOptions: AuthOptions = {
           //   email: credentials.email,
           //   password: credentials.password,
           // });
-          // const url = envConfig.API_PATH + '/auth/signin';
-          const url = 'http://localhost:3333/api/v1' + '/auth/signin';
+          const url = envConfig.API_PATH + '/auth/signin';
+          // const url = 'http://localhost:3333/api/v1' + '/auth/signin';
           const data = {
             email: credentials.email,
             password: credentials.password,

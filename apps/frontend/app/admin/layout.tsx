@@ -13,21 +13,21 @@ export const metadata = {
 };
 
 async function Auth_Layout({ children }: { children: any }) {
-  const session = await getServerSession(authOptions);
+  // const session = await getServerSession(authOptions);
 
   return (
-    <NextAuthProvider session={session}>
-      {session ? (
-        <>
-          <Navbar />
-          <div className={classes['main']}>
-            <Dashboard_Filter>{children}</Dashboard_Filter>
-          </div>
-        </>
-      ) : (
-        <ErrorPage />
-      )}
-    </NextAuthProvider>
+    // <NextAuthProvider session={session}>
+    //   {session ? (
+    <>
+      <Navbar />
+      <div className={classes['main']}>
+        <Dashboard_Filter>{children}</Dashboard_Filter>
+      </div>
+    </>
+    //   ) : (
+    //     <ErrorPage />
+    //   )}
+    // </NextAuthProvider>
   );
 }
 // <Protected>
