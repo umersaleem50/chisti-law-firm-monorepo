@@ -4,6 +4,8 @@ import Navbar from '../../../Components/Stateful/Navbar/navbar';
 import BlogLayout from '@/Components/Layouts/Blog_Layout/Blog_Layout';
 import classes from '../page.module.scss';
 import { envConfig } from '@/envConfig';
+import { notFound } from 'next/navigation';
+import NavbarComponent from '@/Components/Stateful/Navbar/navbar.servercomponent';
 // import { Metadata, ResolvingMetadata } from 'next';
 
 const fetchBlogs = async (slug: string) => {
@@ -43,10 +45,11 @@ const fetchBlogs = async (slug: string) => {
 const Blog_With_ID = async ({ params }: { params: any }) => {
   const { slug } = params;
   const data = await fetchBlogs(slug);
+  if (data.error) return notFound();
 
   return (
     <>
-      <Navbar />
+      <NavbarComponent />
       <div className={classes['main']}>
         <BlogLayout
           description={data.description}

@@ -20,7 +20,7 @@ export interface HeaderProps {}
 const tagsArr: ITag[] = [
   { primaryText: 'more than', secondaryText: '+5000 Cases' },
   { primaryText: 'more than', secondaryText: '+1000 Clients' },
-  { primaryText: '5+ Years', secondaryText: 'Expirence' },
+  { primaryText: '5+ Years', secondaryText: 'Of Expirence' },
 ];
 
 export function Header(props: HeaderProps) {

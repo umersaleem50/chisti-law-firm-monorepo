@@ -1,5 +1,6 @@
 // 'use client';
 
+import NavbarComponent from '@/Components/Stateful/Navbar/navbar.servercomponent';
 import Blogs from '../Components/Layouts/Blogs/Blogs';
 import Footer from '../Components/Layouts/Footer/Footer';
 import Make_Appointment from '../Components/Layouts/Make_Appointment/Make_Appointment';
@@ -42,7 +43,7 @@ export default async function Index() {
   // ];
   return (
     <main className={styles.page}>
-      <Navbar />
+      <NavbarComponent />
       <Header />
       <Finder />
       <Services />

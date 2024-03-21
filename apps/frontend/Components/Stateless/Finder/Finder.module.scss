@@ -26,11 +26,12 @@
   }
 
   &__finder {
-    width: 50%;
+    width: 30%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: stretch;
+    
   }
 
   @include respond(phone) {

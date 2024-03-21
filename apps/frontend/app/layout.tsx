@@ -1,7 +1,4 @@
-import { NextAuthProvider } from '@/providers/AuthProvider';
 import './global.scss';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '@/utils/auth';
 
 export const metadata = {
   title: 'Welcome to chishti law firm.',

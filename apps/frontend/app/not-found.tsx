@@ -1,11 +1,11 @@
-import Navbar from '@/Components/Stateful/Navbar/navbar';
 import classes from './not-found.module.scss';
 import Typography from '@/Components/Typography/Typography';
 import Link from 'next/link';
+import NavbarComponent from '@/Components/Stateful/Navbar/navbar.servercomponent';
 const NotFoundPage = () => {
   return (
     <main className={classes['main']}>
-      <Navbar />
+      <NavbarComponent />
       <div className={classes['content']}>
         <Typography vairent="secondary" component="h1">
           Not Found

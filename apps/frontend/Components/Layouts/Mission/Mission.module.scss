@@ -1,4 +1,4 @@
-@import "~/utils/mixins/responsive.scss";
+@import '~/utils/mixins/responsive.scss';
 .element {
   display: flex;
   width: 100%;
@@ -28,7 +28,7 @@
     flex-direction: row-reverse !important;
   }
 
-  @include respond(phone) {
+  @include respond(tab-port) {
     flex-direction: column;
     &__details,
     &__image {

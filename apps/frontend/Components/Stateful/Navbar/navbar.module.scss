@@ -24,6 +24,12 @@
 
   &__buttons {
     display: flex;
+    justify-self: flex-end;
+    // justify-content: space-between;
+  }
+
+  @include respond(tab-land) {
+    display: flex;
     justify-content: space-between;
   }
 }
@@ -46,7 +52,11 @@
     }
   }
 
-  @include respond(phone) {
+  @include respond(tab-land) {
+    gap: 3rem;
+  }
+
+  @include respond(tab-port) {
     display: none;
   }
 }

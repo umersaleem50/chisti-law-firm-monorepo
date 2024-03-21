@@ -8,6 +8,7 @@ import {
   deactivateAccount,
   getCurrentUser,
   protectedRoute,
+  logout,
 } from '../controllers/auth.controller';
 
 const authRouter = Router();
@@ -22,6 +23,7 @@ authRouter.use(protectedRoute);
 authRouter
   .post('/profile', getCurrentUser)
   .post('/change-password', changePassword)
-  .post('/de-activate', deactivateAccount);
+  .post('/de-activate', deactivateAccount)
+  .post('/logout', logout);
 
 export default authRouter;

@@ -7,6 +7,7 @@ import Lawyer_Details from '@/Components/Layouts/Lawyer_Detail/Lawyer_Details'; 
 import { notFound } from 'next/navigation';
 import classes from '../page.module.scss';
 import { envConfig } from '@/envConfig';
+import NavbarComponent from '@/Components/Stateful/Navbar/navbar.servercomponent';
 
 const fetchData = async (slug: string | '' | undefined) => {
   const url =
@@ -25,7 +26,7 @@ const Lawyer_With_ID = async ({ params }: { params: any }) => {
 
   return (
     <>
-      <Navbar />
+      <NavbarComponent />
       <div className={classes['main']}>
         <Lawyer_Details
           bio={data.bio}

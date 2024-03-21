@@ -1,4 +1,4 @@
-@import "~/utils/mixins/responsive.scss";
+@import '~/utils/mixins/responsive.scss';
 .top {
   display: flex;
   justify-content: space-between;
@@ -9,6 +9,10 @@
 
   &__details {
     max-width: 70rem;
+
+    @include respond(tab-port) {
+      max-width: 50rem;
+    }
 
     @include respond(phone) {
       max-width: 40rem;
@@ -32,7 +36,7 @@
   width: 100%;
   // max-width: var(--max-width);
   margin: var(--margin-section-auto);
-  @include respond(phone) {
+  @include respond(tab-land) {
     padding: 0 2rem;
   }
 }

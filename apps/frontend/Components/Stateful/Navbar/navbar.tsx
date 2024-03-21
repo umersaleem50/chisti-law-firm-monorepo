@@ -10,7 +10,8 @@ import { useRouter } from 'next/navigation';
 // import { signOut, useSession } from 'next-auth/react';
 import { jwtVerify } from 'jose';
 import { envConfig } from '@/envConfig';
-import { useCookies } from 'react-cookie';
+import { CookiesProvider, useCookies } from 'react-cookie';
+import axios from 'axios';
 type navlinks = {
   name: string;
   url: string;
@@ -50,19 +51,32 @@ const generateLinks = (arr: navlinks[]) => {
     );
   });
 };
-const Navbar = () => {
+const Navbar = async ({ cookie = '' }: { cookie?: string }) => {
   const [element, setElement] = useState<HTMLElement>();
-  const [jwtCookie] = useCookies(['jwt']);
+
+  // const jwtCookie = cookies().get('jwt');
+
   const router = useRouter();
-  const handle_login_button = () => {
-    router.push('/auth');
+  const handle_login_button = async () => {
+    // e.preventDefault();
+    try {
+      const res = await axios({
+        url: envConfig.API_PATH + '/auth/logout',
+        method: 'POST',
+        withCredentials: true,
+      });
+      alert('logout successful');
+    } catch (error) {
+      alert('Failed to logout your profile.');
+    } finally {
+      router.push('/auth');
+    }
   };
 
   const handle_dashboard_redirect = () => {
     router.push('/admin/appointments');
   };
 
-  // const [jwtCookie, setCookie] = useCookies(['jwt']);
   // const { data: session } = useSession();
   // const verifyToken = async (token: any) => {
   //   try {
@@ -80,8 +94,10 @@ const Navbar = () => {
   // };
 
   const verifyToken = async (token: string) => {
+    const tokenStr = token?.toString();
+    if (!tokenStr || tokenStr === '') return false;
     const verified = await jwtVerify(
-      token,
+      tokenStr,
       new TextEncoder().encode(envConfig.JWT_SECRETKEY)
     );
     if (verified && verified.payload.id) {
@@ -117,7 +133,7 @@ const Navbar = () => {
           <ul className={classes['nav']}>{generateLinks(NAV_LINKS)}</ul>
         </nav>
         <div className={classes['container__buttons']}>
-          {!jwtCookie.jwt ? (
+          {!(await verifyToken(cookie)) ? (
             <Button
               varient="primary"
               onClick={() => handle_appointment_event(element)}
@@ -134,7 +150,7 @@ const Navbar = () => {
               Dashboard
             </Button>
           )}
-          {!jwtCookie.jwt ? (
+          {!(await verifyToken(cookie)) ? (
             <Button
               varient="outline"
               onClick={handle_login_button}

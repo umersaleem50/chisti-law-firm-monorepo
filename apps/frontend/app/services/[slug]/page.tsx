@@ -8,6 +8,7 @@ import Service_Results from '../../../Components/Layouts/services_results/Servic
 import { notFound } from 'next/navigation';
 import classes from '../page.module.scss';
 import { envConfig } from '@/envConfig';
+import NavbarComponent from '@/Components/Stateful/Navbar/navbar.servercomponent';
 
 const fetchData = async (slug: string | '' | undefined) => {
   // const url = 'https://dummyjson.com/products';
@@ -27,7 +28,7 @@ const Services = async ({ params }: any) => {
 
   return (
     <>
-      <Navbar />
+      <NavbarComponent />
       <div className={classes['main']}>
         <Service_Filters>
           <Service_Results

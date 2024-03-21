@@ -232,3 +232,8 @@ export const restrictedTo = (...users) => {
     next();
   };
 };
+
+export const logout = catchAsync((req, res) => {
+  res.cookie('jwt', '');
+  return res.status(200);
+});
