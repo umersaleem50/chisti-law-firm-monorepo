@@ -28,6 +28,38 @@
         "implicitDependencies": []
       }
     },
+    "generate-ui": {
+      "name": "generate-ui",
+      "type": "lib",
+      "data": {
+        "name": "generate-ui",
+        "root": "libs/generate-ui",
+        "$schema": "../../node_modules/nx/schemas/project-schema.json",
+        "sourceRoot": "libs/generate-ui/src",
+        "projectType": "library",
+        "tags": [],
+        "targets": {
+          "lint": {
+            "inputs": [
+              "default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{workspaceRoot}/.eslintignore"
+            ],
+            "executor": "@nx/linter:eslint",
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "options": {
+              "lintFilePatterns": [
+                "libs/generate-ui/**/*.{ts,tsx,js,jsx}"
+              ]
+            },
+            "configurations": {}
+          }
+        },
+        "implicitDependencies": []
+      }
+    },
     "backend-e2e": {
       "name": "backend-e2e",
       "type": "e2e",
@@ -74,38 +106,6 @@
           }
         },
         "tags": []
-      }
-    },
-    "generate-ui": {
-      "name": "generate-ui",
-      "type": "lib",
-      "data": {
-        "name": "generate-ui",
-        "root": "libs/generate-ui",
-        "$schema": "../../node_modules/nx/schemas/project-schema.json",
-        "sourceRoot": "libs/generate-ui/src",
-        "projectType": "library",
-        "tags": [],
-        "targets": {
-          "lint": {
-            "inputs": [
-              "default",
-              "{workspaceRoot}/.eslintrc.json",
-              "{workspaceRoot}/.eslintignore"
-            ],
-            "executor": "@nx/linter:eslint",
-            "outputs": [
-              "{options.outputFile}"
-            ],
-            "options": {
-              "lintFilePatterns": [
-                "libs/generate-ui/**/*.{ts,tsx,js,jsx}"
-              ]
-            },
-            "configurations": {}
-          }
-        },
-        "implicitDependencies": []
       }
     },
     "frontend": {
@@ -21045,18 +21045,6 @@
   "dependencies": {
     "book-appointment-handler": [],
     "case-type": [],
-    "backend-e2e": [
-      {
-        "source": "backend-e2e",
-        "target": "backend",
-        "type": "implicit"
-      },
-      {
-        "source": "backend-e2e",
-        "target": "npm:axios",
-        "type": "static"
-      }
-    ],
     "generate-ui": [
       {
         "source": "generate-ui",
@@ -21066,6 +21054,18 @@
       {
         "source": "generate-ui",
         "target": "npm:react",
+        "type": "static"
+      }
+    ],
+    "backend-e2e": [
+      {
+        "source": "backend-e2e",
+        "target": "backend",
+        "type": "implicit"
+      },
+      {
+        "source": "backend-e2e",
+        "target": "npm:axios",
         "type": "static"
       }
     ],
@@ -21117,16 +21117,6 @@
       },
       {
         "source": "frontend",
-        "target": "npm:jose",
-        "type": "static"
-      },
-      {
-        "source": "frontend",
-        "target": "npm:react-cookie",
-        "type": "static"
-      },
-      {
-        "source": "frontend",
         "target": "npm:react-data-table-component",
         "type": "static"
       },
@@ -21142,12 +21132,22 @@
       },
       {
         "source": "frontend",
+        "target": "npm:react-cookie",
+        "type": "static"
+      },
+      {
+        "source": "frontend",
         "target": "npm:next-auth",
         "type": "static"
       },
       {
         "source": "frontend",
         "target": "npm:@nx/next",
+        "type": "static"
+      },
+      {
+        "source": "frontend",
+        "target": "npm:jose",
         "type": "static"
       },
       {

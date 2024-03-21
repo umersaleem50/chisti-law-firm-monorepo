@@ -8,6 +8,7 @@ import { useRouter } from 'next/navigation';
 // import { signIn } from 'next-auth/react';
 import { envConfig } from '@/envConfig';
 import axios from 'axios';
+import { useCookies } from 'react-cookie';
 export interface ILoginForm {
   email: string;
   password: string;
@@ -18,6 +19,7 @@ export interface ILoginForm {
 function LoginForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [jwtCookie, setCookie] = useCookies(['jwt']);
   const router = useRouter();
 
   const handle_on_submit = async (e: any) => {
@@ -33,9 +35,12 @@ function LoginForm() {
       });
 
       if (response.status === 200 || response.statusText === 'OK') {
+        console.log(response.data.data);
+        const token = response?.data?.data?.token;
+
         alert('Login successful');
         localStorage.setItem('user', 'true');
-        router.push('/admin/cases');
+        // router.push('/admin/cases');
       }
     } catch (error: any) {
       if (error.response && error.response.data) {

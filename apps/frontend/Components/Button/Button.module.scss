@@ -99,3 +99,30 @@
     color: var(--color-white);
   }
 }
+
+.menu {
+  display: flex;
+  height: 4.5rem;
+  width: 4.5rem;
+  align-items: center;
+  justify-content: center;
+  margin-left: 2rem;
+  border: none;
+  outline: none;
+  // background-color: var(--color-secondary);
+  border-radius: 50%;
+  cursor: pointer;
+
+  transition: all 0.2s ease-in;
+
+  &:active,
+  &:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+  }
+
+  &__icon {
+    color: var(--color-font);
+    font-size: larger;
+  }
+}

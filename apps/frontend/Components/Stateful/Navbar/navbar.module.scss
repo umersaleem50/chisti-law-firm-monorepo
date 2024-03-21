@@ -77,4 +77,8 @@
 .btn--logout {
   background-color: red !important;
   color: white !important;
+
+  @include respond(phone) {
+    display: none !important;
+  }
 }

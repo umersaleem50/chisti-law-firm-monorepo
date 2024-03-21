@@ -3,7 +3,7 @@ import './global.scss';
 export const metadata = {
   title: 'Welcome to chishti law firm.',
   description:
-    'Your personal legal advisors, Contact now to book an appointment.',
+    'Chishti Law Firm is your trusted partner in the pursuit of justice. Our dedicated team of experienced lawyers is here to help you navigate the legal landscape. Your concerns are ours to address, and your success is our mission.',
   icons: {
     icon: [
       {

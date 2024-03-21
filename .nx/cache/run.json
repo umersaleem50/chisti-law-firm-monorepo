@@ -1,29 +1,18 @@
 {
   "run": {
-    "command": "nx run-many --target=build",
-    "startTime": "2024-03-20T09:46:02.444Z",
-    "endTime": "2024-03-20T09:49:35.930Z",
+    "command": "nx run frontend:build",
+    "startTime": "2024-03-21T19:03:26.304Z",
+    "endTime": "2024-03-21T19:06:01.229Z",
     "inner": false
   },
   "tasks": [
     {
-      "taskId": "backend:build:production",
-      "target": "build",
-      "projectName": "backend",
-      "hash": "11826248632819544301",
-      "startTime": "2024-03-20T09:46:02.465Z",
-      "endTime": "2024-03-20T09:46:27.270Z",
-      "params": "",
-      "cacheStatus": "cache-miss",
-      "status": 0
-    },
-    {
       "taskId": "frontend:build:production",
       "target": "build",
       "projectName": "frontend",
-      "hash": "7980677278301682834",
-      "startTime": "2024-03-20T09:46:02.465Z",
-      "endTime": "2024-03-20T09:49:35.928Z",
+      "hash": "2507330765031263357",
+      "startTime": "2024-03-21T19:03:26.324Z",
+      "endTime": "2024-03-21T19:06:01.225Z",
       "params": "",
       "cacheStatus": "cache-miss",
       "status": 0

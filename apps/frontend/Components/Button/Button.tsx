@@ -1,11 +1,13 @@
-"use client";
-import classes from "./Button.module.scss";
-import { CSSProperties } from "react";
-import { IconBaseProps } from "react-icons/lib";
-import { HiOutlineArrowNarrowLeft as IconBackToHomepage } from "react-icons/hi";
-import { useRouter } from "next/navigation";
+'use client';
+import classes from './Button.module.scss';
+import { CSSProperties } from 'react';
+import { IconBaseProps } from 'react-icons/lib';
+import { HiOutlineArrowNarrowLeft as IconBackToHomepage } from 'react-icons/hi';
+import { CiMenuFries as IconMenu } from 'react-icons/ci';
+import { IoCloseOutline as IconClose } from 'react-icons/io5';
+import { useRouter } from 'next/navigation';
 export type IButton = {
-  varient: "primary" | "outline" | "text" | "fullwidth";
+  varient: 'primary' | 'outline' | 'text' | 'fullwidth';
   children?: any;
   style?: CSSProperties;
   text?: string;
@@ -13,10 +15,10 @@ export type IButton = {
   customClasses?: string[];
   iconStart?: React.ElementType<IconBaseProps>;
   iconEnd?: any;
-  modifier?: "secondary";
+  modifier?: 'secondary';
   isActive?: boolean;
   id?: string;
-  type?: "button" | "submit" | "reset";
+  type?: 'button' | 'submit' | 'reset';
 };
 
 const Button = ({
@@ -38,14 +40,14 @@ const Button = ({
       id={id}
       type={type}
       className={[
-        classes["button"],
+        classes['button'],
         classes[varient],
-        modifier ? classes[`${varient}--${modifier}`] : "",
-        isActive ? classes[`${varient}--active`] : "",
+        modifier ? classes[`${varient}--${modifier}`] : '',
+        isActive ? classes[`${varient}--active`] : '',
         customClasses,
       ]
         .flat()
-        .join(" ")}
+        .join(' ')}
       onClick={onClick}
       style={style}
     >
@@ -57,8 +59,8 @@ const Button = ({
 };
 
 export const Back_to_Home_Button = ({
-  text = "back to homepage",
-  url = "/",
+  text = 'back to homepage',
+  url = '/',
   style,
 }: {
   text?: string;
@@ -68,12 +70,27 @@ export const Back_to_Home_Button = ({
   const router = useRouter();
   return (
     <button
-      className={classes["homepage"]}
+      className={classes['homepage']}
       onClick={() => router.push(url)}
       style={style}
     >
-      <IconBackToHomepage style={{ marginRight: "1rem" }} />
+      <IconBackToHomepage style={{ marginRight: '1rem' }} />
       {text}
+    </button>
+  );
+};
+
+export const MenuButton = ({
+  onClick,
+  isToggle,
+}: {
+  onClick: any;
+  isToggle: boolean;
+}) => {
+  return (
+    <button className={classes['menu']} onClick={onClick} type="button">
+      {!isToggle && <IconMenu className={classes['menu__icon']} />}
+      {isToggle && <IconClose className={classes['menu__icon']} />}
     </button>
   );
 };
