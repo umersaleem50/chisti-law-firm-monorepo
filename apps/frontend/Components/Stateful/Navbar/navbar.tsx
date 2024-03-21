@@ -15,6 +15,7 @@ import {
   handle_logout_button,
 } from '@/utils/handler/handle_nav_actions';
 import Navbar_Menu from '../Navbar_Menu/Navbar_Menu';
+import { CookiesProvider } from 'react-cookie';
 
 const Navbar = async ({ cookie = '' }: { cookie?: string }) => {
   const [element, setElement] = useState<HTMLElement>();
@@ -32,62 +33,67 @@ const Navbar = async ({ cookie = '' }: { cookie?: string }) => {
   }, [element]);
   return (
     <>
-      <div className={classes['navbar']}>
-        <div className={classes['container']}>
-          <Image
-            width={50}
-            height={60}
-            alt="logo"
-            src={'/logo-nobg.png'}
-            style={{ objectFit: 'cover' }}
-          />
-          <nav>
-            <ul className={classes['nav']}>{generateLinks(classes)}</ul>
-          </nav>
-          <div className={classes['container__buttons']}>
-            {!(await verifyToken(cookie)) ? (
-              <Button
-                varient="primary"
-                onClick={() => handle_appointment_event(element)}
-                customClasses={[classes['btn--cta']]}
-              >
-                Book Appointment
-              </Button>
-            ) : (
-              <Button
-                varient="outline"
-                onClick={() => handle_dashboard_redirect(router)}
-                customClasses={[classes['btn--cta']]}
-              >
-                Dashboard
-              </Button>
-            )}
-            {!(await verifyToken(cookie)) ? (
-              <Button
-                varient="outline"
-                onClick={() => handle_login(router)}
-                customClasses={[classes['btn--login']]}
-              >
-                login
-              </Button>
-            ) : (
-              <Button
-                varient="primary"
-                onClick={() => handle_logout_button(router)}
-                customClasses={[classes['btn--logout']]}
-              >
-                Logout
-              </Button>
-            )}
-            <MenuButton onClick={handle_toggle_menu} isToggle={isToggleMenu} />
+      <CookiesProvider>
+        <div className={classes['navbar']}>
+          <div className={classes['container']}>
+            <Image
+              width={50}
+              height={60}
+              alt="logo"
+              src={'/logo-nobg.png'}
+              style={{ objectFit: 'cover' }}
+            />
+            <nav>
+              <ul className={classes['nav']}>{generateLinks(classes)}</ul>
+            </nav>
+            <div className={classes['container__buttons']}>
+              {!(await verifyToken(cookie)) ? (
+                <Button
+                  varient="primary"
+                  onClick={() => handle_appointment_event(element)}
+                  customClasses={[classes['btn--cta']]}
+                >
+                  Book Appointment
+                </Button>
+              ) : (
+                <Button
+                  varient="outline"
+                  onClick={() => handle_dashboard_redirect(router)}
+                  customClasses={[classes['btn--cta']]}
+                >
+                  Dashboard
+                </Button>
+              )}
+              {!(await verifyToken(cookie)) ? (
+                <Button
+                  varient="outline"
+                  onClick={() => handle_login(router)}
+                  customClasses={[classes['btn--login']]}
+                >
+                  login
+                </Button>
+              ) : (
+                <Button
+                  varient="primary"
+                  onClick={() => handle_logout_button(router)}
+                  customClasses={[classes['btn--logout']]}
+                >
+                  Logout
+                </Button>
+              )}
+              <MenuButton
+                onClick={handle_toggle_menu}
+                isToggle={isToggleMenu}
+              />
+            </div>
+            <Navbar_Menu
+              element={element}
+              cookie={cookie}
+              isToggle={isToggleMenu}
+            />
           </div>
-          <Navbar_Menu
-            element={element}
-            cookie={cookie}
-            isToggle={isToggleMenu}
-          />
         </div>
-      </div>
+      </CookiesProvider>
     </>
   );
 };

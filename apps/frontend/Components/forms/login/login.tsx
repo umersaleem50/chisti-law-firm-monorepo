@@ -8,7 +8,7 @@ import { useRouter } from 'next/navigation';
 // import { signIn } from 'next-auth/react';
 import { envConfig } from '@/envConfig';
 import axios from 'axios';
-import { useCookies } from 'react-cookie';
+import { CookiesProvider, useCookies } from 'react-cookie';
 export interface ILoginForm {
   email: string;
   password: string;
@@ -37,10 +37,15 @@ function LoginForm() {
       if (response.status === 200 || response.statusText === 'OK') {
         console.log(response.data.data);
         const token = response?.data?.data?.token;
-
+        setCookie('jwt', token, {
+          path: '/',
+          httpOnly: true,
+          sameSite: true,
+          secure: true,
+          maxAge: 15 * 24 * 60 * 60,
+        });
         alert('Login successful');
-        localStorage.setItem('user', 'true');
-        // router.push('/admin/cases');
+        router.push('/admin/cases');
       }
     } catch (error: any) {
       if (error.response && error.response.data) {
@@ -71,43 +76,45 @@ function LoginForm() {
   //   }
   // };
   return (
-    <form className={classes['form']} onSubmit={handle_on_submit}>
-      <div className={classes['form__typo']}>
-        <Typography
-          vairent="secondary"
-          component="h5"
-          color="var(--color-font)"
+    <CookiesProvider>
+      <form className={classes['form']} onSubmit={handle_on_submit}>
+        <div className={classes['form__typo']}>
+          <Typography
+            vairent="secondary"
+            component="h5"
+            color="var(--color-font)"
+          >
+            Login to your workspace
+          </Typography>
+          <Typography vairent="p" component="p" color="var(--color-grey-3)">
+            Login to your workspace to unlock new features.
+          </Typography>
+        </div>
+        <Textbox
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Enter you email"
+          type="email"
+          label="Email"
+        />
+        <Textbox
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Enter you password"
+          type="password"
+          label="Password"
+        />
+        <Button
+          varient="fullwidth"
+          type="submit"
+          isActive
+          style={{ marginTop: '2rem', textAlign: 'center' }}
+          customClasses={[classes['btn--login']]}
         >
-          Login to your workspace
-        </Typography>
-        <Typography vairent="p" component="p" color="var(--color-grey-3)">
-          Login to your workspace to unlock new features.
-        </Typography>
-      </div>
-      <Textbox
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="Enter you email"
-        type="email"
-        label="Email"
-      />
-      <Textbox
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        placeholder="Enter you password"
-        type="password"
-        label="Password"
-      />
-      <Button
-        varient="fullwidth"
-        type="submit"
-        isActive
-        style={{ marginTop: '2rem', textAlign: 'center' }}
-        customClasses={[classes['btn--login']]}
-      >
-        Login
-      </Button>
-    </form>
+          Login
+        </Button>
+      </form>
+    </CookiesProvider>
   );
 }
 

@@ -21117,6 +21117,11 @@
       },
       {
         "source": "frontend",
+        "target": "npm:react-cookie",
+        "type": "static"
+      },
+      {
+        "source": "frontend",
         "target": "npm:react-data-table-component",
         "type": "static"
       },
@@ -21128,11 +21133,6 @@
       {
         "source": "frontend",
         "target": "npm:react-parallax-mouse",
-        "type": "static"
-      },
-      {
-        "source": "frontend",
-        "target": "npm:react-cookie",
         "type": "static"
       },
       {

@@ -101,7 +101,7 @@
 }
 
 .menu {
-  display: flex;
+  display: none;
   height: 4.5rem;
   width: 4.5rem;
   align-items: center;
@@ -114,6 +114,10 @@
   cursor: pointer;
 
   transition: all 0.2s ease-in;
+
+  @include respond(phone) {
+    display: flex;
+  }
 
   &:active,
   &:hover {

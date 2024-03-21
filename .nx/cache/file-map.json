@@ -101,32 +101,6 @@
   },
   "nxJsonPlugins": [],
   "projectFileMap": {
-    "book-appointment-handler": [
-      {
-        "file": "libs/handlers/book-appointment-handler/README.md",
-        "hash": "7040802319482672591"
-      },
-      {
-        "file": "libs/handlers/book-appointment-handler/project.json",
-        "hash": "6514546645548358847"
-      },
-      {
-        "file": "libs/handlers/book-appointment-handler/src/index.ts",
-        "hash": "9685641398118945026"
-      },
-      {
-        "file": "libs/handlers/book-appointment-handler/src/lib/book-appointment-handler.ts",
-        "hash": "11265700792681349704"
-      },
-      {
-        "file": "libs/handlers/book-appointment-handler/tsconfig.json",
-        "hash": "11694468379504486425"
-      },
-      {
-        "file": "libs/handlers/book-appointment-handler/tsconfig.lib.json",
-        "hash": "11624129529813747059"
-      }
-    ],
     "frontend": [
       {
         "file": "apps/frontend/.eslintrc.json",
@@ -145,7 +119,7 @@
       },
       {
         "file": "apps/frontend/Components/Button/Button.module.scss",
-        "hash": "6490291777100934737"
+        "hash": "8551796894690132348"
       },
       {
         "file": "apps/frontend/Components/Button/Button.stories.tsx",
@@ -652,14 +626,15 @@
       },
       {
         "file": "apps/frontend/Components/Stateful/Navbar/navbar.tsx",
-        "hash": "2617481508331079120",
+        "hash": "4088931654271347781",
         "deps": [
           "npm:next",
           "npm:@/utils/handler/bookeEventHandler",
           "npm:react",
           "npm:@/utils/verifyToken/verifyToken",
           "npm:@/utils/generateNavLinks/generateNavLinks",
-          "npm:@/utils/handler/handle_nav_actions"
+          "npm:@/utils/handler/handle_nav_actions",
+          "npm:react-cookie"
         ]
       },
       {
@@ -668,13 +643,14 @@
       },
       {
         "file": "apps/frontend/Components/Stateful/Navbar_Menu/Navbar_Menu.tsx",
-        "hash": "6965774425848764286",
+        "hash": "3195554761091599640",
         "deps": [
           "npm:@/Components/Button/Button",
           "npm:@/utils/generateNavLinks/generateNavLinks",
           "npm:@/utils/handler/handle_nav_actions",
           "npm:@/utils/verifyToken/verifyToken",
-          "npm:next"
+          "npm:next",
+          "npm:react-cookie"
         ]
       },
       {
@@ -1014,7 +990,7 @@
       },
       {
         "file": "apps/frontend/Components/forms/login/login.tsx",
-        "hash": "5655808265866844130",
+        "hash": "6109044022036908212",
         "deps": [
           "npm:@/Components/Button/Button",
           "npm:@/Components/Inputs/Textbox/Textbox",
@@ -1211,6 +1187,15 @@
           "npm:@/envConfig",
           "npm:next",
           "npm:@/Components/Stateful/Navbar/navbar.servercomponent"
+        ]
+      },
+      {
+        "file": "apps/frontend/app/blogs/layout.tsx",
+        "hash": "12321707394453773949",
+        "deps": [
+          "npm:@/providers/AuthProvider",
+          "npm:@/utils/auth",
+          "npm:next-auth"
         ]
       },
       {
@@ -2227,6 +2212,76 @@
         ]
       }
     ],
+    "backend-e2e": [
+      {
+        "file": "apps/backend-e2e/.eslintrc.json",
+        "hash": "14921153827776288937"
+      },
+      {
+        "file": "apps/backend-e2e/jest.config.js",
+        "hash": "14431208338104345705"
+      },
+      {
+        "file": "apps/backend-e2e/project.json",
+        "hash": "3756338916787603404"
+      },
+      {
+        "file": "apps/backend-e2e/src/backend/backend.spec.js",
+        "hash": "11995527825573506885",
+        "deps": [
+          "npm:axios"
+        ]
+      },
+      {
+        "file": "apps/backend-e2e/src/support/global-setup.js",
+        "hash": "6263092253678059726"
+      },
+      {
+        "file": "apps/backend-e2e/src/support/global-teardown.js",
+        "hash": "9301694959833719729"
+      },
+      {
+        "file": "apps/backend-e2e/src/support/test-setup.js",
+        "hash": "14330298251753713578",
+        "deps": [
+          "npm:axios"
+        ]
+      },
+      {
+        "file": "apps/backend-e2e/tsconfig.json",
+        "hash": "1422418700492434985"
+      },
+      {
+        "file": "apps/backend-e2e/tsconfig.spec.json",
+        "hash": "5623794208198348967"
+      }
+    ],
+    "case-type": [
+      {
+        "file": "libs/shared/case-type/README.md",
+        "hash": "11620758126303659691"
+      },
+      {
+        "file": "libs/shared/case-type/project.json",
+        "hash": "6589794201773564789"
+      },
+      {
+        "file": "libs/shared/case-type/src/index.ts",
+        "hash": "3766687583311619159"
+      },
+      {
+        "file": "libs/shared/case-type/src/lib/case-type.ts",
+        "hash": "13109400802790316718"
+      },
+      {
+        "file": "libs/shared/case-type/tsconfig.json",
+        "hash": "11362601880824838265"
+      },
+      {
+        "file": "libs/shared/case-type/tsconfig.lib.json",
+        "hash": "5554291030212586824"
+      }
+    ],
     "backend": [
       {
         "file": "apps/backend/.eslintrc.json",
@@ -2459,50 +2514,6 @@
         ]
       }
     ],
-    "backend-e2e": [
-      {
-        "file": "apps/backend-e2e/.eslintrc.json",
-        "hash": "14921153827776288937"
-      },
-      {
-        "file": "apps/backend-e2e/jest.config.js",
-        "hash": "14431208338104345705"
-      },
-      {
-        "file": "apps/backend-e2e/project.json",
-        "hash": "3756338916787603404"
-      },
-      {
-        "file": "apps/backend-e2e/src/backend/backend.spec.js",
-        "hash": "11995527825573506885",
-        "deps": [
-          "npm:axios"
-        ]
-      },
-      {
-        "file": "apps/backend-e2e/src/support/global-setup.js",
-        "hash": "6263092253678059726"
-      },
-      {
-        "file": "apps/backend-e2e/src/support/global-teardown.js",
-        "hash": "9301694959833719729"
-      },
-      {
-        "file": "apps/backend-e2e/src/support/test-setup.js",
-        "hash": "14330298251753713578",
-        "deps": [
-          "npm:axios"
-        ]
-      },
-      {
-        "file": "apps/backend-e2e/tsconfig.json",
-        "hash": "1422418700492434985"
-      },
-      {
-        "file": "apps/backend-e2e/tsconfig.spec.json",
-        "hash": "5623794208198348967"
-      }
-    ],
     "generate-ui": [
       {
         "file": "libs/generate-ui/.eslintrc.json",
@@ -2551,30 +2562,30 @@
         "hash": "6604186782021510538"
       }
     ],
-    "case-type": [
+    "book-appointment-handler": [
       {
-        "file": "libs/shared/case-type/README.md",
-        "hash": "11620758126303659691"
+        "file": "libs/handlers/book-appointment-handler/README.md",
+        "hash": "7040802319482672591"
       },
       {
-        "file": "libs/shared/case-type/project.json",
-        "hash": "6589794201773564789"
+        "file": "libs/handlers/book-appointment-handler/project.json",
+        "hash": "6514546645548358847"
       },
       {
-        "file": "libs/shared/case-type/src/index.ts",
-        "hash": "3766687583311619159"
+        "file": "libs/handlers/book-appointment-handler/src/index.ts",
+        "hash": "9685641398118945026"
       },
       {
-        "file": "libs/shared/case-type/src/lib/case-type.ts",
-        "hash": "13109400802790316718"
+        "file": "libs/handlers/book-appointment-handler/src/lib/book-appointment-handler.ts",
+        "hash": "11265700792681349704"
       },
       {
-        "file": "libs/shared/case-type/tsconfig.json",
-        "hash": "11362601880824838265"
+        "file": "libs/handlers/book-appointment-handler/tsconfig.json",
+        "hash": "11694468379504486425"
       },
       {
-        "file": "libs/shared/case-type/tsconfig.lib.json",
-        "hash": "5554291030212586824"
+        "file": "libs/handlers/book-appointment-handler/tsconfig.lib.json",
+        "hash": "11624129529813747059"
       }
     ]
   }
