@@ -8,15 +8,17 @@ import Service_Card, {
 import classes from './Service.module.scss';
 const Services = () => {
   return (
-    <Section
-      heading={text['heading']}
-      paragraph={text['paragraph']}
-      buttonOptions={{ text: 'show all', url: '/services' }}
-    >
-      <div className={classes['services']}>
-        {generateServices(services_data)}
-      </div>
-    </Section>
+    <div id="services">
+      <Section
+        heading={text['heading']}
+        paragraph={text['paragraph']}
+        buttonOptions={{ text: 'show all', url: '/services' }}
+      >
+        <div className={classes['services']}>
+          {generateServices(services_data)}
+        </div>
+      </Section>
+    </div>
   );
 };
 

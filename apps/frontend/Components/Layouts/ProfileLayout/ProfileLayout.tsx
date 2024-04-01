@@ -18,8 +18,6 @@ function ProfileLayout({
   name,
   professions,
   workplace,
-  expirence,
-  cases,
   contact,
 }: IProfileLayout) {
   return (
@@ -65,8 +63,8 @@ function ProfileLayout({
             // text="Contact Lawyer"
           >
             <a
-              href={`phone:${contact}`}
-              style={{ textDecoration: 'none', color: 'currentcolor' }}
+              href={`tel:${contact}`}
+              style={{ textDecoration: 'none', color: 'var(--color-white)' }}
             >
               Contact Lawyer
             </a>

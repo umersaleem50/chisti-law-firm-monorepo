@@ -14,9 +14,8 @@ const fetchThreeLatestBlogs = async () => {
     );
     const dataObj = await res.json();
     if (dataObj.data) return dataObj.data;
-    
-    return dataObj;
 
+    return dataObj;
   } catch (error) {
     console.log('this is error at blogs.tsx');
 
@@ -26,7 +25,6 @@ const fetchThreeLatestBlogs = async () => {
 
 const Blogs = async () => {
   const blogs = await fetchThreeLatestBlogs();
-  
 
   return (
     <aside className={classes['blogs']}>
@@ -35,16 +33,20 @@ const Blogs = async () => {
         paragraph={text['paragarph']}
         buttonOptions={{
           text: 'Show All',
-          url: '/team',
+          url: '/blogs',
           varient: 'outline',
         }}
       >
         <div className={classes['container']}>
           {GenerateUi({ RenderElement: Blog_Card, dataArr: blogs })}
         </div>
-        {blogs.length === 0 && <div>
-          <Typography vairent='p' component='p'>No latest blogs found.</Typography>
-        </div>}
+        {blogs.length === 0 && (
+          <div>
+            <Typography vairent="p" component="p">
+              No latest blogs found.
+            </Typography>
+          </div>
+        )}
       </Section>
     </aside>
   );

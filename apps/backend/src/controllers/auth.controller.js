@@ -237,3 +237,7 @@ export const logout = catchAsync((req, res) => {
   res.cookie('jwt', '');
   return res.status(200);
 });
+
+export const verifyCredientials = (req, res) => {
+  return res.status(200).json({ message: 'verified' });
+};

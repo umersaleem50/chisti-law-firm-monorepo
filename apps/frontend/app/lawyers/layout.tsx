@@ -1,3 +1,5 @@
+import { WhatAppButton } from '@/Components/Button/whatsappButton';
+
 export const metadata = {
   title: 'Our Team',
   description:
@@ -11,7 +13,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <WhatAppButton contact="923066098329" />
+        {children}
+      </body>
     </html>
   );
 }

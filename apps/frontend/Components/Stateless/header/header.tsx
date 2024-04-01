@@ -5,7 +5,7 @@ import Button from '../../Button/Button';
 import Typography from '../../Typography/Typography';
 import Tags, { ITag } from '../Tags/Tags';
 import classes from './header.module.scss';
-import { handle_appointment_event } from '@/utils/handler/bookeEventHandler';
+import { handle_scrollTo_event } from '@/utils/handler/bookeEventHandler';
 import { useEffect, useState } from 'react';
 // import {
 //   MouseParallaxContainer,
@@ -25,10 +25,13 @@ const tagsArr: ITag[] = [
 
 export function Header(props: HeaderProps) {
   const [element, setElement] = useState<HTMLElement>();
+  const [learnMoreElement, setLearnMoreElement] = useState<HTMLElement>();
   useEffect(() => {
     const appointmentElement = document.getElementById('appointment-id');
+    const detailsElementDoc = document.getElementById('services');
     if (appointmentElement) setElement(appointmentElement);
-  }, [element]);
+    if (detailsElementDoc) setLearnMoreElement(detailsElementDoc);
+  }, [element, learnMoreElement]);
   return (
     <section className={classes['main']}>
       <div className={classes['container']}>
@@ -49,7 +52,7 @@ export function Header(props: HeaderProps) {
           <div className={classes['left__buttons']}>
             <Button
               varient="primary"
-              onClick={() => handle_appointment_event(element)}
+              onClick={() => handle_scrollTo_event(element)}
               style={{ marginRight: '2rem' }}
             >
               Book appointment
@@ -57,7 +60,7 @@ export function Header(props: HeaderProps) {
             <Button
               varient="text"
               onClick={() => {
-                alert('header:41');
+                handle_scrollTo_event(learnMoreElement);
               }}
             >
               Learn More

@@ -1,6 +1,5 @@
 import Footer from '../../../Components/Layouts/Footer/Footer';
 import Blogs from '../../../Components/Layouts/Blogs/Blogs';
-import Navbar from '../../../Components/Stateful/Navbar/navbar';
 import BlogLayout from '@/Components/Layouts/Blog_Layout/Blog_Layout';
 import classes from '../page.module.scss';
 import { envConfig } from '@/envConfig';

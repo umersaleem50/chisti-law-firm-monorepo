@@ -35,12 +35,10 @@ function LoginForm() {
       });
 
       if (response.status === 200 || response.statusText === 'OK') {
-        console.log(response.data.data);
         const token = response?.data?.data?.token;
         setCookie('jwt', token, {
-          path: '/',
+          path: '/admin',
           httpOnly: true,
-          sameSite: true,
           secure: true,
           maxAge: 15 * 24 * 60 * 60,
         });

@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import classes from './navbar.module.scss';
 import Button, { MenuButton } from '../../Button/Button';
-import { handle_appointment_event } from '@/utils/handler/bookeEventHandler';
+import { handle_scrollTo_event } from '@/utils/handler/bookeEventHandler';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
@@ -50,7 +50,7 @@ const Navbar = async ({ cookie = '' }: { cookie?: string }) => {
               {!(await verifyToken(cookie)) ? (
                 <Button
                   varient="primary"
-                  onClick={() => handle_appointment_event(element)}
+                  onClick={() => handle_scrollTo_event(element)}
                   customClasses={[classes['btn--cta']]}
                 >
                   Book Appointment

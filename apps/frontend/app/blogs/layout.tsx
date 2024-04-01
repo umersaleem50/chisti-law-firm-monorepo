@@ -1,19 +1,20 @@
-import { NextAuthProvider } from '@/providers/AuthProvider';
-import { authOptions } from '@/utils/auth';
-import { getServerSession } from 'next-auth';
+import { WhatAppButton } from '@/Components/Button/whatsappButton';
 
 export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const session = await getServerSession(authOptions);
+  // const session = await getServerSession(authOptions);
 
   return (
     <html lang="en">
-      <NextAuthProvider session={session}>
-        <body>{children}</body>
-      </NextAuthProvider>
+      {/* <NextAuthProvider session={session}> */}
+      <body>
+        {children}
+        <WhatAppButton contact="923066098329" />
+      </body>
+      {/* </NextAuthProvider> */}
     </html>
   );
 }

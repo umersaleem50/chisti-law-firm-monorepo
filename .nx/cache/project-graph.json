@@ -21147,17 +21147,17 @@
       },
       {
         "source": "frontend",
-        "target": "npm:jose",
-        "type": "static"
-      },
-      {
-        "source": "frontend",
         "target": "npm:url",
         "type": "static"
       },
       {
         "source": "frontend",
         "target": "npm:@storybook/testing-library",
+        "type": "static"
+      },
+      {
+        "source": "frontend",
+        "target": "npm:jose",
         "type": "static"
       }
     ],

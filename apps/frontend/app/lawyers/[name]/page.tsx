@@ -12,7 +12,7 @@ import NavbarComponent from '@/Components/Stateful/Navbar/navbar.servercomponent
 const fetchData = async (slug: string | '' | undefined) => {
   const url =
     `${envConfig.API_PATH || 'http://localhost:3333/api/v1'}/lawyers/` + slug;
-  const res = await fetch(url, { method: 'get' });
+  const res = await fetch(url, { method: 'get', cache: 'no-store' });
   if (!res.ok) {
     notFound();
   }

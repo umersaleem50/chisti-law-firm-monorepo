@@ -9,6 +9,7 @@ import {
   getCurrentUser,
   protectedRoute,
   logout,
+  verifyCredientials,
 } from '../controllers/auth.controller';
 
 const authRouter = Router();
@@ -24,6 +25,7 @@ authRouter
   .post('/profile', getCurrentUser)
   .post('/change-password', changePassword)
   .post('/de-activate', deactivateAccount)
-  .post('/logout', logout);
+  .post('/logout', logout)
+  .post('/verify', verifyCredientials);
 
 export default authRouter;

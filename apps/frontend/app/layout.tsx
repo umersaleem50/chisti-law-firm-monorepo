@@ -1,3 +1,4 @@
+import { WhatAppButton } from '@/Components/Button/whatsappButton';
 import './global.scss';
 
 export const metadata = {
@@ -29,7 +30,10 @@ export default async function RootLayout({
   return (
     <html lang="en">
       {/* <NextAuthProvider session={session}> */}
-      <body>{children}</body>
+      <body>
+        <WhatAppButton contact="923066098329" />
+        {children}
+      </body>
       {/* </NextAuthProvider> */}
     </html>
   );

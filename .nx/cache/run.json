@@ -1,8 +1,8 @@
 {
   "run": {
     "command": "nx run frontend:build",
-    "startTime": "2024-03-21T20:44:04.649Z",
-    "endTime": "2024-03-21T20:46:26.748Z",
+    "startTime": "2024-03-22T11:30:34.197Z",
+    "endTime": "2024-03-22T11:32:44.898Z",
     "inner": false
   },
   "tasks": [
@@ -10,9 +10,9 @@
       "taskId": "frontend:build:production",
       "target": "build",
       "projectName": "frontend",
-      "hash": "8683779617896818180",
-      "startTime": "2024-03-21T20:44:04.665Z",
-      "endTime": "2024-03-21T20:46:26.746Z",
+      "hash": "14010828574517317381",
+      "startTime": "2024-03-22T11:30:34.211Z",
+      "endTime": "2024-03-22T11:32:44.891Z",
       "params": "",
       "cacheStatus": "cache-miss",
       "status": 0

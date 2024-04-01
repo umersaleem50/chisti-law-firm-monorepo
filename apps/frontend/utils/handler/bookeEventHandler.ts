@@ -1,4 +1,4 @@
-export const handle_appointment_event = (element: HTMLElement | undefined) => {
+export const handle_scrollTo_event = (element: HTMLElement | undefined) => {
   if (element) {
     const elementPosition = element.getBoundingClientRect();
     const scrollTop = window.scrollY;
@@ -8,7 +8,7 @@ export const handle_appointment_event = (element: HTMLElement | undefined) => {
 
     window.scrollTo({
       top: scrollToPosition,
-      behavior: "smooth", // Add smooth scrolling if supported
+      behavior: 'smooth', // Add smooth scrolling if supported
     });
   }
 };

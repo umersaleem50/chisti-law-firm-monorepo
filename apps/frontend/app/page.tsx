@@ -15,39 +15,13 @@ import styles from './page.module.scss';
 // import Certificate from "@/Components/Layouts/Certificates/Certificates";
 
 export default async function Index() {
-  // const images = [
-  //   {
-  //     src: "1.jpg",
-  //     alt: "1",
-  //   },
-  //   {
-  //     src: "2.jpg",
-  //     alt: "1",
-  //   },
-  //   {
-  //     src: "3.jpg",
-  //     alt: "1",
-  //   },
-  //   {
-  //     src: "1.jpg",
-  //     alt: "1",
-  //   },
-  //   {
-  //     src: "2.jpg",
-  //     alt: "1",
-  //   },
-  //   {
-  //     src: "3.jpg",
-  //     alt: "1",
-  //   },
-  // ];
+
   return (
     <main className={styles.page}>
       <NavbarComponent />
       <Header />
       <Finder />
       <Services />
-
       <Mission />
       <Team />
       <Blogs />
