@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 2rem;
+  max-height: 2rem;
+  animation: blinker linear 3s ease;
+}
+
+@keyframes blinker {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

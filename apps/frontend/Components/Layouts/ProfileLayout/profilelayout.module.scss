@@ -5,6 +5,7 @@
   margin-top: var(--grid-gap);
   @include respond(phone) {
     flex-direction: column;
+    
   }
   &__picture {
     width: 20rem;
@@ -16,6 +17,7 @@
     outline: 1rem solid var(--color-secondary);
     @include respond(phone) {
       align-self: center;
+
     }
   }
 
@@ -27,12 +29,18 @@
     margin-left: var(--grid-gap);
 
     @include respond(phone) {
+      flex-direction: column;
       margin-top: 4rem;
-      margin-left: auto;
+      margin-left: 0;
+      align-items: center;
+      text-align: center;
     }
   }
 }
 
 .mg-top {
   margin-top: var(--grid-gap);
+  @include respond(phone) {
+    margin-top: 1rem;
+  }
 }

@@ -6,6 +6,7 @@ import Textbox from '../../Inputs/Textbox/Textbox';
 import Button from '../../Button/Button';
 import axios from 'axios';
 import { envConfig } from '@/envConfig';
+import { enqueueSnackbar } from 'notistack';
 const Form_Appointment = ({ customClasses }: { customClasses?: string[] }) => {
   const [firstName, setFirstName] = useState<string>('');
   const [lastName, setLastName] = useState<string>('');
@@ -44,11 +45,21 @@ const Form_Appointment = ({ customClasses }: { customClasses?: string[] }) => {
       });
 
       if (response.status === 201 || response.statusText === 'Created') {
-        alert('Thanks for submitting your request.');
+        enqueueSnackbar(
+          <Typography component="p" vairent="p" color="var(--color-white)">
+            Appointment Submitted Successfully!
+          </Typography>,
+          { variant: 'success' }
+        );
         handle_clear_fields();
       }
     } catch (error) {
-      alert('Failed to create an appointment. Try again later!');
+      enqueueSnackbar(
+        <Typography component="p" vairent="p" color="var(--color-white)">
+          Failed to submit appointment, Try again later!
+        </Typography>,
+        { variant: 'error' }
+      );
     }
   };
 

@@ -12,6 +12,7 @@ import AddCase from '@/Components/forms/addCase/addCase';
 import { Input } from '@/Components/Inputs/Textbox/Textbox.stories';
 import Textbox from '@/Components/Inputs/Textbox/Textbox';
 import { envConfig } from '@/envConfig';
+import { enqueueSnackbar } from 'notistack';
 
 export interface ICaseType {
   _id?: string;
@@ -86,13 +87,29 @@ function CasesTable() {
       });
 
       if (response.status === 201) {
-        alert('Case created!');
+        enqueueSnackbar(
+          <Typography component="p" vairent="p" color="var(--color-white)">
+            Case Created!
+          </Typography>,
+          { variant: 'success' }
+        );
         setIsOpen(false);
         handleUpdate();
       }
     } catch (error: any) {
-      if (error.message) alert(error.message);
-      alert('Something went wrong!');
+      if (error.message)
+        enqueueSnackbar(
+          <Typography component="p" vairent="p" color="var(--color-white)">
+            {error.message}
+          </Typography>,
+          { variant: 'error' }
+        );
+      enqueueSnackbar(
+        <Typography component="p" vairent="p" color="var(--color-white)">
+          Something went wrong!
+        </Typography>,
+        { variant: 'error' }
+      );
     }
   };
 

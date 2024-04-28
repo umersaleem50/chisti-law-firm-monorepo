@@ -70,7 +70,7 @@ const Dashboard_Filter = ({
         isSearchBar={false}
         data={filterData}
         handleCheckbox={handleCheckbox}
-        filter_title={'Pages'}
+        filter_title={'Show Pages'}
       />
       {children}
     </div>

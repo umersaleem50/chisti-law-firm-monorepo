@@ -9,6 +9,7 @@ import { useRouter } from 'next/navigation';
 import { envConfig } from '@/envConfig';
 import axios from 'axios';
 import { CookiesProvider, useCookies } from 'react-cookie';
+import { enqueueSnackbar, useSnackbar } from 'notistack';
 export interface ILoginForm {
   email: string;
   password: string;
@@ -42,14 +43,31 @@ function LoginForm() {
           secure: true,
           maxAge: 15 * 24 * 60 * 60,
         });
-        alert('Login successful');
+        // alert('Login successful');
+        enqueueSnackbar(
+          <Typography component="p" vairent="p" color="var(--color-white)">
+            Login Successful!
+          </Typography>,
+          { variant: 'success' }
+        );
+
         router.push('/admin/cases');
       }
     } catch (error: any) {
       if (error.response && error.response.data) {
-        return alert(error.response.data?.message);
+        return enqueueSnackbar(
+          <Typography component="p" vairent="p" color="var(--color-white)">
+            {error.response.data.message}
+          </Typography>,
+          { variant: 'error' }
+        );
       }
-      alert('Something went wrong!');
+      enqueueSnackbar(
+        <Typography component="p" vairent="p" color="var(--color-white)">
+          Something went wrong! Try again later.
+        </Typography>,
+        { variant: 'error' }
+      );
     }
   };
   // const handle_submit = async (e: any) => {

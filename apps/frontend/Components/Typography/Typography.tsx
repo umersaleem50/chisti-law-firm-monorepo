@@ -1,4 +1,4 @@
-import { createElement } from 'react';
+import { CSSProperties, createElement } from 'react';
 import classes from './Typography.module.scss';
 export type ITypography = {
   component: 'p' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
@@ -7,7 +7,7 @@ export type ITypography = {
   text?: any;
   children?: any;
   customClasses?: string[];
-  style?: any;
+  style?: CSSProperties;
   color?: string;
 };
 const Typography = ({

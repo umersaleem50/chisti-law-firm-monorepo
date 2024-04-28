@@ -4,6 +4,7 @@ import Typography from '@/Components/Typography/Typography';
 import AddCase from '@/Components/forms/addCase/addCase';
 import { envConfig } from '@/envConfig';
 import axios from 'axios';
+import { enqueueSnackbar } from 'notistack';
 import React, { useState } from 'react';
 import { ExpanderComponentProps } from 'react-data-table-component';
 
@@ -57,14 +58,30 @@ const ExpandableCase: React.FC<Props> = ({
         method: 'delete',
       });
       if (response.status === 204) {
-        alert('Deleted cases successfully!');
+        enqueueSnackbar(
+          <Typography component="p" vairent="p" color="var(--color-white)">
+            Case deleted successfully!
+          </Typography>,
+          { variant: 'warning' }
+        );
         // router.refresh();
         // window.location.reload();
         handleUpdate();
       }
     } catch (error: any) {
-      if (error.message) alert(error.message);
-      alert('something went wrong.');
+      if (error.message)
+        enqueueSnackbar(
+          <Typography component="p" vairent="p" color="var(--color-white)">
+            {error.message}
+          </Typography>,
+          { variant: 'error' }
+        );
+      enqueueSnackbar(
+        <Typography component="p" vairent="p" color="var(--color-white)">
+          Something went wrong!
+        </Typography>,
+        { variant: 'error' }
+      );
     }
   };
 
@@ -86,13 +103,29 @@ const ExpandableCase: React.FC<Props> = ({
       });
 
       if (response.status === 200) {
-        alert('Case updated!');
+        enqueueSnackbar(
+          <Typography component="p" vairent="p" color="var(--color-white)">
+            Case updated!
+          </Typography>,
+          { variant: 'success' }
+        );
         setIsOpen(false);
         handleUpdate();
       }
     } catch (error: any) {
-      if (error.message) alert(error.message);
-      alert('Something went wrong!');
+      if (error.message)
+        enqueueSnackbar(
+          <Typography component="p" vairent="p" color="var(--color-white)">
+            {error.message}
+          </Typography>,
+          { variant: 'error' }
+        );
+      enqueueSnackbar(
+        <Typography component="p" vairent="p" color="var(--color-white)">
+          Something went wrong!
+        </Typography>,
+        { variant: 'error' }
+      );
     }
   };
 

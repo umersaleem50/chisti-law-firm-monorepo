@@ -8,7 +8,6 @@ import axios from 'axios';
 function Protected({ children }: { children: any }) {
   // const [jwtCookie] = useCookies(['jwt']);
   const jwtCookie = cookies().get('jwt');
-  console.log(jwtCookie);
 
   // const verifyToken = async (token: any) => {
   //   try {
@@ -28,12 +27,15 @@ function Protected({ children }: { children: any }) {
   // };
   const verifyToken = async () => {
     try {
-      const apiReq = await axios({
+      await axios({
         url: envConfig.API_PATH + '/auth/verify',
         method: 'POST',
         withCredentials: true,
+        headers: {
+          Authorization: 'Bearer ' + jwtCookie?.value,
+        },
       });
-      console.log(apiReq.status);
+
       return children;
     } catch (error: any) {
       return <ErrorPage />;

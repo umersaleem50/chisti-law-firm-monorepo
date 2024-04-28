@@ -12,7 +12,8 @@ const ErrorPage = () => {
         </Typography>
         <Typography vairent="p" component="p">
           Please login to access this route. visit{' '}
-          <Link href={'/auth'}>Here to login</Link>
+          <Link href={'/auth'}>Here to login</Link> Or Try{' '}
+          <Link href={'/admin'}>Dashboard</Link>
         </Typography>
         <Typography vairent="hero" component="h1" color="var(--color-primary)">
           401 Error.

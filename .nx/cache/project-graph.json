@@ -28,38 +28,6 @@
         "implicitDependencies": []
       }
     },
-    "generate-ui": {
-      "name": "generate-ui",
-      "type": "lib",
-      "data": {
-        "name": "generate-ui",
-        "root": "libs/generate-ui",
-        "$schema": "../../node_modules/nx/schemas/project-schema.json",
-        "sourceRoot": "libs/generate-ui/src",
-        "projectType": "library",
-        "tags": [],
-        "targets": {
-          "lint": {
-            "inputs": [
-              "default",
-              "{workspaceRoot}/.eslintrc.json",
-              "{workspaceRoot}/.eslintignore"
-            ],
-            "executor": "@nx/linter:eslint",
-            "outputs": [
-              "{options.outputFile}"
-            ],
-            "options": {
-              "lintFilePatterns": [
-                "libs/generate-ui/**/*.{ts,tsx,js,jsx}"
-              ]
-            },
-            "configurations": {}
-          }
-        },
-        "implicitDependencies": []
-      }
-    },
     "backend-e2e": {
       "name": "backend-e2e",
       "type": "e2e",
@@ -106,6 +74,38 @@
           }
         },
         "tags": []
+      }
+    },
+    "generate-ui": {
+      "name": "generate-ui",
+      "type": "lib",
+      "data": {
+        "name": "generate-ui",
+        "root": "libs/generate-ui",
+        "$schema": "../../node_modules/nx/schemas/project-schema.json",
+        "sourceRoot": "libs/generate-ui/src",
+        "projectType": "library",
+        "tags": [],
+        "targets": {
+          "lint": {
+            "inputs": [
+              "default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{workspaceRoot}/.eslintignore"
+            ],
+            "executor": "@nx/linter:eslint",
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "options": {
+              "lintFilePatterns": [
+                "libs/generate-ui/**/*.{ts,tsx,js,jsx}"
+              ]
+            },
+            "configurations": {}
+          }
+        },
+        "implicitDependencies": []
       }
     },
     "frontend": {
@@ -10673,6 +10673,15 @@
         "hash": "sha512-ROoL94jJH2dUVML2Y/5PEDNaSHgeOdSDicUyS7izcF63G6sTc/FTjLub4b8Il9S8S0beOfYt0TaA5qvFK+w0wA=="
       }
     },
+    "npm:clsx": {
+      "type": "npm",
+      "name": "npm:clsx",
+      "data": {
+        "version": "1.2.1",
+        "packageName": "clsx",
+        "hash": "sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg=="
+      }
+    },
     "npm:co": {
       "type": "npm",
       "name": "npm:co",
@@ -13742,6 +13751,15 @@
         "hash": "sha512-sFdI5LyBiNTHjRd7cGPWapiHWMOXKyuBNX/cWJ3NfzrZQVa8GI/8cofCl74AOVqq9W5kNmguTIzJ/1s2gyI9wA=="
       }
     },
+    "npm:goober": {
+      "type": "npm",
+      "name": "npm:goober",
+      "data": {
+        "version": "2.1.14",
+        "packageName": "goober",
+        "hash": "sha512-4UpC0NdGyAFqLNPnhCT2iHpza2q+RAY3GV85a/mRPdzyPQMsj0KmMMuetdIkzWRbJ+Hgau1EZztq8ImmiMGhsg=="
+      }
+    },
     "npm:gopd": {
       "type": "npm",
       "name": "npm:gopd",
@@ -16647,6 +16665,15 @@
         "version": "6.1.0",
         "packageName": "normalize-url",
         "hash": "sha512-DlL+XwOy3NxAQ8xuC0okPgK46iuVNAK01YN7RueYBqqFeGsBjV9XmCAzAdgt+667bCl5kPh9EqKKDwnaPG1I7A=="
+      }
+    },
+    "npm:notistack": {
+      "type": "npm",
+      "name": "npm:notistack",
+      "data": {
+        "version": "3.0.1",
+        "packageName": "notistack",
+        "hash": "sha512-ntVZXXgSQH5WYfyU+3HfcXuKaapzAJ8fBLQ/G618rn3yvSzEbnOB8ZSOwhX+dAORy/lw+GC2N061JA0+gYWTVA=="
       }
     },
     "npm:npm-package-arg": {
@@ -21045,18 +21072,6 @@
   "dependencies": {
     "book-appointment-handler": [],
     "case-type": [],
-    "generate-ui": [
-      {
-        "source": "generate-ui",
-        "target": "npm:@testing-library/react",
-        "type": "static"
-      },
-      {
-        "source": "generate-ui",
-        "target": "npm:react",
-        "type": "static"
-      }
-    ],
     "backend-e2e": [
       {
         "source": "backend-e2e",
@@ -21066,6 +21081,18 @@
       {
         "source": "backend-e2e",
         "target": "npm:axios",
+        "type": "static"
+      }
+    ],
+    "generate-ui": [
+      {
+        "source": "generate-ui",
+        "target": "npm:@testing-library/react",
+        "type": "static"
+      },
+      {
+        "source": "generate-ui",
+        "target": "npm:react",
         "type": "static"
       }
     ],
@@ -21118,6 +21145,11 @@
       {
         "source": "frontend",
         "target": "npm:react-cookie",
+        "type": "static"
+      },
+      {
+        "source": "frontend",
+        "target": "npm:notistack",
         "type": "static"
       },
       {
@@ -42261,6 +42293,13 @@
         "type": "static"
       }
     ],
+    "npm:goober": [
+      {
+        "source": "npm:goober",
+        "target": "npm:csstype",
+        "type": "static"
+      }
+    ],
     "npm:gopd": [
       {
         "source": "npm:gopd",
@@ -46970,6 +47009,28 @@
       {
         "source": "npm:normalize-package-data",
         "target": "npm:validate-npm-package-license",
+        "type": "static"
+      }
+    ],
+    "npm:notistack": [
+      {
+        "source": "npm:notistack",
+        "target": "npm:react",
+        "type": "static"
+      },
+      {
+        "source": "npm:notistack",
+        "target": "npm:react-dom",
+        "type": "static"
+      },
+      {
+        "source": "npm:notistack",
+        "target": "npm:clsx",
+        "type": "static"
+      },
+      {
+        "source": "npm:notistack",
+        "target": "npm:goober",
         "type": "static"
       }
     ],

@@ -1,5 +1,8 @@
 import { WhatAppButton } from '@/Components/Button/whatsappButton';
 import './global.scss';
+import { envConfig } from '@/envConfig';
+import { SnackbarProvider } from 'notistack';
+import NotificationProvider from '@/providers/NotificationProvider';
 
 export const metadata = {
   title: 'Welcome to chishti law firm.',
@@ -30,10 +33,12 @@ export default async function RootLayout({
   return (
     <html lang="en">
       {/* <NextAuthProvider session={session}> */}
-      <body>
-        <WhatAppButton contact="923066098329" />
-        {children}
-      </body>
+      <NotificationProvider duration={3000}>
+        <body>
+          <WhatAppButton contact={envConfig.SUPPORT_CONTACT} />
+          {children}
+        </body>
+      </NotificationProvider>
       {/* </NextAuthProvider> */}
     </html>
   );

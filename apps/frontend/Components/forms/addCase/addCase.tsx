@@ -2,7 +2,6 @@ import Textbox from '@/Components/Inputs/Textbox/Textbox';
 import Modal from 'react-modal';
 import classes from './addCase.module.scss';
 import Button from '@/Components/Button/Button';
-import Typography from '@/Components/Typography/Typography';
 import { caseTypesPakistanObjects } from './caseType';
 import Select_Input from '@/Components/Inputs/Select/Select_Input';
 

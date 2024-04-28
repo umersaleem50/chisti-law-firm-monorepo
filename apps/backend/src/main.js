@@ -33,7 +33,10 @@ app.use('/test', (req, res, next) => {
   res.status(200).json({ message: 'working api' });
 });
 
+
+
 app.use(errorHandlerController);
+
 
 mongoose
   .connect(process.env.DATABASE_URL)

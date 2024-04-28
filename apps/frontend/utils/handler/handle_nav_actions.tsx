@@ -1,5 +1,7 @@
+import Typography from '@/Components/Typography/Typography';
 import { envConfig } from '@/envConfig';
 import axios from 'axios';
+import { enqueueSnackbar } from 'notistack';
 
 export const handle_logout_button = async (router: any) => {
   // e.preventDefault();
@@ -9,9 +11,19 @@ export const handle_logout_button = async (router: any) => {
       method: 'POST',
       withCredentials: true,
     });
-    alert('logout successful');
+    enqueueSnackbar(
+      <Typography component="p" vairent="p" color="var(--color-white)">
+        Logout Successfully!
+      </Typography>,
+      { variant: 'warning' }
+    );
   } catch (error) {
-    alert('Failed to logout your profile.');
+    enqueueSnackbar(
+      <Typography component="p" vairent="p" color="var(--color-white)">
+        Failed to logout, Try again later.
+      </Typography>,
+      { variant: 'error' }
+    );
   } finally {
     router.push('/auth');
   }

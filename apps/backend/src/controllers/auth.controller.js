@@ -22,7 +22,9 @@ const sendTokenRes = (req, res, status, data) => {
     expires: new Date(Date.now() + 15 * 24 * 60 * 60 * 1000),
     maxAge: 15 * 24 * 60 * 60 * 1000,
     httpOnly: true,
+    // sameSite:'none',
     secure: req.secure || req.headers['x-forwarded-proto'] === 'https',
+    domain:'.chishtilawfirm.com.pk'
   });
 
   return res.status(status).json({ status: 'success', data });
@@ -234,7 +236,13 @@ export const restrictedTo = (...users) => {
 };
 
 export const logout = catchAsync((req, res) => {
-  res.cookie('jwt', '');
+  res.cookie('jwt', '',{
+    
+    httpOnly: true,
+    // sameSite:'none',
+    secure: req.secure || req.headers['x-forwarded-proto'] === 'https',
+    domain:'.chishtilawfirm.com.pk'
+  });
   return res.status(200);
 });
 

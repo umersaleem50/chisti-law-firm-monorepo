@@ -6,4 +6,5 @@ export const envConfig = {
     process.env['NEXT_PUBLIC_STORAGE_BUCKET_URL'],
   JWT_SECRETKEY:
     process.env['JWT_SECRETKEY'] || process.env['NEXT_PUBLIC_JWT_SECRETKEY'],
+  SUPPORT_CONTACT: process.env['SUPPORT_CONTACT'],
 };

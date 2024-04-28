@@ -6,10 +6,16 @@
   margin-left: 24rem;
 
   @include respond(phone) {
-    margin-left: auto;
+  
+    text-align: center;
+    margin: 2rem 4rem;
   }
 }
 
 .bio {
   column-count: 3;
+  @include respond(phone) {
+    column-count: 1;
+    
+  }
 }
