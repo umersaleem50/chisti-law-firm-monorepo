@@ -12,7 +12,7 @@ export const text = {
       alt: 'Mian Shafeeq Chishti',
       reverseElement: false,
       otherOptions: {
-        text: 'Advocate Mian. Shafeeq Chishti',
+        text: 'Advocate Mian. Shafique Chishti',
         type: 'text',
         otherText: 'Founder of firm',
       },

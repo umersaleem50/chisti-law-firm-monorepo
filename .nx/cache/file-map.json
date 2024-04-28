@@ -102,32 +102,6 @@
   },
   "nxJsonPlugins": [],
   "projectFileMap": {
-    "case-type": [
-      {
-        "file": "libs/shared/case-type/README.md",
-        "hash": "11620758126303659691"
-      },
-      {
-        "file": "libs/shared/case-type/project.json",
-        "hash": "6589794201773564789"
-      },
-      {
-        "file": "libs/shared/case-type/src/index.ts",
-        "hash": "3766687583311619159"
-      },
-      {
-        "file": "libs/shared/case-type/src/lib/case-type.ts",
-        "hash": "13109400802790316718"
-      },
-      {
-        "file": "libs/shared/case-type/tsconfig.json",
-        "hash": "11362601880824838265"
-      },
-      {
-        "file": "libs/shared/case-type/tsconfig.lib.json",
-        "hash": "5554291030212586824"
-      }
-    ],
     "frontend": [
       {
         "file": "apps/frontend/.eslintrc.json",
@@ -478,7 +452,7 @@
       },
       {
         "file": "apps/frontend/Components/Layouts/Mission/text.ts",
-        "hash": "14783871936832995259"
+        "hash": "9650637698047726364"
       },
       {
         "file": "apps/frontend/Components/Layouts/ProfileLayout/ProfileLayout.tsx",
@@ -598,7 +572,7 @@
       },
       {
         "file": "apps/frontend/Components/Layouts/Testimonials/Testimonials.tsx",
-        "hash": "5272109445283985207",
+        "hash": "12994192521937688769",
         "deps": [
           "npm:react",
           "npm:@/utils/generate-ui/generate-ui"
@@ -919,7 +893,7 @@
       },
       {
         "file": "apps/frontend/Components/Stateless/Testimonial_Card/Testimonial_Card.module.scss",
-        "hash": "10686652640380530477"
+        "hash": "8051232308988437022"
       },
       {
         "file": "apps/frontend/Components/Stateless/Testimonial_Card/Testimonial_Card.stories.tsx",
@@ -2332,6 +2306,106 @@
         "hash": "5623794208198348967"
       }
     ],
+    "case-type": [
+      {
+        "file": "libs/shared/case-type/README.md",
+        "hash": "11620758126303659691"
+      },
+      {
+        "file": "libs/shared/case-type/project.json",
+        "hash": "6589794201773564789"
+      },
+      {
+        "file": "libs/shared/case-type/src/index.ts",
+        "hash": "3766687583311619159"
+      },
+      {
+        "file": "libs/shared/case-type/src/lib/case-type.ts",
+        "hash": "13109400802790316718"
+      },
+      {
+        "file": "libs/shared/case-type/tsconfig.json",
+        "hash": "11362601880824838265"
+      },
+      {
+        "file": "libs/shared/case-type/tsconfig.lib.json",
+        "hash": "5554291030212586824"
+      }
+    ],
+    "generate-ui": [
+      {
+        "file": "libs/generate-ui/.eslintrc.json",
+        "hash": "14830867113928387670"
+      },
+      {
+        "file": "libs/generate-ui/README.md",
+        "hash": "5432303871478871242"
+      },
+      {
+        "file": "libs/generate-ui/project.json",
+        "hash": "7095934038075636253"
+      },
+      {
+        "file": "libs/generate-ui/src/index.ts",
+        "hash": "7792982587108759944"
+      },
+      {
+        "file": "libs/generate-ui/src/lib/generate-ui.spec.tsx",
+        "hash": "12766634825822095557",
+        "deps": [
+          "npm:@testing-library/react"
+        ]
+      },
+      {
+        "file": "libs/generate-ui/src/lib/generate-ui.tsx",
+        "hash": "2820649808741374812",
+        "deps": [
+          "npm:react"
+        ]
+      },
+      {
+        "file": "libs/generate-ui/src/lib/hello-server.tsx",
+        "hash": "4430793549903582581"
+      },
+      {
+        "file": "libs/generate-ui/src/server.ts",
+        "hash": "358709210498179477"
+      },
+      {
+        "file": "libs/generate-ui/tsconfig.json",
+        "hash": "13979398437825372391"
+      },
+      {
+        "file": "libs/generate-ui/tsconfig.lib.json",
+        "hash": "6604186782021510538"
+      }
+    ],
+    "book-appointment-handler": [
+      {
+        "file": "libs/handlers/book-appointment-handler/README.md",
+        "hash": "7040802319482672591"
+      },
+      {
+        "file": "libs/handlers/book-appointment-handler/project.json",
+        "hash": "6514546645548358847"
+      },
+      {
+        "file": "libs/handlers/book-appointment-handler/src/index.ts",
+        "hash": "9685641398118945026"
+      },
+      {
+        "file": "libs/handlers/book-appointment-handler/src/lib/book-appointment-handler.ts",
+        "hash": "11265700792681349704"
+      },
+      {
+        "file": "libs/handlers/book-appointment-handler/tsconfig.json",
+        "hash": "11694468379504486425"
+      },
+      {
+        "file": "libs/handlers/book-appointment-handler/tsconfig.lib.json",
+        "hash": "11624129529813747059"
+      }
+    ],
     "backend": [
       {
         "file": "apps/backend/.eslintrc.json",
@@ -2562,80 +2636,6 @@
         "deps": [
           "npm:@nx/webpack"
         ]
-      }
-    ],
-    "generate-ui": [
-      {
-        "file": "libs/generate-ui/.eslintrc.json",
-        "hash": "14830867113928387670"
-      },
-      {
-        "file": "libs/generate-ui/README.md",
-        "hash": "5432303871478871242"
-      },
-      {
-        "file": "libs/generate-ui/project.json",
-        "hash": "7095934038075636253"
-      },
-      {
-        "file": "libs/generate-ui/src/index.ts",
-        "hash": "7792982587108759944"
-      },
-      {
-        "file": "libs/generate-ui/src/lib/generate-ui.spec.tsx",
-        "hash": "12766634825822095557",
-        "deps": [
-          "npm:@testing-library/react"
-        ]
-      },
-      {
-        "file": "libs/generate-ui/src/lib/generate-ui.tsx",
-        "hash": "2820649808741374812",
-        "deps": [
-          "npm:react"
-        ]
-      },
-      {
-        "file": "libs/generate-ui/src/lib/hello-server.tsx",
-        "hash": "4430793549903582581"
-      },
-      {
-        "file": "libs/generate-ui/src/server.ts",
-        "hash": "358709210498179477"
-      },
-      {
-        "file": "libs/generate-ui/tsconfig.json",
-        "hash": "13979398437825372391"
-      },
-      {
-        "file": "libs/generate-ui/tsconfig.lib.json",
-        "hash": "6604186782021510538"
-      }
-    ],
-    "book-appointment-handler": [
-      {
-        "file": "libs/handlers/book-appointment-handler/README.md",
-        "hash": "7040802319482672591"
-      },
-      {
-        "file": "libs/handlers/book-appointment-handler/project.json",
-        "hash": "6514546645548358847"
-      },
-      {
-        "file": "libs/handlers/book-appointment-handler/src/index.ts",
-        "hash": "9685641398118945026"
-      },
-      {
-        "file": "libs/handlers/book-appointment-handler/src/lib/book-appointment-handler.ts",
-        "hash": "11265700792681349704"
-      },
-      {
-        "file": "libs/handlers/book-appointment-handler/tsconfig.json",
-        "hash": "11694468379504486425"
-      },
-      {
-        "file": "libs/handlers/book-appointment-handler/tsconfig.lib.json",
-        "hash": "11624129529813747059"
       }
     ]
   }

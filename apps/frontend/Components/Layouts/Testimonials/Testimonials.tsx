@@ -13,23 +13,23 @@ const temp_comment_data: ITestimonialCard[] = [
   {
     isActive: true,
     personName: "Aisha Malik",
-    text: ' ""I owe my legal triumph to Mian Shafeeq! His brilliance in civil cases is unmatched. Sincere gratitude for his dedication."',
+    text: ' ""I owe my legal triumph to Mian Shafique Chishti! His brilliance in civil cases is unmatched. Sincere gratitude for his dedication."',
   },
   {
     personName: "Asif Malik",
-    text: '"Mian Shafeeq legal prowes saved me from a criminal nightmare. A true ally in the courtroom. Highly recommend his services."',
+    text: '"His legal prowes saved me from a criminal nightmare. A true ally in the courtroom. Highly recommend his services."',
   },
   {
     personName: "Farida Khan",
-    text: "“Mian Shafeeq, a legal genius! His strategic mind won my civil case. Forever thankful. Best regards,”",
+    text: "“Mian Shafique Chishti, a legal genius! His strategic mind won my civil case. Forever thankful. Best regards,”",
   },
   {
     personName: "Hassan Ali",
-    text: "“In my darkest legal hour, Mian Shafeeq emerged as my guiding light. His expertise in criminal law is unmatched”",
+    text: "“In my darkest legal hour, Mian Shafique Chishti emerged as my guiding light. His expertise in criminal law is unmatched”",
   },
   {
     personName: "Saima Raza",
-    text: "“Mian Shafeeq, a legal virtuoso! His meticulous handling of my civil case secured a victory. Truly grateful.”",
+    text: "“Mian Shafique Chishti, a legal virtuoso! His meticulous handling of my civil case secured a victory. Truly grateful.”",
   },
 ];
 

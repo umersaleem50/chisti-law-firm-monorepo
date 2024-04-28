@@ -13,6 +13,11 @@
   box-shadow: var(--form-shadow);
   cursor: pointer;
   overflow: hidden;
+
+  @include respond(phone) {
+    min-width: 90vw;
+  }
+
   &:hover,
   &--active {
     background-color: var(--color-accent) !important;
